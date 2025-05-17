@@ -1,9 +1,22 @@
 import baseData from './features/catch_base.json';
 import giumeriData from './features/catch_giumeri.json';
 
+export interface Acronym {
+  letter: string;
+  meaning_en: string;
+}
+
+export interface ComponentAcronym {
+  baseTypeNameJp: string;
+  acronymSourceNameEn: string;
+  keywords: Acronym[];
+}
+
 export interface FeatureInfo {
   catch: string;
   description: string;
+  acronyms?: Acronym[];
+  componentAcronyms?: ComponentAcronym[];
 }
 
 export interface DetailedFeatureInfo {
@@ -35,9 +48,13 @@ export function getInitialFeature(starType: string): FeatureInfo | null {
   const entry = findBaseEntry(baseKey) || findGiumeriEntry(baseKey);
   if (!entry) return null;
   const variantInfo = entry[variant === 'α' ? 'alpha_variant' : 'beta_variant'];
+  const baseAcronyms = (entry as any).new_keywords_acronym;
+  const giumeriAcronyms = (entry as any).component_acronyms;
   return {
     catch: (entry as any).new_catchphrase_jp,
     description: variantInfo.new_description_jp,
+    acronyms: baseAcronyms,
+    componentAcronyms: giumeriAcronyms,
   };
 }
 

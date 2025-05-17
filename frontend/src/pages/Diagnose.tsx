@@ -34,8 +34,9 @@ function Diagnose() {
     }
   };
 
-  const featureInfo: FeatureInfo | null = result
-    ? getInitialFeature(result.star_type)
+  const featureKey = result?.jumeri || result?.star_type;
+  const featureInfo: FeatureInfo | null = featureKey
+    ? getInitialFeature(featureKey)
     : null;
 
   return (
@@ -69,11 +70,36 @@ function Diagnose() {
       {error && <p style={{ color: "red" }}>{error}</p>}
       {result && featureInfo && (
         <div style={{ marginTop: "1rem" }}>
-          <h3>{result.star_type}</h3>
+          <h3>{featureKey}</h3>
           <p>{featureInfo.catch}</p>
           <p>{featureInfo.description}</p>
+          {featureInfo.acronyms && (
+            <ul>
+              {featureInfo.acronyms.map((a, idx) => (
+                <li key={idx}>
+                  {a.letter}: {a.meaning_en}
+                </li>
+              ))}
+            </ul>
+          )}
+          {featureInfo.componentAcronyms && (
+            <div>
+              {featureInfo.componentAcronyms.map((c, idx) => (
+                <div key={idx}>
+                  <h4>{c.baseTypeNameJp}</h4>
+                  <ul>
+                    {c.keywords.map((k, i) => (
+                      <li key={i}>
+                        {k.letter}: {k.meaning_en}
+                      </li>
+                    ))}
+                  </ul>
+                </div>
+              ))}
+            </div>
+          )}
           <button
-            onClick={() => navigate(`/questions/${result.star_type}`)}
+            onClick={() => navigate(`/questions/${featureKey}`)}
             style={{ marginTop: '1rem' }}
           >
             さらに本質を探るための質問に進む

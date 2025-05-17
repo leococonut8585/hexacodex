@@ -9,9 +9,22 @@ export interface CategoryQuestions {
   [category: string]: Question[];
 }
 
+export interface Acronym {
+  letter: string;
+  meaning_en: string;
+}
+
+export interface ComponentAcronym {
+  baseTypeNameJp: string;
+  acronymSourceNameEn: string;
+  keywords: Acronym[];
+}
+
 export interface FeatureInfo {
   catch: string;
   description: string;
+  acronyms?: Acronym[];
+  componentAcronyms?: ComponentAcronym[];
 }
 
 export interface DetailedFeatureInfo {
@@ -36,6 +49,8 @@ export interface DiagnosisResult {
   category: string;
   catch: string;
   description: string;
+  acronyms?: Acronym[];
+  componentAcronyms?: ComponentAcronym[];
 }
 
 export interface ApiDiagnosis {
