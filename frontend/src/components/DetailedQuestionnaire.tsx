@@ -1,8 +1,8 @@
 import React, { useState } from 'react';
 import { useParams } from 'react-router-dom';
 import questionsData from '../constants/questions.json';
-import features from '../constants/features.json';
-import { Question, DetailedDiagnosisResult, Features } from '../types';
+import { getDetailedFeature } from '../constants/officialFeatures';
+import { Question, DetailedDiagnosisResult, DetailedFeatureInfo } from '../types';
 
 /**
  * Component showing 21 questions for the selected classification.
@@ -45,16 +45,21 @@ const DetailedQuestionnaire: React.FC = () => {
     const yes = answers.filter((a) => a).length;
     const subType = yes >= THRESHOLD ? '1' : '2';
     const finalKey = `${category}-${subType}`;
-    const info = (features as Features)[finalKey];
-    setResult({ category: finalKey, catch: info.catch, description: info.description, subType });
+    const info: DetailedFeatureInfo | null = getDetailedFeature(finalKey);
+    if (info) {
+      setResult({ category: finalKey, ...info, subType });
+    }
   };
 
   if (result) {
     return (
       <div data-testid="final-result">
         <h3>{result.category}</h3>
-        <p>{result.catch}</p>
-        <p>{result.description}</p>
+        <p>{result.baseDescription}</p>
+        <h4>{result.variantTitle}</h4>
+        <p>{result.variantDescription}</p>
+        <h4>{result.subTitle}</h4>
+        <p>{result.subDescription}</p>
       </div>
     );
   }
