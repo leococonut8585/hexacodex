@@ -5,10 +5,12 @@ import { Routes, Route, Link } from "react-router-dom";
 import Home from "./pages/Home";
 import Diagnose from "./pages/Diagnose";
 import Personality from "./pages/Personality";
+import MatrixBackground from "./components/MatrixBackground";
 
 function App() {
   return (
     <div>
+      <MatrixBackground />
       {/* グローバルナビゲーション */}
       <nav>
         <ul>

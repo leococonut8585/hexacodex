@@ -185,3 +185,14 @@ Hexacodex概要.docx：設計思想、今後の機能追加方針などを記載
 
 penta-only.ts：TypeScriptで記述された元ロジック（バックアップ兼ドキュメント）
 
+## Matrix Rain Background
+
+The React frontend now includes a Matrix-style falling code effect behind all UI
+elements. The implementation lives in `frontend/src/components/MatrixBackground.tsx`.
+Import this component in `src/App.tsx` and place `<MatrixBackground />` at the
+top level of the render tree. The canvas uses `position: fixed` with
+`z-index: -1` and `pointer-events: none` so the regular UI remains fully
+interactive.
+
+No extra dependencies are required; the effect is drawn using the HTML Canvas API.
+
