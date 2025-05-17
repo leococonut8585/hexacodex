@@ -1,0 +1,147 @@
+📄 README.md（Hexa Codex プロジェクト）
+markdown
+コードをコピーする
+# Hexa Codex（ヘキサ・コーデックス）
+
+Hexa Codex は、六星占術の原理をベースとした性格診断Webアプリです。  
+ユーザーの生年月日を入力すると、独自ロジックに基づいて以下の3要素を導出し、自己理解の一助となる情報を提供します。
+
+- **zodiac**（干支）
+- **star_type**（星人タイプ + 陰陽属性）
+- **jumeri**（特殊相性タイプ、存在する場合のみ）
+
+---
+
+## 🔮 アプリのコンセプト
+
+- **基本6コードタイプ（星人）**: KAIRI, KINRYU, AKARI, NOAH, MARI, SENRI
+- **陰陽属性**: 各コードに _α または _β を付加
+- **ジュメリ**: 特定の条件（g === el）で判定される、2種の組合せ型タイプ（例: KAIRI×NOAH_α）
+
+---
+
+## 📈 今後の展望
+
+- 各24タイプ（基本12＋ジュメリ12）に対し**性格質問**を実装予定
+- サブタイプへの分岐により、最終的に48〜58分類の性格診断を目指す
+- 詳細は `documents/Hexacodex概要.docx` を参照
+
+---
+
+## ⚙️ 技術スタック
+
+| 項目        | 技術                              |
+|-------------|-----------------------------------|
+| バックエンド | Python / FastAPI / SQLite        |
+| 占術ロジック | TypeScript（元コード）→ Python移植 |
+| フロントエンド（予定） | React / TypeScript / Material UI  |
+
+---
+
+## 🧠 ロジックに関する経緯と構成
+
+- 初期は六星占術の一般的ロジックで構築
+- 公式の挙動と一致しないため、**ご友人提供の TypeScriptコード `penta-only.ts`** を正とし、Pythonで忠実に移植
+- 完成したPythonロジックは `backend/app/logic/penta_calculator.py` に実装済み（※絶対に改変禁止）
+- 判定要素：
+  - 干支計算: 西暦から直接（立春基準は不採用）
+  - 陰陽: 西暦の偶奇で判定（year % 2）
+  - ジュメリ: g === el 判定＋定義済マッピング（`GENERAL_JUMERI_PARTNERS`）
+
+---
+
+## 📁 ディレクトリ構成（主要）
+
+HexaCodexProject/
+├── backend/
+│ ├── app/
+│ │ ├── main.py # FastAPIアプリケーション、CORS設定済み
+│ │ └── logic/
+│ │ ├── penta_calculator.py # ロジック本体（編集禁止）
+│ │ └── horoscope_calc.py # ロジック呼び出し＆整形用中間層
+│ ├── venv/ # 仮想環境（.gitignore済み）
+│ └── requirements.txt
+├── frontend/ # React + TypeScript（開発予定）
+│ └── README.md（CRAデフォルト）
+├── documents/
+│ ├── Hexacodex概要.docx # 全体仕様と今後の計画
+│ └── penta-only.ts # 占術ロジック原本（TypeScript）
+└── AGENTS.md # Codex向け仕様補足ファイル
+
+yaml
+コードをコピーする
+
+---
+
+## 🔌 API仕様（現在実装済み）
+
+### ✅ `/diagnose`（POST）
+
+#### 入力
+```json
+{
+  "year": 1994,
+  "month": 12,
+  "day": 6
+}
+出力
+json
+コードをコピーする
+{
+  "zodiac": "戌",
+  "star_type": "AKARI_α",
+  "jumeri": "SENRI×AKARI_α"
+}
+CORS設定済み → 外部フロントエンドから直接呼び出し可能
+
+🚧 開発ステータスと今後の課題
+✅ 実装済み
+penta_calculator.py: TypeScript移植済み、検証済み
+
+/diagnose API：動作確認済み
+
+CORS設定済みでフロント接続準備完了
+
+🔜 今後の開発予定
+React + TypeScript + Material UI によるフロント開発開始
+
+診断結果画面とフォームの整備
+
+サブタイプ分類機能（性格質問 → 絞り込み）
+
+ジュメリ名称の最終ルール確認
+
+SQLiteまたは他DB導入（結果保存等）
+
+テスト整備、ロギングの充実
+
+🚫 エンジニアへの重要な引き継ぎ事項
+❗占術ロジックのブラックボックス化
+backend/app/logic/penta_calculator.py のコードは絶対に変更禁止
+
+このファイルは penta-only.ts を移植した唯一正確な再現であり、ユーザー検証済
+
+以後のロジック（性格分類、UI出力、診断評価など）は、このブラックボックスが返す結果のみを元に実装する
+
+▶️ 開発・起動手順
+バックエンド（FastAPI）
+bash
+コードをコピーする
+cd backend
+python -m venv venv
+source venv/bin/activate  # Windows: venv\Scripts\activate
+pip install -r requirements.txt
+uvicorn app.main:app --reload
+フロントエンド（予定）
+bash
+コードをコピーする
+cd frontend
+npm install
+npm start
+🧾 関連ファイル
+AGENTS.md：Codexエージェント用の仕様補足書
+
+Hexacodex概要.docx：設計思想、今後の機能追加方針などを記載
+
+penta-only.ts：TypeScriptで記述された元ロジック（バックアップ兼ドキュメント）
+
