@@ -47,6 +47,7 @@ const DetailedQuestionnaire: React.FC = () => {
     const finalKey = `${category}-${subType}`;
     const info: DetailedFeatureInfo | null = getDetailedFeature(finalKey);
     if (info) {
+      // info already contains only the selected subtype data
       setResult({ category: finalKey, ...info, subType });
     }
   };
@@ -55,6 +56,7 @@ const DetailedQuestionnaire: React.FC = () => {
     return (
       <div data-testid="final-result">
         <h3>{result.category}</h3>
+        <p>{result.catch}</p>
         {result.acronyms && (
           <ul>
             {result.acronyms.map((a, idx) => (
