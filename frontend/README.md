@@ -56,3 +56,21 @@ You don’t have to ever use `eject`. The curated feature set is suitable for sm
 You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
 
 To learn React, check out the [React documentation](https://reactjs.org/).
+
+## Matrix Rain Background
+
+This project includes a simple Matrix-style background effect implemented in
+`src/components/MatrixBackground.tsx`. The component renders a canvas that fills
+the screen and displays green characters falling down like the movie
+"The Matrix".
+
+### Usage
+
+1. No additional packages are required. The component uses the native Canvas API.
+2. Import and place `<MatrixBackground />` near the root of your application, for
+   example in `src/App.tsx` before other content so it stays in the back.
+3. The canvas uses `position: fixed` and `z-index: -1` with `pointer-events:
+   none`, ensuring it does not interfere with the UI.
+
+The effect can be customised by editing the characters, font size, or colour in
+`MatrixBackground.tsx`.
