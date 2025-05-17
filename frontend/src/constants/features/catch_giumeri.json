@@ -1,0 +1,392 @@
+{
+  "jumeri_types": [
+    {
+      "jumeri_type_name_jp": "SENRI × AKARI (センリ × アカリ)",
+      "original_title_jp": "知略と閃光の二重奏、予測不可能な変革のアルカナ",
+      "jumeri_type_composition_jp": "SENRIの「直感と行動」をベースに、AKARIの「行動なき頭脳と感性」が融合。行動派に芸術的なひらめきと知的な深みが加わります。",
+      "new_catchphrase_jp": "行動する閃きの竜巻、予測不能なアイデアを現実に叩きつける実践アーティスト",
+      "component_acronyms": [
+        {
+          "base_type_name_jp": "SENRI (センリ) の特徴に基づくアクロニム",
+          "acronym_source_name_en": "SENRI",
+          "keywords": [
+            { "letter": "S", "meaning_en": "Speed-Demon" },
+            { "letter": "E", "meaning_en": "Energetic-Force" },
+            { "letter": "N", "meaning_en": "No-Nonsense-Action" },
+            { "letter": "R", "meaning_en": "Risk-Taker" },
+            { "letter": "I", "meaning_en": "Instinct-Driven" }
+          ]
+        },
+        {
+          "base_type_name_jp": "AKARI (アカリ) の特徴に基づくアクロニム",
+          "acronym_source_name_en": "AKARI",
+          "keywords": [
+            { "letter": "A", "meaning_en": "Artistic-Mind" },
+            { "letter": "K", "meaning_en": "Keen-Insight" },
+            { "letter": "A", "meaning_en": "Abstract-Thinker" },
+            { "letter": "R", "meaning_en": "Romantic-Visionary" },
+            { "letter": "I", "meaning_en": "Intuitive-Dreamer" }
+          ]
+        }
+      ],
+      "new_description_jp": "SENRIの「考えるより先に体が動く」行動力と直感に、AKARIの「豊かな感性と芸術的アイデア（ただし行動は苦手）」が加わったタイプ。普段は行動的ですが、時にAKARI由来の芸術的なひらめきや知的な視点がその行動を予測不能でユニークなものへと変貌させます。論理よりも、行動と直感的なアートセンスが火花を散らし、時に計画性のないまま突き進むことも。",
+      "alpha_variant": {
+        "original_title_jp": "戦略を纏い、閃光を放つ、孤高のカリスマティック・イノベーター",
+        "new_title_jp": "直感アクション・アーティスト ～閃きを即実行する野生のカリスマ～",
+        "new_description_jp": "SENRIの「即断即決の行動力」に、AKARIの「情熱的な表現アイデア」がドッキング。困難な状況でも芸術的な閃きを頼りに、大胆な行動で道を切り開くダイナミックで影響力のあるタイプ。その行動は時に衝動的で、周囲を驚かせますが、AKARIの知性が深みを与えることも。",
+        "sub_types": [
+          {
+            "original_title_jp": "α-1 (戦略的閃光アーティスト)",
+            "new_title_jp": "暴走する閃光アーティスト・コマンダー",
+            "new_description_jp": "常識を覆すような芸術的閃きを、SENRI由来の圧倒的な行動力で即座に形にする開拓者。計画よりも、その場の勢いとAKARIのアートセンスで道を切り開きます。"
+          },
+          {
+            "original_title_jp": "α-2 (知略の革命デザイナー)",
+            "new_title_jp": "行動的美学のインパクト・デザイナー",
+            "new_description_jp": "AKARIの美的感性と深い思考をSENRIの行動力で社会に叩きつけ、既存の価値観に実践的な揺さぶりをかけるカリスマ的扇動者。そのデザインは行動で示され、時に知的な戦略も垣間見せます。"
+          }
+        ]
+      },
+      "beta_variant": {
+        "original_title_jp": "深淵なる知性と秘めたる情熱、影で世界を操るミスティック・ストラテジスト",
+        "new_title_jp": "静動のインスピレーション・アクター ～秘めたる情熱を形にする行動的芸術家～",
+        "new_description_jp": "SENRIの「寡黙な実践力」と、AKARIの「内に秘めた鋭い感性・芸術への探求心」が静かに融合。普段は物静かですが、AKARI由来の芸術的衝動や知的な閃きにSENRIの行動力が火がつくと、驚くべき集中力でそれを具現化しようとします。影の実行者であり、孤高の表現者。",
+        "sub_types": [
+          {
+            "original_title_jp": "β-1 (深淵のアルケミスト)",
+            "new_title_jp": "沈黙の創造アルケミスト・アクション",
+            "new_description_jp": "孤独な実践の中で、AKARI由来の美の探求心とSENRIの行動力が結晶化し、時代を超える価値ある「作品」や「行動の軌跡」を静かに生み出します。それは理論より実践の産物です。"
+          },
+          {
+            "original_title_jp": "β-2 (影の詩的改革者)",
+            "new_title_jp": "幻想実行のポエティック・エージェント",
+            "new_description_jp": "AKARIの幻想的な詩情や深い思考を、SENRIの具体的な行動力で現実世界に「実行」するミステリアスな異端児。その行動は詩的で、人々の心に静かな衝撃を与え、時に知的な批評性も帯びます。"
+          }
+        ]
+      }
+    },
+    {
+      "jumeri_type_name_jp": "AKARI × SENRI (アカリ × センリ)",
+      "original_title_jp": "情熱の奔流に秘められし知略、閃きを現実に刻むアーティスト・ストラテジスト",
+      "jumeri_type_composition_jp": "AKARIの「行動なき頭脳と感性」をベースに、SENRIの「直感と行動」が融合。アイデアが行動力を得て、現実化する。",
+      "new_catchphrase_jp": "アイデアを現実に撃ち込む感性の狙撃手、情熱を知恵と行動力で形にするアーティスト",
+      "component_acronyms": [
+        {
+          "base_type_name_jp": "AKARI (アカリ) の特徴に基づくアクロニム",
+          "acronym_source_name_en": "AKARI",
+          "keywords": [
+            { "letter": "A", "meaning_en": "Artistic-Mind" },
+            { "letter": "K", "meaning_en": "Keen-Insight" },
+            { "letter": "A", "meaning_en": "Abstract-Thinker" },
+            { "letter": "R", "meaning_en": "Romantic-Visionary" },
+            { "letter": "I", "meaning_en": "Intuitive-Dreamer" }
+          ]
+        },
+        {
+          "base_type_name_jp": "SENRI (センリ) の特徴に基づくアクロニム",
+          "acronym_source_name_en": "SENRI",
+          "keywords": [
+            { "letter": "S", "meaning_en": "Speed-Demon" },
+            { "letter": "E", "meaning_en": "Energetic-Force" },
+            { "letter": "N", "meaning_en": "No-Nonsense-Action" },
+            { "letter": "R", "meaning_en": "Risk-Taker" },
+            { "letter": "I", "meaning_en": "Instinct-Driven" }
+          ]
+        }
+      ],
+      "new_description_jp": "AKARIの「豊かな感性と芸術的アイデア、深い思考力（ただし行動は苦手）」がメインとなり、そこにSENRIの「考えるより先に体が動く」行動力がプラス。情熱的な芸術衝動や知的な閃きを、SENRI由来の衝動的かつ効果的な行動力で現実世界で形にする力を持ちます。",
+      "alpha_variant": {
+        "original_title_jp": "閃光のストラテジスト：情熱を武器に、世界を鮮烈にデザインする挑戦者",
+        "new_title_jp": "情熱実行のアイデア・ダイナモ ～閃きを行動に変える感性の司令塔～",
+        "new_description_jp": "AKARIの「爆発的な表現アイデアと鋭い知性」にSENRIの「大胆な行動力・革新性」がフルスロットルで融合。情熱を武器に、世界を鮮烈なアイデアと具体的な行動でデザインする挑戦者です。",
+        "sub_types": [
+          {
+            "original_title_jp": "α-1 (情熱の開拓アーティスト)",
+            "new_title_jp": "アイデア実現のパッション・ストライカー",
+            "new_description_jp": "AKARIの内なる閃きを羅針盤に、SENRI由来の行動力で未知の表現領域やプロジェクトを情熱的に、そして具体的に切り拓く先駆者。アイデアが即、行動に繋がります。"
+          },
+          {
+            "original_title_jp": "α-2 (戦略的カリスマデザイナー)",
+            "new_title_jp": "美意識の行動的イノベーター",
+            "new_description_jp": "AKARIの美意識と深い思考、SENRIの行動力で常識を挑発し、社会を覚醒させる扇動の芸術家。そのデザインは具体的な行動を伴い、人々を巻き込み、時に知的な戦略も見せます。"
+          }
+        ]
+      },
+      "beta_variant": {
+        "original_title_jp": "孤高の戦略的詩人：内なる炎を秘め、深遠なる言葉と美で静かに世界を刺す者",
+        "new_title_jp": "静かなる戦術のポエティック・アクショニスト ～内なる思考を具体的な行動で示す～",
+        "new_description_jp": "AKARIの「内に秘めた鋭い感受性や芸術への探求心、深い思考」に、SENRIの「寡黙な実践力と一点突破の行動」が静かに寄り添います。深遠なアイデアや詩的な感性を、具体的な行動や作品で静かに、しかし的確に世界に提示します。",
+        "sub_types": [
+          {
+            "original_title_jp": "β-1 (孤高の錬金術的参謀)",
+            "new_title_jp": "内省的アイデアの実践デザイナー",
+            "new_description_jp": "AKARIの秘めたる美意識と思考力、SENRIの具体的な行動力が結びつき、真価あるアイデアを静かに、しかし着実に創造し実行する者。"
+          },
+          {
+            "original_title_jp": "β-2 (夢幻の戦略的吟遊詩人)",
+            "new_title_jp": "幻想を行動で示すサイレント・リアリスト",
+            "new_description_jp": "AKARIの幻想的な詩情や深い思考とSENRIの行動力が融合。秘めたる反骨精神を、具体的な行動や作品という形で静かに表現し、時に知的な批評性をもって時代を覚醒させます。"
+          }
+        ]
+      }
+    },
+    {
+      "jumeri_type_name_jp": "MARI × KINRYU (マリ × キンリュウ)",
+      "original_title_jp": "堅実な大地に咲く陽光の花、信頼と革新が織りなす温かな魅力",
+      "jumeri_type_composition_jp": "MARIの「身内への愛と堅実さ（時に陰湿で厳しい）」ベースに、KINRYUの「明るく繊細、自己認知弱め」な魅力が加わる。",
+      "new_catchphrase_jp": "愛深き堅守のアーティスト、意外な輝きと脆さを秘めた不屈のサポーター",
+      "component_acronyms": [
+        {
+          "base_type_name_jp": "MARI (マリ) の特徴に基づくアクロニム",
+          "acronym_source_name_en": "MARI",
+          "keywords": [
+            { "letter": "M", "meaning_en": "My-People-Only" },
+            { "letter": "A", "meaning_en": "Ardent-Loyalty" },
+            { "letter": "R", "meaning_en": "Relentless-Protector" },
+            { "letter": "I", "meaning_en": "Intense-Shadow" }
+          ]
+        },
+        {
+          "base_type_name_jp": "KINRYU (キンリュウ) の特徴に基づくアクロニム",
+          "acronym_source_name_en": "KINRYU",
+          "keywords": [
+            { "letter": "K", "meaning_en": "Kindred-Spirit (but flighty)" },
+            { "letter": "I", "meaning_en": "Imaginative-Child" },
+            { "letter": "N", "meaning_en": "Novelty-Hunter" },
+            { "letter": "R", "meaning_en": "Radiant-Fragility" },
+            { "letter": "Y", "meaning_en": "Youthful-Unawareness" },
+            { "letter": "U", "meaning_en": "Unconventional-Heart" }
+          ]
+        }
+      ],
+      "new_description_jp": "MARIの「真面目で堅実、身内への愛は鉄壁（時に他者に厳しく、陰のある執念深さも）」というベースに、KINRYUの「自由で華やか、しかし繊細で自己認知が弱い」魅力がプラスされます。基本は堅実で愛情深いが、KINRYUの要素が意外な明るさや型破りな一面、そして脆さをもたらし、予測不能な魅力を持つバランスの妙が光るタイプです。",
+      "alpha_variant": {
+        "original_title_jp": "陽光をまとう堅実なリーダー：信頼と笑顔で、未来を育むコミュニティビルダー",
+        "new_title_jp": "鉄壁スマイルの社交的ガーディアン ～愛と意外性、そして厳格さで未来を育む太陽～",
+        "new_description_jp": "MARIの「献身的なサポート力と誠実なリーダーシップ（時に厳格で排他的）」に、KINRYUの「明るく行動的なエネルギー（時に無自覚な繊細さ）」がドッキング。身内を守る太陽のような存在ですが、その輝きには意外な繊細さや気まぐれさが同居し、敵対者には容赦ない一面も。",
+        "sub_types": [
+          {
+            "original_title_jp": "α-1 (信頼と冒険のハーモニー・リーダー)",
+            "new_title_jp": "頼れる冒険隊長（ただし気まぐれと鉄の掟付き）",
+            "new_description_jp": "MARIの堅実な航路に、KINRYUの未知の喜びを運ぶ船長。絶対的な安心感と、時に予測不能なワクワク感を届けますが、KINRYUの繊細さが影響し、MARIの厳格さも顔を出すことがあります。"
+          },
+          {
+            "original_title_jp": "α-2 (育むエンターテイナー・マイスター)",
+            "new_title_jp": "愛情深き才能プロデューサー（ただし繊細かつ厳格）",
+            "new_description_jp": "MARIの確かな育成技術とKINRYUの遊び心で、才能を開花させる演出家。育成をエンタメにしますが、本人の自己認知の弱さからくる不安定さや、MARI由来の厳しい一面も垣間見えます。"
+          }
+        ]
+      },
+      "beta_variant": {
+        "original_title_jp": "縁の下のシャイニング・サポーター：控えめな誠実さの奥に、個性的な輝きを秘めた癒し手",
+        "new_title_jp": "静謐な輝きの献身ヒーラー ～秘めたる個性と執愛、そして脆さを持つ影の功労者～",
+        "new_description_jp": "MARIの「控えめで献身的なサポート力（時に執着が強く、陰湿な面も）」に、KINRYUの「独自の美的センスや遊び心（と繊細さ、自己認知の弱さ）」がそっと加わります。静かな安心感と心地よい刺激を与えるが、どこか掴みどころのない輝きと脆さ、そして深い情念を秘めた存在。",
+        "sub_types": [
+          {
+            "original_title_jp": "β-1 (静寂の自由なる守護者)",
+            "new_title_jp": "アンバランスな美学のサイレント・プロテクター（執愛）",
+            "new_description_jp": "MARIの不動の誠実さと執愛に、KINRYUの型破りな美学と繊細さが融合。独自のやり方で大切なものを守りますが、そのバランスは時に危うげで、他を排除するほどの強さを見せます。"
+          },
+          {
+            "original_title_jp": "β-2 (微笑みの縁結びイノベーター)",
+            "new_title_jp": "ナイーブハートのクローズド・コネクター",
+            "new_description_jp": "MARIの温かな（身内への）絆を紡ぐ力とKINRYUの斬新なアイデアで、限られた範囲での調和と変革を静かに紡ぎます。KINRYU由来の繊細さが影響し、MARIの排他性がその輪を閉ざすことも。"
+          }
+        ]
+      }
+    },
+    {
+      "jumeri_type_name_jp": "KINRYU × MARI (キンリュウ × マリ)",
+      "original_title_jp": "自由な輝きに宿る誠実の核、華やかな冒険に信頼を灯す人",
+      "jumeri_type_composition_jp": "KINRYUの「明るく繊細、自己認知弱め」ベースに、MARIの「身内への愛と堅実さ（時に陰湿で厳しい）」が加わる。",
+      "new_catchphrase_jp": "きらめく冒険家の意外な誠実さと執念、脆さを隠した献身の輝き",
+      "component_acronyms": [
+        {
+          "base_type_name_jp": "KINRYU (キンリュウ) の特徴に基づくアクロニム",
+          "acronym_source_name_en": "KINRYU",
+          "keywords": [
+            { "letter": "K", "meaning_en": "Kindred-Spirit (but flighty)" },
+            { "letter": "I", "meaning_en": "Imaginative-Child" },
+            { "letter": "N", "meaning_en": "Novelty-Hunter" },
+            { "letter": "R", "meaning_en": "Radiant-Fragility" },
+            { "letter": "Y", "meaning_en": "Youthful-Unawareness" },
+            { "letter": "U", "meaning_en": "Unconventional-Heart" }
+          ]
+        },
+        {
+          "base_type_name_jp": "MARI (マリ) の特徴に基づくアクロニム",
+          "acronym_source_name_en": "MARI",
+          "keywords": [
+            { "letter": "M", "meaning_en": "My-People-Only" },
+            { "letter": "A", "meaning_en": "Ardent-Loyalty" },
+            { "letter": "R", "meaning_en": "Relentless-Protector" },
+            { "letter": "I", "meaning_en": "Intense-Shadow" }
+          ]
+        }
+      ],
+      "new_description_jp": "KINRYUの「自由で新しいもの好き、明るいが繊細で自己認知が弱い」冒険家の部分がメイン。そこにMARIの「真面目で堅実、身内への愛は鉄壁（時に他者に厳しく、陰のある執念深さも）」心が加わり、華やかな魅力と意外なほどの信頼感、そして執着心にも似た強さを兼ね備えます。ただし、ベースの脆さと自己理解の浅さは残ります。",
+      "alpha_variant": {
+        "original_title_jp": "太陽の実行者：自由な輝きと確かな誠実さで、人々を巻き込み未来を照らすリーダー",
+        "new_title_jp": "シャイニング・コマンダー ～危うい輝きと鉄壁の愛、そして執念で未来を照らす～",
+        "new_description_jp": "KINRYUの「エネルギッシュな行動力と華やかな魅力（時に無自覚な繊細さ）」に、MARIの「責任感と献身性（時に厳格で執着的）」がガッチリ結びつきます。「行動する希望」そのものですが、その輝きには危うさも伴い、一度定めた身内や目標への執着は並外れたものになります。",
+        "sub_types": [
+          {
+            "original_title_jp": "α-1 (陽気な信頼のパイオニア)",
+            "new_title_jp": "天真爛漫なロイヤル・パイオニア（執愛）",
+            "new_description_jp": "KINRYUの自由な魂とMARIの誠実な心（と執着心）で、未知の喜びを（選ばれた者と）共に切り拓くリーダー。その明るさで人を惹きつけますが、時に繊細さゆえの不安定さと、MARI由来の強い執着を見せます。"
+          },
+          {
+            "original_title_jp": "α-2 (変幻自在の育成エンターテイナー)",
+            "new_title_jp": "きらめき育成マジシャン（ただし心はガラス、愛は鉄）",
+            "new_description_jp": "KINRYUの華麗な演出とMARIの温かな（時に執拗な）眼差しで、才能を解き放つマジシャン。人々を魅了しますが、自身の繊細さや自己認知の弱さ、そして身内への強烈な愛憎とは常に隣り合わせです。"
+          }
+        ]
+      },
+      "beta_variant": {
+        "original_title_jp": "静かなる華やぎの奉仕者：独自のセンスと温かな誠意で、心に寄り添い貢献する人",
+        "new_title_jp": "アンバランス・ハートの献身アーティスト ～独自の輝きと秘めたる誠実さ、そして影～",
+        "new_description_jp": "KINRYUの「独自の美的センスや型にはまらない個性（と繊細さ、自己認知の弱さ）」に、MARIの「控えめで献身的なサポート力と誠実さ（時に執着と陰湿さ）」がそっと加わります。静かな喜びと確かな安心感を与えるが、そのアンバランスな魅力はどこか儚げで、時に深い影を落とします。",
+        "sub_types": [
+          {
+            "original_title_jp": "β-1 (自由なる魂の堅実な守り手)",
+            "new_title_jp": "危うげな美学のサイレント・プロテクター（執念）",
+            "new_description_jp": "KINRYUの独自の美学とMARIの確かな誠意（と執念）で、静かに個性を守り育むガーディアン。その自由な魂は時に脆く、守る側の執着にも似た強さが際立ちます。"
+          },
+          {
+            "original_title_jp": "β-2 (静かなる絆のイノベーター)",
+            "new_title_jp": "ナイーブ・ハートのクローズド・デザイナー（影）",
+            "new_description_jp": "KINRYUの型破りな発想とMARIの温かな（時に排他的な）配慮で、限られた人々と未来を繋ぐ発明家。その革新性は魅力的ですが、本人の繊細さとMARIの影の部分が、その輪を狭く深くすることがあります。"
+          }
+        ]
+      }
+    },
+    {
+      "jumeri_type_name_jp": "NOAH × KAIRI (ノア × カイリ)",
+      "original_title_jp": "慈愛の賢者、温かな理想を現実に紡ぐ、調和と知性の探求者",
+      "jumeri_type_composition_jp": "NOAHの「愛と努力、ただしマイ・ルールで支配的」ベースに、KAIRIの「天才気質で見栄っ張り」な知性が加わる。「愛情にあふれた人が才能に目覚め、その才能を誇示しつつ愛のルールで導く」イメージ。",
+      "new_catchphrase_jp": "愛とルールの天才指揮官、華麗なる知性で理想郷を築く愛のカリスマ",
+      "component_acronyms": [
+        {
+          "base_type_name_jp": "NOAH (ノア) の特徴に基づくアクロニム",
+          "acronym_source_name_en": "NOAH",
+          "keywords": [
+            { "letter": "N", "meaning_en": "Nurturing-Dominance" },
+            { "letter": "O", "meaning_en": "Order-Driven" },
+            { "letter": "A", "meaning_en": "Affectionate-Effort" },
+            { "letter": "H", "meaning_en": "Heartfelt-Rules" }
+          ]
+        },
+        {
+          "base_type_name_jp": "KAIRI (カイリ) の特徴に基づくアクロニム",
+          "acronym_source_name_en": "KAIRI",
+          "keywords": [
+            { "letter": "K", "meaning_en": "Keen-Intellect" },
+            { "letter": "A", "meaning_en": "Ambitious-Showman" },
+            { "letter": "I", "meaning_en": "Ideal-Seeker" },
+            { "letter": "R", "meaning_en": "Radiant-Genius" },
+            { "letter": "I", "meaning_en": "Impressive-Mind" }
+          ]
+        }
+      ],
+      "new_description_jp": "NOAHの「温厚で平和主義、しかしマイ・ルールが強く時に支配的」な愛情深さがメイン。そこにKAIRIの「知的で理想を追い求める天才気質と見栄っ張り」な賢さがプラス。ただ優しいだけでなく、華やかで時に強引な知性と理想追求が加わり、独自の愛の形とルールで人々を導き、その才能と成果を誇示します。",
+      "alpha_variant": {
+        "original_title_jp": "理想を掲げる希望の灯台：知性と慈愛で、人々を導き育むビジョナリー・リーダー",
+        "new_title_jp": "愛と才覚のグランド・アーキテクト ～華麗なる理想を掲げる愛の指導者～",
+        "new_description_jp": "NOAHの「育成力と楽観的なエネルギー（時に支配的）」に、KAIRIの「明確な理想とそれを実現する天才的知性（と見栄）」がドッキング。明るい未来へと人々を導く影響力のあるリーダーですが、その手法は華やかで時に独善的であり、自らの正しさと才能を強くアピールします。",
+        "sub_types": [
+          {
+            "original_title_jp": "α-1 (希望のアーキテクト)",
+            "new_title_jp": "愛と秩序のドリーム・ビルダー（誇示欲強め）",
+            "new_description_jp": "NOAHの慈愛とKAIRIの戦略（と誇示欲）で、理想の未来図を描き築き上げる構築者。「夢の建築家」ですが、その設計には独自の愛のルールと、自らの天才性を際立たせる要素が強く反映されます。"
+          },
+          {
+            "original_title_jp": "α-2 (信念のグロース・カタリスト)",
+            "new_title_jp": "愛と才能のスパーク・イグナイター（支配的育成）",
+            "new_description_jp": "NOAHの温かな導きとKAIRIの揺るぎない理想（と天才アピール）で、個と組織の成長を加速させる触媒。「魂の育成者」ですが、その育成方針は絶対的で、従う者だけが愛の恩恵を受けられます。"
+          }
+        ]
+      },
+      "beta_variant": {
+        "original_title_jp": "静かなる洞察の守護者：深い共感と知恵で、個の成長と調和を支える賢人",
+        "new_title_jp": "静謐なる愛のインテリジェンス・ガーディアン ～秘めたる才能と支配力、そして見栄を持つ賢者～",
+        "new_description_jp": "NOAHの「静かで受け入れる優しさ（ただしマイ・ルールは健在）」と、KAIRIの「内省的で深い洞察力（と天才的自負、見栄っ張りな一面）」がしっとりと融合。一人ひとりに合わせた的確なサポートで内面的成長を支えますが、その根底には独自の価値観と才能への自信、そしてそれを認めさせたい欲求があります。",
+        "sub_types": [
+          {
+            "original_title_jp": "β-1 (静謐なる理想の職人)",
+            "new_title_jp": "愛と才のサイレント・アルケミスト（誇り高き職人）",
+            "new_description_jp": "NOAHの深い共感とKAIRIの揺るぎない探求心（と才能への自負）で、本質的な癒しと完成を追求する者。「魂のアルチザン」ですが、その作品には独自の美学とルールが貫かれ、その完成度を静かに誇示します。"
+          },
+          {
+            "original_title_jp": "β-2 (思索する守護の哲学者)",
+            "new_title_jp": "愛とルールのプロファウンド・セージ（見守る支配者）",
+            "new_description_jp": "NOAHの静かな眼差しとKAIRIの深い知恵（と天才的洞察）で、本質を見守り育む賢者。「時代の良心」ですが、その良心は独自の愛とルールに基づいており、人々がそれに従うことを見守ります。"
+          }
+        ]
+      }
+    },
+    {
+      "jumeri_type_name_jp": "KAIRI × NOAH (カイリ × ノア)",
+      "original_title_jp": "知の灯台に宿る慈愛の風、高潔な理想と温かな眼差しで未来を育む者",
+      "jumeri_type_composition_jp": "KAIRIの「天才気質で見栄っ張り」ベースに、NOAHの「愛と努力、ただしマイ・ルールで支配的」な要素が加わる。「才能あふれる人が愛に目覚め、その愛を独自の理想とルールで示す」イメージ。",
+      "new_catchphrase_jp": "華麗なる才知の愛執政、理想と愛、そして独自のルールで人々を育む見栄っ張りな賢者",
+      "component_acronyms": [
+        {
+          "base_type_name_jp": "KAIRI (カイリ) の特徴に基づくアクロニム",
+          "acronym_source_name_en": "KAIRI",
+          "keywords": [
+            { "letter": "K", "meaning_en": "Keen-Intellect" },
+            { "letter": "A", "meaning_en": "Ambitious-Showman" },
+            { "letter": "I", "meaning_en": "Ideal-Seeker" },
+            { "letter": "R", "meaning_en": "Radiant-Genius" },
+            { "letter": "I", "meaning_en": "Impressive-Mind" }
+          ]
+        },
+        {
+          "base_type_name_jp": "NOAH (ノア) の特徴に基づくアクロニム",
+          "acronym_source_name_en": "NOAH",
+          "keywords": [
+            { "letter": "N", "meaning_en": "Nurturing-Dominance" },
+            { "letter": "O", "meaning_en": "Order-Driven" },
+            { "letter": "A", "meaning_en": "Affectionate-Effort" },
+            { "letter": "H", "meaning_en": "Heartfelt-Rules" }
+          ]
+        }
+      ],
+      "new_description_jp": "KAIRIの「知的で理想を求める天才気質と見栄っ張り」な部分がメイン。そこにNOAHの「温厚な優しさ、育成力、しかしマイ・ルールが強く時に支配的」な要素がプラス。人間的な温かみと柔軟性が加わりますが、ベースの天才的自負と理想追求、そしてそれを誇示したい欲求は健在です。愛や育成も、自らの天才的な理想とルールに基づいて行われます。",
+      "alpha_variant": {
+        "original_title_jp": "理想を現実に根付かせる育成者：知性と温情で、希望の未来をデザインするリーダー",
+        "new_title_jp": "才知と愛のグランド・デザイナー ～理想を独自の愛で実現するカリスマ育成家～",
+        "new_description_jp": "KAIRIの「明確な理想と戦略的思考（と誇示欲）」に、NOAHの「人を育て、みんなをまとめていく温かいリーダーシップ（時に支配的でマイ・ルール重視）」がドッキング。建設的で人間的魅力にあふれた指導者ですが、その指導には天才的な理想と独自の愛の形、そしてそれを称賛させたいという欲求が反映されます。",
+        "sub_types": [
+          {
+            "original_title_jp": "α-1 (理想の架け橋を築く賢者)",
+            "new_title_jp": "才知と温情のドリーム・アーキテクト（ただし称賛必須）",
+            "new_description_jp": "KAIRIの知性とNOAHの温情で、希望ある未来図を現実化するリーダー。「夢と現実をつなぐ建築家」ですが、その設計には天才的な理想と愛のルールが盛り込まれ、その成果は広く知らしめたいと考えます。"
+          },
+          {
+            "original_title_jp": "α-2 (信念を育む賢明な指導者)",
+            "new_title_jp": "愛と理想のパッション・エデュケーター（マイ・ルール式）",
+            "new_description_jp": "KAIRIの理想への情熱とNOAHの温かな眼差しで、個と社会の成長を促す探求者。「魂の教育者」ですが、その教育は独自の天才的理想と愛の形、そして従うべきルールに基づいています。"
+          }
+        ]
+      },
+      "beta_variant": {
+        "original_title_jp": "内省する慈愛の探求者：静かな知恵と深い共感で、本質的な成長と調和を育む賢人",
+        "new_title_jp": "静謐なる才知のラビング・セージ ～内省と独自の愛で魂を育む孤高のメンター～",
+        "new_description_jp": "KAIRIの「内省的で深い探求心と知的な分析力（と天才的自負、見栄っ張りな一面）」に、NOAHの「静かで受け入れるような優しさと人への細やかな配慮（ただしマイ・ルールと支配力あり）」がしっとりと融合。人の心の奥底にある本当の気持ちや願いを鋭く察知しますが、そのサポートは独自の理想と愛の形、そしてそれを理解し称賛する者に対して最も深く注がれます。",
+        "sub_types": [
+          {
+            "original_title_jp": "β-1 (静謐なる育成のアルチザン)",
+            "new_title_jp": "才知と共感のソウルフル・クラフトマン（ただし傑作は展示希望）",
+            "new_description_jp": "KAIRIの孤高の探求とNOAHの深い共感で、本質的な才能と癒しを育む職人。「魂の職人」ですが、その育成法や成果物は天才的な洞察と独自の愛に基づいており、その素晴らしさを認めてほしいと願っています。"
+          },
+          {
+            "original_title_jp": "β-2 (内省する守護の灯台守)",
+            "new_title_jp": "才知と愛情のスピリット・キーパー（ただし導きは絶対）",
+            "new_description_jp": "KAIRIの深い洞察とNOAHの静かな愛情で、本質的な価値と心の平和を見守る賢者。「精神の灯台守」ですが、その光は独自の天才的理想と愛のルールで照らされ、人々がそれに従うことを見守り、時に優しくも厳しく導きます。"
+          }
+        ]
+      }
+    }
+  ]
+}
