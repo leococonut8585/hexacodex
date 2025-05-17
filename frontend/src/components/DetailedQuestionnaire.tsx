@@ -94,16 +94,9 @@ const DetailedQuestionnaire: React.FC = () => {
   const q = questions[index];
   return (
     <div>
-      <div style={{ textAlign: 'center', marginBottom: '1rem' }}>
-        <p style={{ fontSize: '1.25rem', fontWeight: 'bold' }}>{q.question}</p>
-        <div
-          style={{
-            marginTop: '0.5rem',
-            display: 'flex',
-            justifyContent: 'center',
-            gap: '1.5rem',
-          }}
-        >
+      <div className="question-block">
+        <p className="question-text">{q.question}</p>
+        <div className="radio-group">
           <label>
             <input
               type="radio"
@@ -124,14 +117,7 @@ const DetailedQuestionnaire: React.FC = () => {
           </label>
         </div>
       </div>
-      <div
-        style={{
-          marginTop: '1rem',
-          display: 'flex',
-          justifyContent: 'center',
-          gap: '1rem',
-        }}
-      >
+      <div className="nav-buttons">
         <button onClick={prev} disabled={index === 0} data-testid="back">
           Back
         </button>

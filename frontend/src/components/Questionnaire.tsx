@@ -95,24 +95,14 @@ const Questionnaire: React.FC = () => {
         </div>
       ) : (
         <div>
-          <div
-            key={`${currentQuestion.category}-${currentQuestion.id}`}
-            style={{
-              marginBottom: '1rem',
-              textAlign: 'center',
-            }}
-          >
-            <p style={{ fontSize: '1.25rem', fontWeight: 'bold' }}>
+        <div
+          key={`${currentQuestion.category}-${currentQuestion.id}`}
+          className="question-block"
+        >
+            <p className="question-text">
               {currentQuestion.question}
             </p>
-            <div
-              style={{
-                marginTop: '0.5rem',
-                display: 'flex',
-                justifyContent: 'center',
-                gap: '1.5rem',
-              }}
-            >
+            <div className="radio-group">
               <label>
                 <input
                   type="radio"
@@ -141,14 +131,7 @@ const Questionnaire: React.FC = () => {
               </label>
             </div>
           </div>
-          <div
-            style={{
-              marginTop: '1rem',
-              display: 'flex',
-              justifyContent: 'center',
-              gap: '1rem',
-            }}
-          >
+          <div className="nav-buttons">
             <button onClick={() => setIndex((i) => Math.max(i - 1, 0))} disabled={index === 0}>
               Back
             </button>
@@ -176,7 +159,7 @@ const Questionnaire: React.FC = () => {
             )}
           </div>
           {!canSubmit && index === allQuestions.length - 1 && (
-            <p style={{ color: 'red' }}>未回答の質問があります。</p>
+            <p className="error-text">未回答の質問があります。</p>
           )}
         </div>
       )}
