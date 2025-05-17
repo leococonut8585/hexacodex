@@ -3,8 +3,6 @@ import questionsData from '../constants/questions.json';
 import features from '../constants/features.json';
 import { CategoryQuestions, AnswerState, DiagnosisResult } from '../types';
 
-const QUESTIONS_PER_PAGE = 5;
-
 const Questionnaire: React.FC = () => {
   const data: CategoryQuestions = questionsData as CategoryQuestions;
   const categories = Object.keys(data);
@@ -21,10 +19,8 @@ const Questionnaire: React.FC = () => {
     });
     return state;
   });
-  const [page, setPage] = useState(0);
+  const [index, setIndex] = useState(0);
   const [result, setResult] = useState<DiagnosisResult | null>(null);
-
-  const totalPages = Math.ceil(allQuestions.length / QUESTIONS_PER_PAGE);
 
   const handleAnswer = (
     category: string,
@@ -37,10 +33,7 @@ const Questionnaire: React.FC = () => {
     }));
   };
 
-  const pageQuestions = allQuestions.slice(
-    page * QUESTIONS_PER_PAGE,
-    (page + 1) * QUESTIONS_PER_PAGE
-  );
+  const currentQuestion = allQuestions[index];
 
   const canSubmit = allQuestions.every(
     (q) => answers[q.category][q.id] !== undefined
@@ -69,53 +62,53 @@ const Questionnaire: React.FC = () => {
         </div>
       ) : (
         <div>
-          {pageQuestions.map((q) => (
-            <div key={`${q.category}-${q.id}`} style={{ marginBottom: '1rem' }}>
-              <p>{q.question}</p>
-              <label>
-                <input
-                  type="radio"
-                  name={`${q.category}-${q.id}`}
-                  onChange={() => handleAnswer(q.category, q.id, true)}
-                  checked={answers[q.category][q.id] === true}
-                />{' '}
-                {q.optionYes}
-              </label>
-              <label style={{ marginLeft: '1rem' }}>
-                <input
-                  type="radio"
-                  name={`${q.category}-${q.id}`}
-                  onChange={() => handleAnswer(q.category, q.id, false)}
-                  checked={answers[q.category][q.id] === false}
-                />{' '}
-                {q.optionNo}
-              </label>
-            </div>
-          ))}
+          <div key={`${currentQuestion.category}-${currentQuestion.id}`} style={{ marginBottom: '1rem' }}>
+            <p>{currentQuestion.question}</p>
+            <label>
+              <input
+                type="radio"
+                name={`${currentQuestion.category}-${currentQuestion.id}`}
+                onChange={() => handleAnswer(currentQuestion.category, currentQuestion.id, true)}
+                checked={answers[currentQuestion.category][currentQuestion.id] === true}
+              />{' '}
+              {currentQuestion.optionYes}
+            </label>
+            <label style={{ marginLeft: '1rem' }}>
+              <input
+                type="radio"
+                name={`${currentQuestion.category}-${currentQuestion.id}`}
+                onChange={() => handleAnswer(currentQuestion.category, currentQuestion.id, false)}
+                checked={answers[currentQuestion.category][currentQuestion.id] === false}
+              />{' '}
+              {currentQuestion.optionNo}
+            </label>
+          </div>
           <div style={{ marginTop: '1rem' }}>
-            <button onClick={() => setPage((p) => Math.max(p - 1, 0))} disabled={page === 0}>
+            <button onClick={() => setIndex((i) => Math.max(i - 1, 0))} disabled={index === 0}>
               Back
             </button>
-            {page < totalPages - 1 && (
+            {index < allQuestions.length - 1 && (
               <button
-                onClick={() => setPage((p) => Math.min(p + 1, totalPages - 1))}
+                onClick={() => setIndex((i) => Math.min(i + 1, allQuestions.length - 1))}
                 style={{ marginLeft: '1rem' }}
+                disabled={answers[currentQuestion.category][currentQuestion.id] === undefined}
+                data-testid="next"
               >
                 Next
               </button>
             )}
-            {page === totalPages - 1 && (
+            {index === allQuestions.length - 1 && (
               <button
                 onClick={handleSubmit}
-                disabled={!canSubmit}
+                disabled={!canSubmit || answers[currentQuestion.category][currentQuestion.id] === undefined}
                 style={{ marginLeft: '1rem' }}
                 data-testid="submit"
               >
-                診断する
+                結果を見る
               </button>
             )}
           </div>
-          {!canSubmit && page === totalPages - 1 && (
+          {!canSubmit && index === allQuestions.length - 1 && (
             <p style={{ color: 'red' }}>未回答の質問があります。</p>
           )}
         </div>
