@@ -18,11 +18,15 @@ jest.mock('../constants/features.json', () => ({
 test('submit disabled until all questions answered', () => {
   const Questionnaire = require('./Questionnaire').default;
   render(<Questionnaire />);
+
+  // 1問目回答
+  fireEvent.click(screen.getAllByRole('radio')[0]);
+  fireEvent.click(screen.getByTestId('next'));
+
+  // 2問目回答後に結果表示
   const submitButton = screen.getByTestId('submit');
-  // 未回答のため無効
   expect(submitButton).toBeDisabled();
-  const radios = screen.getAllByRole('radio');
-  radios.forEach((r) => fireEvent.click(r));
+  fireEvent.click(screen.getAllByRole('radio')[0]);
   expect(submitButton).not.toBeDisabled();
   fireEvent.click(submitButton);
   expect(screen.getByTestId('result')).toBeInTheDocument();

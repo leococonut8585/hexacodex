@@ -18,9 +18,6 @@ function App() {
           <li>
             <Link to="/diagnose">診断</Link>
           </li>
-          <li>
-            <Link to="/personality">性格診断</Link>
-          </li>
         </ul>
       </nav>
 
