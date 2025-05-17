@@ -33,6 +33,8 @@ export interface DetailedFeatureInfo {
   variantDescription: string;
   subTitle: string;
   subDescription: string;
+  acronyms?: Acronym[];
+  componentAcronyms?: ComponentAcronym[];
 }
 
 export interface Features {

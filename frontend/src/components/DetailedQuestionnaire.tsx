@@ -55,6 +55,31 @@ const DetailedQuestionnaire: React.FC = () => {
     return (
       <div data-testid="final-result">
         <h3>{result.category}</h3>
+        {result.acronyms && (
+          <ul>
+            {result.acronyms.map((a, idx) => (
+              <li key={idx}>
+                {a.letter}: {a.meaning_en}
+              </li>
+            ))}
+          </ul>
+        )}
+        {result.componentAcronyms && (
+          <div>
+            {result.componentAcronyms.map((c, idx) => (
+              <div key={idx}>
+                <h4>{c.baseTypeNameJp}</h4>
+                <ul>
+                  {c.keywords.map((k, i) => (
+                    <li key={i}>
+                      {k.letter}: {k.meaning_en}
+                    </li>
+                  ))}
+                </ul>
+              </div>
+            ))}
+          </div>
+        )}
         <p>{result.baseDescription}</p>
         <h4>{result.variantTitle}</h4>
         <p>{result.variantDescription}</p>

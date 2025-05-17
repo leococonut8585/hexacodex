@@ -25,6 +25,8 @@ export interface DetailedFeatureInfo {
   variantDescription: string;
   subTitle: string;
   subDescription: string;
+  acronyms?: Acronym[];
+  componentAcronyms?: ComponentAcronym[];
 }
 
 function extractKey(name: string): string {
@@ -68,12 +70,16 @@ export function getDetailedFeature(finalKey: string): DetailedFeatureInfo | null
   const variantInfo = entry[variant === 'α' ? 'alpha_variant' : 'beta_variant'];
   const sub = variantInfo.sub_types[subIdx];
   if (!sub) return null;
+  const baseAcronyms = (entry as any).new_keywords_acronym;
+  const compAcronyms = (entry as any).component_acronyms;
   return {
     baseDescription: (entry as any).new_description_jp,
     variantTitle: variantInfo.new_title_jp,
     variantDescription: variantInfo.new_description_jp,
     subTitle: sub.new_title_jp,
     subDescription: sub.new_description_jp,
+    acronyms: baseAcronyms,
+    componentAcronyms: compAcronyms,
   };
 }
 
