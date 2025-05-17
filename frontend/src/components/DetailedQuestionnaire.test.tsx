@@ -11,11 +11,14 @@ jest.mock('../constants/questions.json', () => ({
   }
 }));
 
-jest.mock('../constants/features.json', () => ({
-  default: {
-    'TEST-1': { catch: 'c1', description: 'd1' },
-    'TEST-2': { catch: 'c2', description: 'd2' }
-  }
+jest.mock('../constants/officialFeatures', () => ({
+  getDetailedFeature: () => ({
+    baseDescription: 'base',
+    variantTitle: 'varTitle',
+    variantDescription: 'varDesc',
+    subTitle: 'subTitle',
+    subDescription: 'subDesc'
+  })
 }));
 
 const DetailedQuestionnaire = require('./DetailedQuestionnaire').default;
@@ -35,4 +38,6 @@ test('can answer questions and see result', () => {
   fireEvent.click(screen.getByTestId('finish'));
   expect(screen.getByTestId('final-result')).toBeInTheDocument();
   expect(screen.getByText('TEST-2')).toBeInTheDocument();
+  expect(screen.getByText('base')).toBeInTheDocument();
+  expect(screen.getByText('varTitle')).toBeInTheDocument();
 });

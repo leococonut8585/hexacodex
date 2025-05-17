@@ -7,7 +7,7 @@ The user answers each yes/no question and the result is calculated on the client
 ## Files
 
 - `src/constants/questions.json` – list of questions grouped by category
-- `src/constants/features.json` – catch copy and description for each category
+- `src/constants/features/catch_base.json` and `catch_giumeri.json` – official catch copies and descriptions
 - `src/components/Questionnaire.tsx` – main questionnaire logic
 
 # Getting Started with Create React App

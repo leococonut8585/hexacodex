@@ -1,8 +1,8 @@
 import React, { useState } from "react";
 import axios from "axios";
 import { useNavigate } from "react-router-dom";
-import features from "../constants/features.json";
-import { ApiDiagnosis, Features } from "../types";
+import { getInitialFeature } from "../constants/officialFeatures";
+import { ApiDiagnosis, FeatureInfo } from "../types";
 
 /**
  * Birthdate form that triggers backend calculation and
@@ -34,7 +34,9 @@ function Diagnose() {
     }
   };
 
-  const featureInfo = result ? (features as Features)[result.star_type] : null;
+  const featureInfo: FeatureInfo | null = result
+    ? getInitialFeature(result.star_type)
+    : null;
 
   return (
     <div>

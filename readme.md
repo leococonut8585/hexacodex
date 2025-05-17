@@ -35,7 +35,9 @@ Hexa Codex は、六星占術の原理をベースとした性格診断Webアプ
 3. 選ばれた分類専用の21問を1問ずつ回答
 4. 回答数でサブタイプ(-1/-2)を判定し、合計48分類を提示
 
-`frontend/src/constants/questions.json` と `features.json` にそれぞれ質問と特徴テキストを管理しています。
+`frontend/src/constants/questions.json` と
+`frontend/src/constants/features/catch_base.json`、`catch_giumeri.json`
+にそれぞれ質問と公式のキャッチコピー・解説データを管理しています。
 
 
 ## ⚙️ 技術スタック

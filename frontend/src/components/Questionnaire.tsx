@@ -1,7 +1,7 @@
 import React, { useState } from 'react';
 import questionsData from '../constants/questions.json';
-import features from '../constants/features.json';
-import { CategoryQuestions, AnswerState, DiagnosisResult } from '../types';
+import { getInitialFeature } from '../constants/officialFeatures';
+import { CategoryQuestions, AnswerState, DiagnosisResult, FeatureInfo } from '../types';
 
 const Questionnaire: React.FC = () => {
   const data: CategoryQuestions = questionsData as CategoryQuestions;
@@ -47,8 +47,10 @@ const Questionnaire: React.FC = () => {
       scores[cat] = Object.values(ans).filter((v) => v).length;
     });
     const best = categories.reduce((a, b) => (scores[a] >= scores[b] ? a : b));
-    const info = (features as any)[best];
-    setResult({ category: best, catch: info.catch, description: info.description });
+    const info: FeatureInfo | null = getInitialFeature(best);
+    if (info) {
+      setResult({ category: best, catch: info.catch, description: info.description });
+    }
   };
 
   return (

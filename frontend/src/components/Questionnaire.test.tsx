@@ -11,8 +11,8 @@ jest.mock('../constants/questions.json', () => ({
   }
 }));
 
-jest.mock('../constants/features.json', () => ({
-  default: { TEST_CAT: { catch: 'catch', description: 'desc' } }
+jest.mock('../constants/officialFeatures', () => ({
+  getInitialFeature: () => ({ catch: 'catch', description: 'desc' })
 }));
 
 test('submit disabled until all questions answered', () => {

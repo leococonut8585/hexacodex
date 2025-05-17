@@ -14,6 +14,14 @@ export interface FeatureInfo {
   description: string;
 }
 
+export interface DetailedFeatureInfo {
+  baseDescription: string;
+  variantTitle: string;
+  variantDescription: string;
+  subTitle: string;
+  subDescription: string;
+}
+
 export interface Features {
   [category: string]: FeatureInfo;
 }
@@ -36,6 +44,7 @@ export interface ApiDiagnosis {
   jumeri: string;
 }
 
-export interface DetailedDiagnosisResult extends DiagnosisResult {
+export interface DetailedDiagnosisResult extends DetailedFeatureInfo {
+  category: string;
   subType: string;
 }
