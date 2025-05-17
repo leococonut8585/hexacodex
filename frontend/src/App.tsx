@@ -11,26 +11,28 @@ function App() {
   return (
     <div>
       <MatrixBackground />
-      {/* グローバルナビゲーション */}
-      <nav>
-        <ul>
-          <li>
-            <Link to="/">ホーム</Link>
-          </li>
-          <li>
-            <Link to="/diagnose">診断</Link>
-          </li>
-        </ul>
-      </nav>
+      <div className="main-container">
+        {/* グローバルナビゲーション */}
+        <nav className="global-nav">
+          <ul>
+            <li>
+              <Link to="/">ホーム</Link>
+            </li>
+            <li>
+              <Link to="/diagnose">診断</Link>
+            </li>
+          </ul>
+        </nav>
 
-      {/* ルーティング定義 */}
-      <Routes>
-        <Route path="/" element={<Home />} />
-        <Route path="/diagnose" element={<Diagnose />} />
-        <Route path="/personality" element={<Personality />} />
-        <Route path="/questions/:category" element={<Personality />} />
-        {/* 必要なら他のRouteも追加 */}
-      </Routes>
+        {/* ルーティング定義 */}
+        <Routes>
+          <Route path="/" element={<Home />} />
+          <Route path="/diagnose" element={<Diagnose />} />
+          <Route path="/personality" element={<Personality />} />
+          <Route path="/questions/:category" element={<Personality />} />
+          {/* 必要なら他のRouteも追加 */}
+        </Routes>
+      </div>
     </div>
   );
 }

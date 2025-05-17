@@ -66,10 +66,9 @@ function Diagnose() {
         />
         <button type="submit">診断する</button>
       </form>
-
-      {error && <p style={{ color: "red" }}>{error}</p>}
+      {error && <p className="error-text">{error}</p>}
       {result && featureInfo && (
-        <div style={{ marginTop: "1rem" }}>
+        <div className="result-section">
           <h3>{featureKey}</h3>
           {featureInfo.acronyms && (
             <ul>
@@ -100,7 +99,7 @@ function Diagnose() {
           <p>{featureInfo.description}</p>
           <button
             onClick={() => navigate(`/questions/${featureKey}`)}
-            style={{ marginTop: '1rem' }}
+            className="result-next"
           >
             さらに本質を探るための質問に進む
           </button>
