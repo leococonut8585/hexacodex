@@ -1,0 +1,98 @@
+{
+  "KAIRI_α": {
+    "catch": "KAIRI_αのキャッチ",
+    "description": "KAIRI_αの特徴説明です。"
+  },
+  "KAIRI_β": {
+    "catch": "KAIRI_βのキャッチ",
+    "description": "KAIRI_βの特徴説明です。"
+  },
+  "KAIRI×NOAH_α": {
+    "catch": "KAIRI×NOAH_αのキャッチ",
+    "description": "KAIRI×NOAH_αの特徴説明です。"
+  },
+  "KAIRI×NOAH_β": {
+    "catch": "KAIRI×NOAH_βのキャッチ",
+    "description": "KAIRI×NOAH_βの特徴説明です。"
+  },
+  "KINRYU_α": {
+    "catch": "KINRYU_αのキャッチ",
+    "description": "KINRYU_αの特徴説明です。"
+  },
+  "KINRYU_β": {
+    "catch": "KINRYU_βのキャッチ",
+    "description": "KINRYU_βの特徴説明です。"
+  },
+  "KINRYU×MARI_α": {
+    "catch": "KINRYU×MARI_αのキャッチ",
+    "description": "KINRYU×MARI_αの特徴説明です。"
+  },
+  "KINRYU×MARI_β": {
+    "catch": "KINRYU×MARI_βのキャッチ",
+    "description": "KINRYU×MARI_βの特徴説明です。"
+  },
+  "AKARI_α": {
+    "catch": "AKARI_αのキャッチ",
+    "description": "AKARI_αの特徴説明です。"
+  },
+  "AKARI_β": {
+    "catch": "AKARI_βのキャッチ",
+    "description": "AKARI_βの特徴説明です。"
+  },
+  "AKARI×SENRI_α": {
+    "catch": "AKARI×SENRI_αのキャッチ",
+    "description": "AKARI×SENRI_αの特徴説明です。"
+  },
+  "AKARI×SENRI_β": {
+    "catch": "AKARI×SENRI_βのキャッチ",
+    "description": "AKARI×SENRI_βの特徴説明です。"
+  },
+  "NOAH_α": {
+    "catch": "NOAH_αのキャッチ",
+    "description": "NOAH_αの特徴説明です。"
+  },
+  "NOAH_β": {
+    "catch": "NOAH_βのキャッチ",
+    "description": "NOAH_βの特徴説明です。"
+  },
+  "NOAH×KAIRI_α": {
+    "catch": "NOAH×KAIRI_αのキャッチ",
+    "description": "NOAH×KAIRI_αの特徴説明です。"
+  },
+  "NOAH×KAIRI_β": {
+    "catch": "NOAH×KAIRI_βのキャッチ",
+    "description": "NOAH×KAIRI_βの特徴説明です。"
+  },
+  "MARI_α": {
+    "catch": "MARI_αのキャッチ",
+    "description": "MARI_αの特徴説明です。"
+  },
+  "MARI_β": {
+    "catch": "MARI_βのキャッチ",
+    "description": "MARI_βの特徴説明です。"
+  },
+  "MARI×KINRYU_α": {
+    "catch": "MARI×KINRYU_αのキャッチ",
+    "description": "MARI×KINRYU_αの特徴説明です。"
+  },
+  "MARI×KINRYU_β": {
+    "catch": "MARI×KINRYU_βのキャッチ",
+    "description": "MARI×KINRYU_βの特徴説明です。"
+  },
+  "SENRI_α": {
+    "catch": "SENRI_αのキャッチ",
+    "description": "SENRI_αの特徴説明です。"
+  },
+  "SENRI_β": {
+    "catch": "SENRI_βのキャッチ",
+    "description": "SENRI_βの特徴説明です。"
+  },
+  "SENRI×AKARI_α": {
+    "catch": "SENRI×AKARI_αのキャッチ",
+    "description": "SENRI×AKARI_αの特徴説明です。"
+  },
+  "SENRI×AKARI_β": {
+    "catch": "SENRI×AKARI_βのキャッチ",
+    "description": "SENRI×AKARI_βの特徴説明です。"
+  }
+}
