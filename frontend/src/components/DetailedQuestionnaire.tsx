@@ -94,28 +94,44 @@ const DetailedQuestionnaire: React.FC = () => {
   const q = questions[index];
   return (
     <div>
-      <p>{q.question}</p>
-      <div>
-        <label>
-          <input
-            type="radio"
-            name={`q${q.id}`}
-            checked={answers[index] === true}
-            onChange={() => handleSelect(true)}
-          />{' '}
-          {q.optionYes}
-        </label>
-        <label style={{ marginLeft: '1rem' }}>
-          <input
-            type="radio"
-            name={`q${q.id}`}
-            checked={answers[index] === false}
-            onChange={() => handleSelect(false)}
-          />{' '}
-          {q.optionNo}
-        </label>
+      <div style={{ textAlign: 'center', marginBottom: '1rem' }}>
+        <p style={{ fontSize: '1.25rem', fontWeight: 'bold' }}>{q.question}</p>
+        <div
+          style={{
+            marginTop: '0.5rem',
+            display: 'flex',
+            justifyContent: 'center',
+            gap: '1.5rem',
+          }}
+        >
+          <label>
+            <input
+              type="radio"
+              name={`q${q.id}`}
+              checked={answers[index] === true}
+              onChange={() => handleSelect(true)}
+            />{' '}
+            {q.optionYes}
+          </label>
+          <label>
+            <input
+              type="radio"
+              name={`q${q.id}`}
+              checked={answers[index] === false}
+              onChange={() => handleSelect(false)}
+            />{' '}
+            {q.optionNo}
+          </label>
+        </div>
       </div>
-      <div style={{ marginTop: '1rem' }}>
+      <div
+        style={{
+          marginTop: '1rem',
+          display: 'flex',
+          justifyContent: 'center',
+          gap: '1rem',
+        }}
+      >
         <button onClick={prev} disabled={index === 0} data-testid="back">
           Back
         </button>
@@ -123,7 +139,6 @@ const DetailedQuestionnaire: React.FC = () => {
           <button
             onClick={next}
             disabled={answers[index] === undefined}
-            style={{ marginLeft: '1rem' }}
             data-testid="next"
           >
             Next
@@ -133,7 +148,6 @@ const DetailedQuestionnaire: React.FC = () => {
           <button
             onClick={finish}
             disabled={answers[index] === undefined}
-            style={{ marginLeft: '1rem' }}
             data-testid="finish"
           >
             結果を見る

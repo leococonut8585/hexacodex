@@ -44,4 +44,5 @@ test('can answer questions and see result', () => {
   expect(screen.getByText('catch')).toBeInTheDocument();
   expect(screen.getByText('base')).toBeInTheDocument();
   expect(screen.getByText('varTitle')).toBeInTheDocument();
+  expect(screen.getAllByText('subTitle').length).toBe(1);
 });

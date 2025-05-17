@@ -95,36 +95,71 @@ const Questionnaire: React.FC = () => {
         </div>
       ) : (
         <div>
-          <div key={`${currentQuestion.category}-${currentQuestion.id}`} style={{ marginBottom: '1rem' }}>
-            <p>{currentQuestion.question}</p>
-            <label>
-              <input
-                type="radio"
-                name={`${currentQuestion.category}-${currentQuestion.id}`}
-                onChange={() => handleAnswer(currentQuestion.category, currentQuestion.id, true)}
-                checked={answers[currentQuestion.category][currentQuestion.id] === true}
-              />{' '}
-              {currentQuestion.optionYes}
-            </label>
-            <label style={{ marginLeft: '1rem' }}>
-              <input
-                type="radio"
-                name={`${currentQuestion.category}-${currentQuestion.id}`}
-                onChange={() => handleAnswer(currentQuestion.category, currentQuestion.id, false)}
-                checked={answers[currentQuestion.category][currentQuestion.id] === false}
-              />{' '}
-              {currentQuestion.optionNo}
-            </label>
+          <div
+            key={`${currentQuestion.category}-${currentQuestion.id}`}
+            style={{
+              marginBottom: '1rem',
+              textAlign: 'center',
+            }}
+          >
+            <p style={{ fontSize: '1.25rem', fontWeight: 'bold' }}>
+              {currentQuestion.question}
+            </p>
+            <div
+              style={{
+                marginTop: '0.5rem',
+                display: 'flex',
+                justifyContent: 'center',
+                gap: '1.5rem',
+              }}
+            >
+              <label>
+                <input
+                  type="radio"
+                  name={`${currentQuestion.category}-${currentQuestion.id}`}
+                  onChange={() =>
+                    handleAnswer(currentQuestion.category, currentQuestion.id, true)
+                  }
+                  checked={
+                    answers[currentQuestion.category][currentQuestion.id] === true
+                  }
+                />{' '}
+                {currentQuestion.optionYes}
+              </label>
+              <label>
+                <input
+                  type="radio"
+                  name={`${currentQuestion.category}-${currentQuestion.id}`}
+                  onChange={() =>
+                    handleAnswer(currentQuestion.category, currentQuestion.id, false)
+                  }
+                  checked={
+                    answers[currentQuestion.category][currentQuestion.id] === false
+                  }
+                />{' '}
+                {currentQuestion.optionNo}
+              </label>
+            </div>
           </div>
-          <div style={{ marginTop: '1rem' }}>
+          <div
+            style={{
+              marginTop: '1rem',
+              display: 'flex',
+              justifyContent: 'center',
+              gap: '1rem',
+            }}
+          >
             <button onClick={() => setIndex((i) => Math.max(i - 1, 0))} disabled={index === 0}>
               Back
             </button>
             {index < allQuestions.length - 1 && (
               <button
-                onClick={() => setIndex((i) => Math.min(i + 1, allQuestions.length - 1))}
-                style={{ marginLeft: '1rem' }}
-                disabled={answers[currentQuestion.category][currentQuestion.id] === undefined}
+                onClick={() =>
+                  setIndex((i) => Math.min(i + 1, allQuestions.length - 1))
+                }
+                disabled={
+                  answers[currentQuestion.category][currentQuestion.id] === undefined
+                }
                 data-testid="next"
               >
                 Next
@@ -134,7 +169,6 @@ const Questionnaire: React.FC = () => {
               <button
                 onClick={handleSubmit}
                 disabled={!canSubmit || answers[currentQuestion.category][currentQuestion.id] === undefined}
-                style={{ marginLeft: '1rem' }}
                 data-testid="submit"
               >
                 結果を見る
