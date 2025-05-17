@@ -39,6 +39,28 @@ Hexa Codex は、六星占術の原理をベースとした性格診断Webアプ
 `frontend/src/constants/features/catch_base.json`、`catch_giumeri.json`
 にそれぞれ質問と公式のキャッチコピー・解説データを管理しています。
 
+### サブタイプ表示のフィルタ
+
+21問の回答後に表示する最終結果では、選択されたサブタイプ以外の説明が混在しないよう、`getDetailedFeature()` でサブタイプを絞り込んだデータのみを取得しています。以下のように返された `catch` や `subTitle` などをそのまま表示することで、確定したサブタイプだけの情報をユーザーに提示できます。
+
+```tsx
+const info = getDetailedFeature(finalKey);
+if (info) {
+  setResult({ category: finalKey, ...info, subType });
+}
+```
+
+表示例:
+
+```jsx
+<div data-testid="final-result">
+  <h3>{result.category}</h3>
+  <p>{result.catch}</p>
+  <h4>{result.subTitle}</h4>
+  <p>{result.subDescription}</p>
+</div>
+```
+
 
 ## ⚙️ 技術スタック
 

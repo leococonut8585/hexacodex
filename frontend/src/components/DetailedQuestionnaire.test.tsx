@@ -13,6 +13,7 @@ jest.mock('../constants/questions.json', () => ({
 
 jest.mock('../constants/officialFeatures', () => ({
   getDetailedFeature: () => ({
+    catch: 'catch',
     baseDescription: 'base',
     variantTitle: 'varTitle',
     variantDescription: 'varDesc',
@@ -40,6 +41,7 @@ test('can answer questions and see result', () => {
   fireEvent.click(screen.getByTestId('finish'));
   expect(screen.getByTestId('final-result')).toBeInTheDocument();
   expect(screen.getByText('TEST-2')).toBeInTheDocument();
+  expect(screen.getByText('catch')).toBeInTheDocument();
   expect(screen.getByText('base')).toBeInTheDocument();
   expect(screen.getByText('varTitle')).toBeInTheDocument();
 });

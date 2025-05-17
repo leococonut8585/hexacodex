@@ -28,6 +28,7 @@ export interface FeatureInfo {
 }
 
 export interface DetailedFeatureInfo {
+  catch: string;
   baseDescription: string;
   variantTitle: string;
   variantDescription: string;

@@ -20,6 +20,7 @@ export interface FeatureInfo {
 }
 
 export interface DetailedFeatureInfo {
+  catch: string;
   baseDescription: string;
   variantTitle: string;
   variantDescription: string;
@@ -73,6 +74,7 @@ export function getDetailedFeature(finalKey: string): DetailedFeatureInfo | null
   const baseAcronyms = (entry as any).new_keywords_acronym;
   const compAcronyms = (entry as any).component_acronyms;
   return {
+    catch: (entry as any).new_catchphrase_jp,
     baseDescription: (entry as any).new_description_jp,
     variantTitle: variantInfo.new_title_jp,
     variantDescription: variantInfo.new_description_jp,
