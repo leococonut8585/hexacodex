@@ -1,0 +1,3074 @@
+{
+  "KAIRI_α": [
+    {
+      "id": 1,
+      "question": "KAIRI_αに関する質問1",
+      "optionYes": "はい",
+      "optionNo": "いいえ"
+    },
+    {
+      "id": 2,
+      "question": "KAIRI_αに関する質問2",
+      "optionYes": "はい",
+      "optionNo": "いいえ"
+    },
+    {
+      "id": 3,
+      "question": "KAIRI_αに関する質問3",
+      "optionYes": "はい",
+      "optionNo": "いいえ"
+    },
+    {
+      "id": 4,
+      "question": "KAIRI_αに関する質問4",
+      "optionYes": "はい",
+      "optionNo": "いいえ"
+    },
+    {
+      "id": 5,
+      "question": "KAIRI_αに関する質問5",
+      "optionYes": "はい",
+      "optionNo": "いいえ"
+    },
+    {
+      "id": 6,
+      "question": "KAIRI_αに関する質問6",
+      "optionYes": "はい",
+      "optionNo": "いいえ"
+    },
+    {
+      "id": 7,
+      "question": "KAIRI_αに関する質問7",
+      "optionYes": "はい",
+      "optionNo": "いいえ"
+    },
+    {
+      "id": 8,
+      "question": "KAIRI_αに関する質問8",
+      "optionYes": "はい",
+      "optionNo": "いいえ"
+    },
+    {
+      "id": 9,
+      "question": "KAIRI_αに関する質問9",
+      "optionYes": "はい",
+      "optionNo": "いいえ"
+    },
+    {
+      "id": 10,
+      "question": "KAIRI_αに関する質問10",
+      "optionYes": "はい",
+      "optionNo": "いいえ"
+    },
+    {
+      "id": 11,
+      "question": "KAIRI_αに関する質問11",
+      "optionYes": "はい",
+      "optionNo": "いいえ"
+    },
+    {
+      "id": 12,
+      "question": "KAIRI_αに関する質問12",
+      "optionYes": "はい",
+      "optionNo": "いいえ"
+    },
+    {
+      "id": 13,
+      "question": "KAIRI_αに関する質問13",
+      "optionYes": "はい",
+      "optionNo": "いいえ"
+    },
+    {
+      "id": 14,
+      "question": "KAIRI_αに関する質問14",
+      "optionYes": "はい",
+      "optionNo": "いいえ"
+    },
+    {
+      "id": 15,
+      "question": "KAIRI_αに関する質問15",
+      "optionYes": "はい",
+      "optionNo": "いいえ"
+    },
+    {
+      "id": 16,
+      "question": "KAIRI_αに関する質問16",
+      "optionYes": "はい",
+      "optionNo": "いいえ"
+    },
+    {
+      "id": 17,
+      "question": "KAIRI_αに関する質問17",
+      "optionYes": "はい",
+      "optionNo": "いいえ"
+    },
+    {
+      "id": 18,
+      "question": "KAIRI_αに関する質問18",
+      "optionYes": "はい",
+      "optionNo": "いいえ"
+    },
+    {
+      "id": 19,
+      "question": "KAIRI_αに関する質問19",
+      "optionYes": "はい",
+      "optionNo": "いいえ"
+    },
+    {
+      "id": 20,
+      "question": "KAIRI_αに関する質問20",
+      "optionYes": "はい",
+      "optionNo": "いいえ"
+    },
+    {
+      "id": 21,
+      "question": "KAIRI_αに関する質問21",
+      "optionYes": "はい",
+      "optionNo": "いいえ"
+    }
+  ],
+  "KAIRI_β": [
+    {
+      "id": 1,
+      "question": "KAIRI_βに関する質問1",
+      "optionYes": "はい",
+      "optionNo": "いいえ"
+    },
+    {
+      "id": 2,
+      "question": "KAIRI_βに関する質問2",
+      "optionYes": "はい",
+      "optionNo": "いいえ"
+    },
+    {
+      "id": 3,
+      "question": "KAIRI_βに関する質問3",
+      "optionYes": "はい",
+      "optionNo": "いいえ"
+    },
+    {
+      "id": 4,
+      "question": "KAIRI_βに関する質問4",
+      "optionYes": "はい",
+      "optionNo": "いいえ"
+    },
+    {
+      "id": 5,
+      "question": "KAIRI_βに関する質問5",
+      "optionYes": "はい",
+      "optionNo": "いいえ"
+    },
+    {
+      "id": 6,
+      "question": "KAIRI_βに関する質問6",
+      "optionYes": "はい",
+      "optionNo": "いいえ"
+    },
+    {
+      "id": 7,
+      "question": "KAIRI_βに関する質問7",
+      "optionYes": "はい",
+      "optionNo": "いいえ"
+    },
+    {
+      "id": 8,
+      "question": "KAIRI_βに関する質問8",
+      "optionYes": "はい",
+      "optionNo": "いいえ"
+    },
+    {
+      "id": 9,
+      "question": "KAIRI_βに関する質問9",
+      "optionYes": "はい",
+      "optionNo": "いいえ"
+    },
+    {
+      "id": 10,
+      "question": "KAIRI_βに関する質問10",
+      "optionYes": "はい",
+      "optionNo": "いいえ"
+    },
+    {
+      "id": 11,
+      "question": "KAIRI_βに関する質問11",
+      "optionYes": "はい",
+      "optionNo": "いいえ"
+    },
+    {
+      "id": 12,
+      "question": "KAIRI_βに関する質問12",
+      "optionYes": "はい",
+      "optionNo": "いいえ"
+    },
+    {
+      "id": 13,
+      "question": "KAIRI_βに関する質問13",
+      "optionYes": "はい",
+      "optionNo": "いいえ"
+    },
+    {
+      "id": 14,
+      "question": "KAIRI_βに関する質問14",
+      "optionYes": "はい",
+      "optionNo": "いいえ"
+    },
+    {
+      "id": 15,
+      "question": "KAIRI_βに関する質問15",
+      "optionYes": "はい",
+      "optionNo": "いいえ"
+    },
+    {
+      "id": 16,
+      "question": "KAIRI_βに関する質問16",
+      "optionYes": "はい",
+      "optionNo": "いいえ"
+    },
+    {
+      "id": 17,
+      "question": "KAIRI_βに関する質問17",
+      "optionYes": "はい",
+      "optionNo": "いいえ"
+    },
+    {
+      "id": 18,
+      "question": "KAIRI_βに関する質問18",
+      "optionYes": "はい",
+      "optionNo": "いいえ"
+    },
+    {
+      "id": 19,
+      "question": "KAIRI_βに関する質問19",
+      "optionYes": "はい",
+      "optionNo": "いいえ"
+    },
+    {
+      "id": 20,
+      "question": "KAIRI_βに関する質問20",
+      "optionYes": "はい",
+      "optionNo": "いいえ"
+    },
+    {
+      "id": 21,
+      "question": "KAIRI_βに関する質問21",
+      "optionYes": "はい",
+      "optionNo": "いいえ"
+    }
+  ],
+  "KAIRI×NOAH_α": [
+    {
+      "id": 1,
+      "question": "KAIRI×NOAH_αに関する質問1",
+      "optionYes": "はい",
+      "optionNo": "いいえ"
+    },
+    {
+      "id": 2,
+      "question": "KAIRI×NOAH_αに関する質問2",
+      "optionYes": "はい",
+      "optionNo": "いいえ"
+    },
+    {
+      "id": 3,
+      "question": "KAIRI×NOAH_αに関する質問3",
+      "optionYes": "はい",
+      "optionNo": "いいえ"
+    },
+    {
+      "id": 4,
+      "question": "KAIRI×NOAH_αに関する質問4",
+      "optionYes": "はい",
+      "optionNo": "いいえ"
+    },
+    {
+      "id": 5,
+      "question": "KAIRI×NOAH_αに関する質問5",
+      "optionYes": "はい",
+      "optionNo": "いいえ"
+    },
+    {
+      "id": 6,
+      "question": "KAIRI×NOAH_αに関する質問6",
+      "optionYes": "はい",
+      "optionNo": "いいえ"
+    },
+    {
+      "id": 7,
+      "question": "KAIRI×NOAH_αに関する質問7",
+      "optionYes": "はい",
+      "optionNo": "いいえ"
+    },
+    {
+      "id": 8,
+      "question": "KAIRI×NOAH_αに関する質問8",
+      "optionYes": "はい",
+      "optionNo": "いいえ"
+    },
+    {
+      "id": 9,
+      "question": "KAIRI×NOAH_αに関する質問9",
+      "optionYes": "はい",
+      "optionNo": "いいえ"
+    },
+    {
+      "id": 10,
+      "question": "KAIRI×NOAH_αに関する質問10",
+      "optionYes": "はい",
+      "optionNo": "いいえ"
+    },
+    {
+      "id": 11,
+      "question": "KAIRI×NOAH_αに関する質問11",
+      "optionYes": "はい",
+      "optionNo": "いいえ"
+    },
+    {
+      "id": 12,
+      "question": "KAIRI×NOAH_αに関する質問12",
+      "optionYes": "はい",
+      "optionNo": "いいえ"
+    },
+    {
+      "id": 13,
+      "question": "KAIRI×NOAH_αに関する質問13",
+      "optionYes": "はい",
+      "optionNo": "いいえ"
+    },
+    {
+      "id": 14,
+      "question": "KAIRI×NOAH_αに関する質問14",
+      "optionYes": "はい",
+      "optionNo": "いいえ"
+    },
+    {
+      "id": 15,
+      "question": "KAIRI×NOAH_αに関する質問15",
+      "optionYes": "はい",
+      "optionNo": "いいえ"
+    },
+    {
+      "id": 16,
+      "question": "KAIRI×NOAH_αに関する質問16",
+      "optionYes": "はい",
+      "optionNo": "いいえ"
+    },
+    {
+      "id": 17,
+      "question": "KAIRI×NOAH_αに関する質問17",
+      "optionYes": "はい",
+      "optionNo": "いいえ"
+    },
+    {
+      "id": 18,
+      "question": "KAIRI×NOAH_αに関する質問18",
+      "optionYes": "はい",
+      "optionNo": "いいえ"
+    },
+    {
+      "id": 19,
+      "question": "KAIRI×NOAH_αに関する質問19",
+      "optionYes": "はい",
+      "optionNo": "いいえ"
+    },
+    {
+      "id": 20,
+      "question": "KAIRI×NOAH_αに関する質問20",
+      "optionYes": "はい",
+      "optionNo": "いいえ"
+    },
+    {
+      "id": 21,
+      "question": "KAIRI×NOAH_αに関する質問21",
+      "optionYes": "はい",
+      "optionNo": "いいえ"
+    }
+  ],
+  "KAIRI×NOAH_β": [
+    {
+      "id": 1,
+      "question": "KAIRI×NOAH_βに関する質問1",
+      "optionYes": "はい",
+      "optionNo": "いいえ"
+    },
+    {
+      "id": 2,
+      "question": "KAIRI×NOAH_βに関する質問2",
+      "optionYes": "はい",
+      "optionNo": "いいえ"
+    },
+    {
+      "id": 3,
+      "question": "KAIRI×NOAH_βに関する質問3",
+      "optionYes": "はい",
+      "optionNo": "いいえ"
+    },
+    {
+      "id": 4,
+      "question": "KAIRI×NOAH_βに関する質問4",
+      "optionYes": "はい",
+      "optionNo": "いいえ"
+    },
+    {
+      "id": 5,
+      "question": "KAIRI×NOAH_βに関する質問5",
+      "optionYes": "はい",
+      "optionNo": "いいえ"
+    },
+    {
+      "id": 6,
+      "question": "KAIRI×NOAH_βに関する質問6",
+      "optionYes": "はい",
+      "optionNo": "いいえ"
+    },
+    {
+      "id": 7,
+      "question": "KAIRI×NOAH_βに関する質問7",
+      "optionYes": "はい",
+      "optionNo": "いいえ"
+    },
+    {
+      "id": 8,
+      "question": "KAIRI×NOAH_βに関する質問8",
+      "optionYes": "はい",
+      "optionNo": "いいえ"
+    },
+    {
+      "id": 9,
+      "question": "KAIRI×NOAH_βに関する質問9",
+      "optionYes": "はい",
+      "optionNo": "いいえ"
+    },
+    {
+      "id": 10,
+      "question": "KAIRI×NOAH_βに関する質問10",
+      "optionYes": "はい",
+      "optionNo": "いいえ"
+    },
+    {
+      "id": 11,
+      "question": "KAIRI×NOAH_βに関する質問11",
+      "optionYes": "はい",
+      "optionNo": "いいえ"
+    },
+    {
+      "id": 12,
+      "question": "KAIRI×NOAH_βに関する質問12",
+      "optionYes": "はい",
+      "optionNo": "いいえ"
+    },
+    {
+      "id": 13,
+      "question": "KAIRI×NOAH_βに関する質問13",
+      "optionYes": "はい",
+      "optionNo": "いいえ"
+    },
+    {
+      "id": 14,
+      "question": "KAIRI×NOAH_βに関する質問14",
+      "optionYes": "はい",
+      "optionNo": "いいえ"
+    },
+    {
+      "id": 15,
+      "question": "KAIRI×NOAH_βに関する質問15",
+      "optionYes": "はい",
+      "optionNo": "いいえ"
+    },
+    {
+      "id": 16,
+      "question": "KAIRI×NOAH_βに関する質問16",
+      "optionYes": "はい",
+      "optionNo": "いいえ"
+    },
+    {
+      "id": 17,
+      "question": "KAIRI×NOAH_βに関する質問17",
+      "optionYes": "はい",
+      "optionNo": "いいえ"
+    },
+    {
+      "id": 18,
+      "question": "KAIRI×NOAH_βに関する質問18",
+      "optionYes": "はい",
+      "optionNo": "いいえ"
+    },
+    {
+      "id": 19,
+      "question": "KAIRI×NOAH_βに関する質問19",
+      "optionYes": "はい",
+      "optionNo": "いいえ"
+    },
+    {
+      "id": 20,
+      "question": "KAIRI×NOAH_βに関する質問20",
+      "optionYes": "はい",
+      "optionNo": "いいえ"
+    },
+    {
+      "id": 21,
+      "question": "KAIRI×NOAH_βに関する質問21",
+      "optionYes": "はい",
+      "optionNo": "いいえ"
+    }
+  ],
+  "KINRYU_α": [
+    {
+      "id": 1,
+      "question": "KINRYU_αに関する質問1",
+      "optionYes": "はい",
+      "optionNo": "いいえ"
+    },
+    {
+      "id": 2,
+      "question": "KINRYU_αに関する質問2",
+      "optionYes": "はい",
+      "optionNo": "いいえ"
+    },
+    {
+      "id": 3,
+      "question": "KINRYU_αに関する質問3",
+      "optionYes": "はい",
+      "optionNo": "いいえ"
+    },
+    {
+      "id": 4,
+      "question": "KINRYU_αに関する質問4",
+      "optionYes": "はい",
+      "optionNo": "いいえ"
+    },
+    {
+      "id": 5,
+      "question": "KINRYU_αに関する質問5",
+      "optionYes": "はい",
+      "optionNo": "いいえ"
+    },
+    {
+      "id": 6,
+      "question": "KINRYU_αに関する質問6",
+      "optionYes": "はい",
+      "optionNo": "いいえ"
+    },
+    {
+      "id": 7,
+      "question": "KINRYU_αに関する質問7",
+      "optionYes": "はい",
+      "optionNo": "いいえ"
+    },
+    {
+      "id": 8,
+      "question": "KINRYU_αに関する質問8",
+      "optionYes": "はい",
+      "optionNo": "いいえ"
+    },
+    {
+      "id": 9,
+      "question": "KINRYU_αに関する質問9",
+      "optionYes": "はい",
+      "optionNo": "いいえ"
+    },
+    {
+      "id": 10,
+      "question": "KINRYU_αに関する質問10",
+      "optionYes": "はい",
+      "optionNo": "いいえ"
+    },
+    {
+      "id": 11,
+      "question": "KINRYU_αに関する質問11",
+      "optionYes": "はい",
+      "optionNo": "いいえ"
+    },
+    {
+      "id": 12,
+      "question": "KINRYU_αに関する質問12",
+      "optionYes": "はい",
+      "optionNo": "いいえ"
+    },
+    {
+      "id": 13,
+      "question": "KINRYU_αに関する質問13",
+      "optionYes": "はい",
+      "optionNo": "いいえ"
+    },
+    {
+      "id": 14,
+      "question": "KINRYU_αに関する質問14",
+      "optionYes": "はい",
+      "optionNo": "いいえ"
+    },
+    {
+      "id": 15,
+      "question": "KINRYU_αに関する質問15",
+      "optionYes": "はい",
+      "optionNo": "いいえ"
+    },
+    {
+      "id": 16,
+      "question": "KINRYU_αに関する質問16",
+      "optionYes": "はい",
+      "optionNo": "いいえ"
+    },
+    {
+      "id": 17,
+      "question": "KINRYU_αに関する質問17",
+      "optionYes": "はい",
+      "optionNo": "いいえ"
+    },
+    {
+      "id": 18,
+      "question": "KINRYU_αに関する質問18",
+      "optionYes": "はい",
+      "optionNo": "いいえ"
+    },
+    {
+      "id": 19,
+      "question": "KINRYU_αに関する質問19",
+      "optionYes": "はい",
+      "optionNo": "いいえ"
+    },
+    {
+      "id": 20,
+      "question": "KINRYU_αに関する質問20",
+      "optionYes": "はい",
+      "optionNo": "いいえ"
+    },
+    {
+      "id": 21,
+      "question": "KINRYU_αに関する質問21",
+      "optionYes": "はい",
+      "optionNo": "いいえ"
+    }
+  ],
+  "KINRYU_β": [
+    {
+      "id": 1,
+      "question": "KINRYU_βに関する質問1",
+      "optionYes": "はい",
+      "optionNo": "いいえ"
+    },
+    {
+      "id": 2,
+      "question": "KINRYU_βに関する質問2",
+      "optionYes": "はい",
+      "optionNo": "いいえ"
+    },
+    {
+      "id": 3,
+      "question": "KINRYU_βに関する質問3",
+      "optionYes": "はい",
+      "optionNo": "いいえ"
+    },
+    {
+      "id": 4,
+      "question": "KINRYU_βに関する質問4",
+      "optionYes": "はい",
+      "optionNo": "いいえ"
+    },
+    {
+      "id": 5,
+      "question": "KINRYU_βに関する質問5",
+      "optionYes": "はい",
+      "optionNo": "いいえ"
+    },
+    {
+      "id": 6,
+      "question": "KINRYU_βに関する質問6",
+      "optionYes": "はい",
+      "optionNo": "いいえ"
+    },
+    {
+      "id": 7,
+      "question": "KINRYU_βに関する質問7",
+      "optionYes": "はい",
+      "optionNo": "いいえ"
+    },
+    {
+      "id": 8,
+      "question": "KINRYU_βに関する質問8",
+      "optionYes": "はい",
+      "optionNo": "いいえ"
+    },
+    {
+      "id": 9,
+      "question": "KINRYU_βに関する質問9",
+      "optionYes": "はい",
+      "optionNo": "いいえ"
+    },
+    {
+      "id": 10,
+      "question": "KINRYU_βに関する質問10",
+      "optionYes": "はい",
+      "optionNo": "いいえ"
+    },
+    {
+      "id": 11,
+      "question": "KINRYU_βに関する質問11",
+      "optionYes": "はい",
+      "optionNo": "いいえ"
+    },
+    {
+      "id": 12,
+      "question": "KINRYU_βに関する質問12",
+      "optionYes": "はい",
+      "optionNo": "いいえ"
+    },
+    {
+      "id": 13,
+      "question": "KINRYU_βに関する質問13",
+      "optionYes": "はい",
+      "optionNo": "いいえ"
+    },
+    {
+      "id": 14,
+      "question": "KINRYU_βに関する質問14",
+      "optionYes": "はい",
+      "optionNo": "いいえ"
+    },
+    {
+      "id": 15,
+      "question": "KINRYU_βに関する質問15",
+      "optionYes": "はい",
+      "optionNo": "いいえ"
+    },
+    {
+      "id": 16,
+      "question": "KINRYU_βに関する質問16",
+      "optionYes": "はい",
+      "optionNo": "いいえ"
+    },
+    {
+      "id": 17,
+      "question": "KINRYU_βに関する質問17",
+      "optionYes": "はい",
+      "optionNo": "いいえ"
+    },
+    {
+      "id": 18,
+      "question": "KINRYU_βに関する質問18",
+      "optionYes": "はい",
+      "optionNo": "いいえ"
+    },
+    {
+      "id": 19,
+      "question": "KINRYU_βに関する質問19",
+      "optionYes": "はい",
+      "optionNo": "いいえ"
+    },
+    {
+      "id": 20,
+      "question": "KINRYU_βに関する質問20",
+      "optionYes": "はい",
+      "optionNo": "いいえ"
+    },
+    {
+      "id": 21,
+      "question": "KINRYU_βに関する質問21",
+      "optionYes": "はい",
+      "optionNo": "いいえ"
+    }
+  ],
+  "KINRYU×MARI_α": [
+    {
+      "id": 1,
+      "question": "KINRYU×MARI_αに関する質問1",
+      "optionYes": "はい",
+      "optionNo": "いいえ"
+    },
+    {
+      "id": 2,
+      "question": "KINRYU×MARI_αに関する質問2",
+      "optionYes": "はい",
+      "optionNo": "いいえ"
+    },
+    {
+      "id": 3,
+      "question": "KINRYU×MARI_αに関する質問3",
+      "optionYes": "はい",
+      "optionNo": "いいえ"
+    },
+    {
+      "id": 4,
+      "question": "KINRYU×MARI_αに関する質問4",
+      "optionYes": "はい",
+      "optionNo": "いいえ"
+    },
+    {
+      "id": 5,
+      "question": "KINRYU×MARI_αに関する質問5",
+      "optionYes": "はい",
+      "optionNo": "いいえ"
+    },
+    {
+      "id": 6,
+      "question": "KINRYU×MARI_αに関する質問6",
+      "optionYes": "はい",
+      "optionNo": "いいえ"
+    },
+    {
+      "id": 7,
+      "question": "KINRYU×MARI_αに関する質問7",
+      "optionYes": "はい",
+      "optionNo": "いいえ"
+    },
+    {
+      "id": 8,
+      "question": "KINRYU×MARI_αに関する質問8",
+      "optionYes": "はい",
+      "optionNo": "いいえ"
+    },
+    {
+      "id": 9,
+      "question": "KINRYU×MARI_αに関する質問9",
+      "optionYes": "はい",
+      "optionNo": "いいえ"
+    },
+    {
+      "id": 10,
+      "question": "KINRYU×MARI_αに関する質問10",
+      "optionYes": "はい",
+      "optionNo": "いいえ"
+    },
+    {
+      "id": 11,
+      "question": "KINRYU×MARI_αに関する質問11",
+      "optionYes": "はい",
+      "optionNo": "いいえ"
+    },
+    {
+      "id": 12,
+      "question": "KINRYU×MARI_αに関する質問12",
+      "optionYes": "はい",
+      "optionNo": "いいえ"
+    },
+    {
+      "id": 13,
+      "question": "KINRYU×MARI_αに関する質問13",
+      "optionYes": "はい",
+      "optionNo": "いいえ"
+    },
+    {
+      "id": 14,
+      "question": "KINRYU×MARI_αに関する質問14",
+      "optionYes": "はい",
+      "optionNo": "いいえ"
+    },
+    {
+      "id": 15,
+      "question": "KINRYU×MARI_αに関する質問15",
+      "optionYes": "はい",
+      "optionNo": "いいえ"
+    },
+    {
+      "id": 16,
+      "question": "KINRYU×MARI_αに関する質問16",
+      "optionYes": "はい",
+      "optionNo": "いいえ"
+    },
+    {
+      "id": 17,
+      "question": "KINRYU×MARI_αに関する質問17",
+      "optionYes": "はい",
+      "optionNo": "いいえ"
+    },
+    {
+      "id": 18,
+      "question": "KINRYU×MARI_αに関する質問18",
+      "optionYes": "はい",
+      "optionNo": "いいえ"
+    },
+    {
+      "id": 19,
+      "question": "KINRYU×MARI_αに関する質問19",
+      "optionYes": "はい",
+      "optionNo": "いいえ"
+    },
+    {
+      "id": 20,
+      "question": "KINRYU×MARI_αに関する質問20",
+      "optionYes": "はい",
+      "optionNo": "いいえ"
+    },
+    {
+      "id": 21,
+      "question": "KINRYU×MARI_αに関する質問21",
+      "optionYes": "はい",
+      "optionNo": "いいえ"
+    }
+  ],
+  "KINRYU×MARI_β": [
+    {
+      "id": 1,
+      "question": "KINRYU×MARI_βに関する質問1",
+      "optionYes": "はい",
+      "optionNo": "いいえ"
+    },
+    {
+      "id": 2,
+      "question": "KINRYU×MARI_βに関する質問2",
+      "optionYes": "はい",
+      "optionNo": "いいえ"
+    },
+    {
+      "id": 3,
+      "question": "KINRYU×MARI_βに関する質問3",
+      "optionYes": "はい",
+      "optionNo": "いいえ"
+    },
+    {
+      "id": 4,
+      "question": "KINRYU×MARI_βに関する質問4",
+      "optionYes": "はい",
+      "optionNo": "いいえ"
+    },
+    {
+      "id": 5,
+      "question": "KINRYU×MARI_βに関する質問5",
+      "optionYes": "はい",
+      "optionNo": "いいえ"
+    },
+    {
+      "id": 6,
+      "question": "KINRYU×MARI_βに関する質問6",
+      "optionYes": "はい",
+      "optionNo": "いいえ"
+    },
+    {
+      "id": 7,
+      "question": "KINRYU×MARI_βに関する質問7",
+      "optionYes": "はい",
+      "optionNo": "いいえ"
+    },
+    {
+      "id": 8,
+      "question": "KINRYU×MARI_βに関する質問8",
+      "optionYes": "はい",
+      "optionNo": "いいえ"
+    },
+    {
+      "id": 9,
+      "question": "KINRYU×MARI_βに関する質問9",
+      "optionYes": "はい",
+      "optionNo": "いいえ"
+    },
+    {
+      "id": 10,
+      "question": "KINRYU×MARI_βに関する質問10",
+      "optionYes": "はい",
+      "optionNo": "いいえ"
+    },
+    {
+      "id": 11,
+      "question": "KINRYU×MARI_βに関する質問11",
+      "optionYes": "はい",
+      "optionNo": "いいえ"
+    },
+    {
+      "id": 12,
+      "question": "KINRYU×MARI_βに関する質問12",
+      "optionYes": "はい",
+      "optionNo": "いいえ"
+    },
+    {
+      "id": 13,
+      "question": "KINRYU×MARI_βに関する質問13",
+      "optionYes": "はい",
+      "optionNo": "いいえ"
+    },
+    {
+      "id": 14,
+      "question": "KINRYU×MARI_βに関する質問14",
+      "optionYes": "はい",
+      "optionNo": "いいえ"
+    },
+    {
+      "id": 15,
+      "question": "KINRYU×MARI_βに関する質問15",
+      "optionYes": "はい",
+      "optionNo": "いいえ"
+    },
+    {
+      "id": 16,
+      "question": "KINRYU×MARI_βに関する質問16",
+      "optionYes": "はい",
+      "optionNo": "いいえ"
+    },
+    {
+      "id": 17,
+      "question": "KINRYU×MARI_βに関する質問17",
+      "optionYes": "はい",
+      "optionNo": "いいえ"
+    },
+    {
+      "id": 18,
+      "question": "KINRYU×MARI_βに関する質問18",
+      "optionYes": "はい",
+      "optionNo": "いいえ"
+    },
+    {
+      "id": 19,
+      "question": "KINRYU×MARI_βに関する質問19",
+      "optionYes": "はい",
+      "optionNo": "いいえ"
+    },
+    {
+      "id": 20,
+      "question": "KINRYU×MARI_βに関する質問20",
+      "optionYes": "はい",
+      "optionNo": "いいえ"
+    },
+    {
+      "id": 21,
+      "question": "KINRYU×MARI_βに関する質問21",
+      "optionYes": "はい",
+      "optionNo": "いいえ"
+    }
+  ],
+  "AKARI_α": [
+    {
+      "id": 1,
+      "question": "AKARI_αに関する質問1",
+      "optionYes": "はい",
+      "optionNo": "いいえ"
+    },
+    {
+      "id": 2,
+      "question": "AKARI_αに関する質問2",
+      "optionYes": "はい",
+      "optionNo": "いいえ"
+    },
+    {
+      "id": 3,
+      "question": "AKARI_αに関する質問3",
+      "optionYes": "はい",
+      "optionNo": "いいえ"
+    },
+    {
+      "id": 4,
+      "question": "AKARI_αに関する質問4",
+      "optionYes": "はい",
+      "optionNo": "いいえ"
+    },
+    {
+      "id": 5,
+      "question": "AKARI_αに関する質問5",
+      "optionYes": "はい",
+      "optionNo": "いいえ"
+    },
+    {
+      "id": 6,
+      "question": "AKARI_αに関する質問6",
+      "optionYes": "はい",
+      "optionNo": "いいえ"
+    },
+    {
+      "id": 7,
+      "question": "AKARI_αに関する質問7",
+      "optionYes": "はい",
+      "optionNo": "いいえ"
+    },
+    {
+      "id": 8,
+      "question": "AKARI_αに関する質問8",
+      "optionYes": "はい",
+      "optionNo": "いいえ"
+    },
+    {
+      "id": 9,
+      "question": "AKARI_αに関する質問9",
+      "optionYes": "はい",
+      "optionNo": "いいえ"
+    },
+    {
+      "id": 10,
+      "question": "AKARI_αに関する質問10",
+      "optionYes": "はい",
+      "optionNo": "いいえ"
+    },
+    {
+      "id": 11,
+      "question": "AKARI_αに関する質問11",
+      "optionYes": "はい",
+      "optionNo": "いいえ"
+    },
+    {
+      "id": 12,
+      "question": "AKARI_αに関する質問12",
+      "optionYes": "はい",
+      "optionNo": "いいえ"
+    },
+    {
+      "id": 13,
+      "question": "AKARI_αに関する質問13",
+      "optionYes": "はい",
+      "optionNo": "いいえ"
+    },
+    {
+      "id": 14,
+      "question": "AKARI_αに関する質問14",
+      "optionYes": "はい",
+      "optionNo": "いいえ"
+    },
+    {
+      "id": 15,
+      "question": "AKARI_αに関する質問15",
+      "optionYes": "はい",
+      "optionNo": "いいえ"
+    },
+    {
+      "id": 16,
+      "question": "AKARI_αに関する質問16",
+      "optionYes": "はい",
+      "optionNo": "いいえ"
+    },
+    {
+      "id": 17,
+      "question": "AKARI_αに関する質問17",
+      "optionYes": "はい",
+      "optionNo": "いいえ"
+    },
+    {
+      "id": 18,
+      "question": "AKARI_αに関する質問18",
+      "optionYes": "はい",
+      "optionNo": "いいえ"
+    },
+    {
+      "id": 19,
+      "question": "AKARI_αに関する質問19",
+      "optionYes": "はい",
+      "optionNo": "いいえ"
+    },
+    {
+      "id": 20,
+      "question": "AKARI_αに関する質問20",
+      "optionYes": "はい",
+      "optionNo": "いいえ"
+    },
+    {
+      "id": 21,
+      "question": "AKARI_αに関する質問21",
+      "optionYes": "はい",
+      "optionNo": "いいえ"
+    }
+  ],
+  "AKARI_β": [
+    {
+      "id": 1,
+      "question": "AKARI_βに関する質問1",
+      "optionYes": "はい",
+      "optionNo": "いいえ"
+    },
+    {
+      "id": 2,
+      "question": "AKARI_βに関する質問2",
+      "optionYes": "はい",
+      "optionNo": "いいえ"
+    },
+    {
+      "id": 3,
+      "question": "AKARI_βに関する質問3",
+      "optionYes": "はい",
+      "optionNo": "いいえ"
+    },
+    {
+      "id": 4,
+      "question": "AKARI_βに関する質問4",
+      "optionYes": "はい",
+      "optionNo": "いいえ"
+    },
+    {
+      "id": 5,
+      "question": "AKARI_βに関する質問5",
+      "optionYes": "はい",
+      "optionNo": "いいえ"
+    },
+    {
+      "id": 6,
+      "question": "AKARI_βに関する質問6",
+      "optionYes": "はい",
+      "optionNo": "いいえ"
+    },
+    {
+      "id": 7,
+      "question": "AKARI_βに関する質問7",
+      "optionYes": "はい",
+      "optionNo": "いいえ"
+    },
+    {
+      "id": 8,
+      "question": "AKARI_βに関する質問8",
+      "optionYes": "はい",
+      "optionNo": "いいえ"
+    },
+    {
+      "id": 9,
+      "question": "AKARI_βに関する質問9",
+      "optionYes": "はい",
+      "optionNo": "いいえ"
+    },
+    {
+      "id": 10,
+      "question": "AKARI_βに関する質問10",
+      "optionYes": "はい",
+      "optionNo": "いいえ"
+    },
+    {
+      "id": 11,
+      "question": "AKARI_βに関する質問11",
+      "optionYes": "はい",
+      "optionNo": "いいえ"
+    },
+    {
+      "id": 12,
+      "question": "AKARI_βに関する質問12",
+      "optionYes": "はい",
+      "optionNo": "いいえ"
+    },
+    {
+      "id": 13,
+      "question": "AKARI_βに関する質問13",
+      "optionYes": "はい",
+      "optionNo": "いいえ"
+    },
+    {
+      "id": 14,
+      "question": "AKARI_βに関する質問14",
+      "optionYes": "はい",
+      "optionNo": "いいえ"
+    },
+    {
+      "id": 15,
+      "question": "AKARI_βに関する質問15",
+      "optionYes": "はい",
+      "optionNo": "いいえ"
+    },
+    {
+      "id": 16,
+      "question": "AKARI_βに関する質問16",
+      "optionYes": "はい",
+      "optionNo": "いいえ"
+    },
+    {
+      "id": 17,
+      "question": "AKARI_βに関する質問17",
+      "optionYes": "はい",
+      "optionNo": "いいえ"
+    },
+    {
+      "id": 18,
+      "question": "AKARI_βに関する質問18",
+      "optionYes": "はい",
+      "optionNo": "いいえ"
+    },
+    {
+      "id": 19,
+      "question": "AKARI_βに関する質問19",
+      "optionYes": "はい",
+      "optionNo": "いいえ"
+    },
+    {
+      "id": 20,
+      "question": "AKARI_βに関する質問20",
+      "optionYes": "はい",
+      "optionNo": "いいえ"
+    },
+    {
+      "id": 21,
+      "question": "AKARI_βに関する質問21",
+      "optionYes": "はい",
+      "optionNo": "いいえ"
+    }
+  ],
+  "AKARI×SENRI_α": [
+    {
+      "id": 1,
+      "question": "AKARI×SENRI_αに関する質問1",
+      "optionYes": "はい",
+      "optionNo": "いいえ"
+    },
+    {
+      "id": 2,
+      "question": "AKARI×SENRI_αに関する質問2",
+      "optionYes": "はい",
+      "optionNo": "いいえ"
+    },
+    {
+      "id": 3,
+      "question": "AKARI×SENRI_αに関する質問3",
+      "optionYes": "はい",
+      "optionNo": "いいえ"
+    },
+    {
+      "id": 4,
+      "question": "AKARI×SENRI_αに関する質問4",
+      "optionYes": "はい",
+      "optionNo": "いいえ"
+    },
+    {
+      "id": 5,
+      "question": "AKARI×SENRI_αに関する質問5",
+      "optionYes": "はい",
+      "optionNo": "いいえ"
+    },
+    {
+      "id": 6,
+      "question": "AKARI×SENRI_αに関する質問6",
+      "optionYes": "はい",
+      "optionNo": "いいえ"
+    },
+    {
+      "id": 7,
+      "question": "AKARI×SENRI_αに関する質問7",
+      "optionYes": "はい",
+      "optionNo": "いいえ"
+    },
+    {
+      "id": 8,
+      "question": "AKARI×SENRI_αに関する質問8",
+      "optionYes": "はい",
+      "optionNo": "いいえ"
+    },
+    {
+      "id": 9,
+      "question": "AKARI×SENRI_αに関する質問9",
+      "optionYes": "はい",
+      "optionNo": "いいえ"
+    },
+    {
+      "id": 10,
+      "question": "AKARI×SENRI_αに関する質問10",
+      "optionYes": "はい",
+      "optionNo": "いいえ"
+    },
+    {
+      "id": 11,
+      "question": "AKARI×SENRI_αに関する質問11",
+      "optionYes": "はい",
+      "optionNo": "いいえ"
+    },
+    {
+      "id": 12,
+      "question": "AKARI×SENRI_αに関する質問12",
+      "optionYes": "はい",
+      "optionNo": "いいえ"
+    },
+    {
+      "id": 13,
+      "question": "AKARI×SENRI_αに関する質問13",
+      "optionYes": "はい",
+      "optionNo": "いいえ"
+    },
+    {
+      "id": 14,
+      "question": "AKARI×SENRI_αに関する質問14",
+      "optionYes": "はい",
+      "optionNo": "いいえ"
+    },
+    {
+      "id": 15,
+      "question": "AKARI×SENRI_αに関する質問15",
+      "optionYes": "はい",
+      "optionNo": "いいえ"
+    },
+    {
+      "id": 16,
+      "question": "AKARI×SENRI_αに関する質問16",
+      "optionYes": "はい",
+      "optionNo": "いいえ"
+    },
+    {
+      "id": 17,
+      "question": "AKARI×SENRI_αに関する質問17",
+      "optionYes": "はい",
+      "optionNo": "いいえ"
+    },
+    {
+      "id": 18,
+      "question": "AKARI×SENRI_αに関する質問18",
+      "optionYes": "はい",
+      "optionNo": "いいえ"
+    },
+    {
+      "id": 19,
+      "question": "AKARI×SENRI_αに関する質問19",
+      "optionYes": "はい",
+      "optionNo": "いいえ"
+    },
+    {
+      "id": 20,
+      "question": "AKARI×SENRI_αに関する質問20",
+      "optionYes": "はい",
+      "optionNo": "いいえ"
+    },
+    {
+      "id": 21,
+      "question": "AKARI×SENRI_αに関する質問21",
+      "optionYes": "はい",
+      "optionNo": "いいえ"
+    }
+  ],
+  "AKARI×SENRI_β": [
+    {
+      "id": 1,
+      "question": "AKARI×SENRI_βに関する質問1",
+      "optionYes": "はい",
+      "optionNo": "いいえ"
+    },
+    {
+      "id": 2,
+      "question": "AKARI×SENRI_βに関する質問2",
+      "optionYes": "はい",
+      "optionNo": "いいえ"
+    },
+    {
+      "id": 3,
+      "question": "AKARI×SENRI_βに関する質問3",
+      "optionYes": "はい",
+      "optionNo": "いいえ"
+    },
+    {
+      "id": 4,
+      "question": "AKARI×SENRI_βに関する質問4",
+      "optionYes": "はい",
+      "optionNo": "いいえ"
+    },
+    {
+      "id": 5,
+      "question": "AKARI×SENRI_βに関する質問5",
+      "optionYes": "はい",
+      "optionNo": "いいえ"
+    },
+    {
+      "id": 6,
+      "question": "AKARI×SENRI_βに関する質問6",
+      "optionYes": "はい",
+      "optionNo": "いいえ"
+    },
+    {
+      "id": 7,
+      "question": "AKARI×SENRI_βに関する質問7",
+      "optionYes": "はい",
+      "optionNo": "いいえ"
+    },
+    {
+      "id": 8,
+      "question": "AKARI×SENRI_βに関する質問8",
+      "optionYes": "はい",
+      "optionNo": "いいえ"
+    },
+    {
+      "id": 9,
+      "question": "AKARI×SENRI_βに関する質問9",
+      "optionYes": "はい",
+      "optionNo": "いいえ"
+    },
+    {
+      "id": 10,
+      "question": "AKARI×SENRI_βに関する質問10",
+      "optionYes": "はい",
+      "optionNo": "いいえ"
+    },
+    {
+      "id": 11,
+      "question": "AKARI×SENRI_βに関する質問11",
+      "optionYes": "はい",
+      "optionNo": "いいえ"
+    },
+    {
+      "id": 12,
+      "question": "AKARI×SENRI_βに関する質問12",
+      "optionYes": "はい",
+      "optionNo": "いいえ"
+    },
+    {
+      "id": 13,
+      "question": "AKARI×SENRI_βに関する質問13",
+      "optionYes": "はい",
+      "optionNo": "いいえ"
+    },
+    {
+      "id": 14,
+      "question": "AKARI×SENRI_βに関する質問14",
+      "optionYes": "はい",
+      "optionNo": "いいえ"
+    },
+    {
+      "id": 15,
+      "question": "AKARI×SENRI_βに関する質問15",
+      "optionYes": "はい",
+      "optionNo": "いいえ"
+    },
+    {
+      "id": 16,
+      "question": "AKARI×SENRI_βに関する質問16",
+      "optionYes": "はい",
+      "optionNo": "いいえ"
+    },
+    {
+      "id": 17,
+      "question": "AKARI×SENRI_βに関する質問17",
+      "optionYes": "はい",
+      "optionNo": "いいえ"
+    },
+    {
+      "id": 18,
+      "question": "AKARI×SENRI_βに関する質問18",
+      "optionYes": "はい",
+      "optionNo": "いいえ"
+    },
+    {
+      "id": 19,
+      "question": "AKARI×SENRI_βに関する質問19",
+      "optionYes": "はい",
+      "optionNo": "いいえ"
+    },
+    {
+      "id": 20,
+      "question": "AKARI×SENRI_βに関する質問20",
+      "optionYes": "はい",
+      "optionNo": "いいえ"
+    },
+    {
+      "id": 21,
+      "question": "AKARI×SENRI_βに関する質問21",
+      "optionYes": "はい",
+      "optionNo": "いいえ"
+    }
+  ],
+  "NOAH_α": [
+    {
+      "id": 1,
+      "question": "NOAH_αに関する質問1",
+      "optionYes": "はい",
+      "optionNo": "いいえ"
+    },
+    {
+      "id": 2,
+      "question": "NOAH_αに関する質問2",
+      "optionYes": "はい",
+      "optionNo": "いいえ"
+    },
+    {
+      "id": 3,
+      "question": "NOAH_αに関する質問3",
+      "optionYes": "はい",
+      "optionNo": "いいえ"
+    },
+    {
+      "id": 4,
+      "question": "NOAH_αに関する質問4",
+      "optionYes": "はい",
+      "optionNo": "いいえ"
+    },
+    {
+      "id": 5,
+      "question": "NOAH_αに関する質問5",
+      "optionYes": "はい",
+      "optionNo": "いいえ"
+    },
+    {
+      "id": 6,
+      "question": "NOAH_αに関する質問6",
+      "optionYes": "はい",
+      "optionNo": "いいえ"
+    },
+    {
+      "id": 7,
+      "question": "NOAH_αに関する質問7",
+      "optionYes": "はい",
+      "optionNo": "いいえ"
+    },
+    {
+      "id": 8,
+      "question": "NOAH_αに関する質問8",
+      "optionYes": "はい",
+      "optionNo": "いいえ"
+    },
+    {
+      "id": 9,
+      "question": "NOAH_αに関する質問9",
+      "optionYes": "はい",
+      "optionNo": "いいえ"
+    },
+    {
+      "id": 10,
+      "question": "NOAH_αに関する質問10",
+      "optionYes": "はい",
+      "optionNo": "いいえ"
+    },
+    {
+      "id": 11,
+      "question": "NOAH_αに関する質問11",
+      "optionYes": "はい",
+      "optionNo": "いいえ"
+    },
+    {
+      "id": 12,
+      "question": "NOAH_αに関する質問12",
+      "optionYes": "はい",
+      "optionNo": "いいえ"
+    },
+    {
+      "id": 13,
+      "question": "NOAH_αに関する質問13",
+      "optionYes": "はい",
+      "optionNo": "いいえ"
+    },
+    {
+      "id": 14,
+      "question": "NOAH_αに関する質問14",
+      "optionYes": "はい",
+      "optionNo": "いいえ"
+    },
+    {
+      "id": 15,
+      "question": "NOAH_αに関する質問15",
+      "optionYes": "はい",
+      "optionNo": "いいえ"
+    },
+    {
+      "id": 16,
+      "question": "NOAH_αに関する質問16",
+      "optionYes": "はい",
+      "optionNo": "いいえ"
+    },
+    {
+      "id": 17,
+      "question": "NOAH_αに関する質問17",
+      "optionYes": "はい",
+      "optionNo": "いいえ"
+    },
+    {
+      "id": 18,
+      "question": "NOAH_αに関する質問18",
+      "optionYes": "はい",
+      "optionNo": "いいえ"
+    },
+    {
+      "id": 19,
+      "question": "NOAH_αに関する質問19",
+      "optionYes": "はい",
+      "optionNo": "いいえ"
+    },
+    {
+      "id": 20,
+      "question": "NOAH_αに関する質問20",
+      "optionYes": "はい",
+      "optionNo": "いいえ"
+    },
+    {
+      "id": 21,
+      "question": "NOAH_αに関する質問21",
+      "optionYes": "はい",
+      "optionNo": "いいえ"
+    }
+  ],
+  "NOAH_β": [
+    {
+      "id": 1,
+      "question": "NOAH_βに関する質問1",
+      "optionYes": "はい",
+      "optionNo": "いいえ"
+    },
+    {
+      "id": 2,
+      "question": "NOAH_βに関する質問2",
+      "optionYes": "はい",
+      "optionNo": "いいえ"
+    },
+    {
+      "id": 3,
+      "question": "NOAH_βに関する質問3",
+      "optionYes": "はい",
+      "optionNo": "いいえ"
+    },
+    {
+      "id": 4,
+      "question": "NOAH_βに関する質問4",
+      "optionYes": "はい",
+      "optionNo": "いいえ"
+    },
+    {
+      "id": 5,
+      "question": "NOAH_βに関する質問5",
+      "optionYes": "はい",
+      "optionNo": "いいえ"
+    },
+    {
+      "id": 6,
+      "question": "NOAH_βに関する質問6",
+      "optionYes": "はい",
+      "optionNo": "いいえ"
+    },
+    {
+      "id": 7,
+      "question": "NOAH_βに関する質問7",
+      "optionYes": "はい",
+      "optionNo": "いいえ"
+    },
+    {
+      "id": 8,
+      "question": "NOAH_βに関する質問8",
+      "optionYes": "はい",
+      "optionNo": "いいえ"
+    },
+    {
+      "id": 9,
+      "question": "NOAH_βに関する質問9",
+      "optionYes": "はい",
+      "optionNo": "いいえ"
+    },
+    {
+      "id": 10,
+      "question": "NOAH_βに関する質問10",
+      "optionYes": "はい",
+      "optionNo": "いいえ"
+    },
+    {
+      "id": 11,
+      "question": "NOAH_βに関する質問11",
+      "optionYes": "はい",
+      "optionNo": "いいえ"
+    },
+    {
+      "id": 12,
+      "question": "NOAH_βに関する質問12",
+      "optionYes": "はい",
+      "optionNo": "いいえ"
+    },
+    {
+      "id": 13,
+      "question": "NOAH_βに関する質問13",
+      "optionYes": "はい",
+      "optionNo": "いいえ"
+    },
+    {
+      "id": 14,
+      "question": "NOAH_βに関する質問14",
+      "optionYes": "はい",
+      "optionNo": "いいえ"
+    },
+    {
+      "id": 15,
+      "question": "NOAH_βに関する質問15",
+      "optionYes": "はい",
+      "optionNo": "いいえ"
+    },
+    {
+      "id": 16,
+      "question": "NOAH_βに関する質問16",
+      "optionYes": "はい",
+      "optionNo": "いいえ"
+    },
+    {
+      "id": 17,
+      "question": "NOAH_βに関する質問17",
+      "optionYes": "はい",
+      "optionNo": "いいえ"
+    },
+    {
+      "id": 18,
+      "question": "NOAH_βに関する質問18",
+      "optionYes": "はい",
+      "optionNo": "いいえ"
+    },
+    {
+      "id": 19,
+      "question": "NOAH_βに関する質問19",
+      "optionYes": "はい",
+      "optionNo": "いいえ"
+    },
+    {
+      "id": 20,
+      "question": "NOAH_βに関する質問20",
+      "optionYes": "はい",
+      "optionNo": "いいえ"
+    },
+    {
+      "id": 21,
+      "question": "NOAH_βに関する質問21",
+      "optionYes": "はい",
+      "optionNo": "いいえ"
+    }
+  ],
+  "NOAH×KAIRI_α": [
+    {
+      "id": 1,
+      "question": "NOAH×KAIRI_αに関する質問1",
+      "optionYes": "はい",
+      "optionNo": "いいえ"
+    },
+    {
+      "id": 2,
+      "question": "NOAH×KAIRI_αに関する質問2",
+      "optionYes": "はい",
+      "optionNo": "いいえ"
+    },
+    {
+      "id": 3,
+      "question": "NOAH×KAIRI_αに関する質問3",
+      "optionYes": "はい",
+      "optionNo": "いいえ"
+    },
+    {
+      "id": 4,
+      "question": "NOAH×KAIRI_αに関する質問4",
+      "optionYes": "はい",
+      "optionNo": "いいえ"
+    },
+    {
+      "id": 5,
+      "question": "NOAH×KAIRI_αに関する質問5",
+      "optionYes": "はい",
+      "optionNo": "いいえ"
+    },
+    {
+      "id": 6,
+      "question": "NOAH×KAIRI_αに関する質問6",
+      "optionYes": "はい",
+      "optionNo": "いいえ"
+    },
+    {
+      "id": 7,
+      "question": "NOAH×KAIRI_αに関する質問7",
+      "optionYes": "はい",
+      "optionNo": "いいえ"
+    },
+    {
+      "id": 8,
+      "question": "NOAH×KAIRI_αに関する質問8",
+      "optionYes": "はい",
+      "optionNo": "いいえ"
+    },
+    {
+      "id": 9,
+      "question": "NOAH×KAIRI_αに関する質問9",
+      "optionYes": "はい",
+      "optionNo": "いいえ"
+    },
+    {
+      "id": 10,
+      "question": "NOAH×KAIRI_αに関する質問10",
+      "optionYes": "はい",
+      "optionNo": "いいえ"
+    },
+    {
+      "id": 11,
+      "question": "NOAH×KAIRI_αに関する質問11",
+      "optionYes": "はい",
+      "optionNo": "いいえ"
+    },
+    {
+      "id": 12,
+      "question": "NOAH×KAIRI_αに関する質問12",
+      "optionYes": "はい",
+      "optionNo": "いいえ"
+    },
+    {
+      "id": 13,
+      "question": "NOAH×KAIRI_αに関する質問13",
+      "optionYes": "はい",
+      "optionNo": "いいえ"
+    },
+    {
+      "id": 14,
+      "question": "NOAH×KAIRI_αに関する質問14",
+      "optionYes": "はい",
+      "optionNo": "いいえ"
+    },
+    {
+      "id": 15,
+      "question": "NOAH×KAIRI_αに関する質問15",
+      "optionYes": "はい",
+      "optionNo": "いいえ"
+    },
+    {
+      "id": 16,
+      "question": "NOAH×KAIRI_αに関する質問16",
+      "optionYes": "はい",
+      "optionNo": "いいえ"
+    },
+    {
+      "id": 17,
+      "question": "NOAH×KAIRI_αに関する質問17",
+      "optionYes": "はい",
+      "optionNo": "いいえ"
+    },
+    {
+      "id": 18,
+      "question": "NOAH×KAIRI_αに関する質問18",
+      "optionYes": "はい",
+      "optionNo": "いいえ"
+    },
+    {
+      "id": 19,
+      "question": "NOAH×KAIRI_αに関する質問19",
+      "optionYes": "はい",
+      "optionNo": "いいえ"
+    },
+    {
+      "id": 20,
+      "question": "NOAH×KAIRI_αに関する質問20",
+      "optionYes": "はい",
+      "optionNo": "いいえ"
+    },
+    {
+      "id": 21,
+      "question": "NOAH×KAIRI_αに関する質問21",
+      "optionYes": "はい",
+      "optionNo": "いいえ"
+    }
+  ],
+  "NOAH×KAIRI_β": [
+    {
+      "id": 1,
+      "question": "NOAH×KAIRI_βに関する質問1",
+      "optionYes": "はい",
+      "optionNo": "いいえ"
+    },
+    {
+      "id": 2,
+      "question": "NOAH×KAIRI_βに関する質問2",
+      "optionYes": "はい",
+      "optionNo": "いいえ"
+    },
+    {
+      "id": 3,
+      "question": "NOAH×KAIRI_βに関する質問3",
+      "optionYes": "はい",
+      "optionNo": "いいえ"
+    },
+    {
+      "id": 4,
+      "question": "NOAH×KAIRI_βに関する質問4",
+      "optionYes": "はい",
+      "optionNo": "いいえ"
+    },
+    {
+      "id": 5,
+      "question": "NOAH×KAIRI_βに関する質問5",
+      "optionYes": "はい",
+      "optionNo": "いいえ"
+    },
+    {
+      "id": 6,
+      "question": "NOAH×KAIRI_βに関する質問6",
+      "optionYes": "はい",
+      "optionNo": "いいえ"
+    },
+    {
+      "id": 7,
+      "question": "NOAH×KAIRI_βに関する質問7",
+      "optionYes": "はい",
+      "optionNo": "いいえ"
+    },
+    {
+      "id": 8,
+      "question": "NOAH×KAIRI_βに関する質問8",
+      "optionYes": "はい",
+      "optionNo": "いいえ"
+    },
+    {
+      "id": 9,
+      "question": "NOAH×KAIRI_βに関する質問9",
+      "optionYes": "はい",
+      "optionNo": "いいえ"
+    },
+    {
+      "id": 10,
+      "question": "NOAH×KAIRI_βに関する質問10",
+      "optionYes": "はい",
+      "optionNo": "いいえ"
+    },
+    {
+      "id": 11,
+      "question": "NOAH×KAIRI_βに関する質問11",
+      "optionYes": "はい",
+      "optionNo": "いいえ"
+    },
+    {
+      "id": 12,
+      "question": "NOAH×KAIRI_βに関する質問12",
+      "optionYes": "はい",
+      "optionNo": "いいえ"
+    },
+    {
+      "id": 13,
+      "question": "NOAH×KAIRI_βに関する質問13",
+      "optionYes": "はい",
+      "optionNo": "いいえ"
+    },
+    {
+      "id": 14,
+      "question": "NOAH×KAIRI_βに関する質問14",
+      "optionYes": "はい",
+      "optionNo": "いいえ"
+    },
+    {
+      "id": 15,
+      "question": "NOAH×KAIRI_βに関する質問15",
+      "optionYes": "はい",
+      "optionNo": "いいえ"
+    },
+    {
+      "id": 16,
+      "question": "NOAH×KAIRI_βに関する質問16",
+      "optionYes": "はい",
+      "optionNo": "いいえ"
+    },
+    {
+      "id": 17,
+      "question": "NOAH×KAIRI_βに関する質問17",
+      "optionYes": "はい",
+      "optionNo": "いいえ"
+    },
+    {
+      "id": 18,
+      "question": "NOAH×KAIRI_βに関する質問18",
+      "optionYes": "はい",
+      "optionNo": "いいえ"
+    },
+    {
+      "id": 19,
+      "question": "NOAH×KAIRI_βに関する質問19",
+      "optionYes": "はい",
+      "optionNo": "いいえ"
+    },
+    {
+      "id": 20,
+      "question": "NOAH×KAIRI_βに関する質問20",
+      "optionYes": "はい",
+      "optionNo": "いいえ"
+    },
+    {
+      "id": 21,
+      "question": "NOAH×KAIRI_βに関する質問21",
+      "optionYes": "はい",
+      "optionNo": "いいえ"
+    }
+  ],
+  "MARI_α": [
+    {
+      "id": 1,
+      "question": "MARI_αに関する質問1",
+      "optionYes": "はい",
+      "optionNo": "いいえ"
+    },
+    {
+      "id": 2,
+      "question": "MARI_αに関する質問2",
+      "optionYes": "はい",
+      "optionNo": "いいえ"
+    },
+    {
+      "id": 3,
+      "question": "MARI_αに関する質問3",
+      "optionYes": "はい",
+      "optionNo": "いいえ"
+    },
+    {
+      "id": 4,
+      "question": "MARI_αに関する質問4",
+      "optionYes": "はい",
+      "optionNo": "いいえ"
+    },
+    {
+      "id": 5,
+      "question": "MARI_αに関する質問5",
+      "optionYes": "はい",
+      "optionNo": "いいえ"
+    },
+    {
+      "id": 6,
+      "question": "MARI_αに関する質問6",
+      "optionYes": "はい",
+      "optionNo": "いいえ"
+    },
+    {
+      "id": 7,
+      "question": "MARI_αに関する質問7",
+      "optionYes": "はい",
+      "optionNo": "いいえ"
+    },
+    {
+      "id": 8,
+      "question": "MARI_αに関する質問8",
+      "optionYes": "はい",
+      "optionNo": "いいえ"
+    },
+    {
+      "id": 9,
+      "question": "MARI_αに関する質問9",
+      "optionYes": "はい",
+      "optionNo": "いいえ"
+    },
+    {
+      "id": 10,
+      "question": "MARI_αに関する質問10",
+      "optionYes": "はい",
+      "optionNo": "いいえ"
+    },
+    {
+      "id": 11,
+      "question": "MARI_αに関する質問11",
+      "optionYes": "はい",
+      "optionNo": "いいえ"
+    },
+    {
+      "id": 12,
+      "question": "MARI_αに関する質問12",
+      "optionYes": "はい",
+      "optionNo": "いいえ"
+    },
+    {
+      "id": 13,
+      "question": "MARI_αに関する質問13",
+      "optionYes": "はい",
+      "optionNo": "いいえ"
+    },
+    {
+      "id": 14,
+      "question": "MARI_αに関する質問14",
+      "optionYes": "はい",
+      "optionNo": "いいえ"
+    },
+    {
+      "id": 15,
+      "question": "MARI_αに関する質問15",
+      "optionYes": "はい",
+      "optionNo": "いいえ"
+    },
+    {
+      "id": 16,
+      "question": "MARI_αに関する質問16",
+      "optionYes": "はい",
+      "optionNo": "いいえ"
+    },
+    {
+      "id": 17,
+      "question": "MARI_αに関する質問17",
+      "optionYes": "はい",
+      "optionNo": "いいえ"
+    },
+    {
+      "id": 18,
+      "question": "MARI_αに関する質問18",
+      "optionYes": "はい",
+      "optionNo": "いいえ"
+    },
+    {
+      "id": 19,
+      "question": "MARI_αに関する質問19",
+      "optionYes": "はい",
+      "optionNo": "いいえ"
+    },
+    {
+      "id": 20,
+      "question": "MARI_αに関する質問20",
+      "optionYes": "はい",
+      "optionNo": "いいえ"
+    },
+    {
+      "id": 21,
+      "question": "MARI_αに関する質問21",
+      "optionYes": "はい",
+      "optionNo": "いいえ"
+    }
+  ],
+  "MARI_β": [
+    {
+      "id": 1,
+      "question": "MARI_βに関する質問1",
+      "optionYes": "はい",
+      "optionNo": "いいえ"
+    },
+    {
+      "id": 2,
+      "question": "MARI_βに関する質問2",
+      "optionYes": "はい",
+      "optionNo": "いいえ"
+    },
+    {
+      "id": 3,
+      "question": "MARI_βに関する質問3",
+      "optionYes": "はい",
+      "optionNo": "いいえ"
+    },
+    {
+      "id": 4,
+      "question": "MARI_βに関する質問4",
+      "optionYes": "はい",
+      "optionNo": "いいえ"
+    },
+    {
+      "id": 5,
+      "question": "MARI_βに関する質問5",
+      "optionYes": "はい",
+      "optionNo": "いいえ"
+    },
+    {
+      "id": 6,
+      "question": "MARI_βに関する質問6",
+      "optionYes": "はい",
+      "optionNo": "いいえ"
+    },
+    {
+      "id": 7,
+      "question": "MARI_βに関する質問7",
+      "optionYes": "はい",
+      "optionNo": "いいえ"
+    },
+    {
+      "id": 8,
+      "question": "MARI_βに関する質問8",
+      "optionYes": "はい",
+      "optionNo": "いいえ"
+    },
+    {
+      "id": 9,
+      "question": "MARI_βに関する質問9",
+      "optionYes": "はい",
+      "optionNo": "いいえ"
+    },
+    {
+      "id": 10,
+      "question": "MARI_βに関する質問10",
+      "optionYes": "はい",
+      "optionNo": "いいえ"
+    },
+    {
+      "id": 11,
+      "question": "MARI_βに関する質問11",
+      "optionYes": "はい",
+      "optionNo": "いいえ"
+    },
+    {
+      "id": 12,
+      "question": "MARI_βに関する質問12",
+      "optionYes": "はい",
+      "optionNo": "いいえ"
+    },
+    {
+      "id": 13,
+      "question": "MARI_βに関する質問13",
+      "optionYes": "はい",
+      "optionNo": "いいえ"
+    },
+    {
+      "id": 14,
+      "question": "MARI_βに関する質問14",
+      "optionYes": "はい",
+      "optionNo": "いいえ"
+    },
+    {
+      "id": 15,
+      "question": "MARI_βに関する質問15",
+      "optionYes": "はい",
+      "optionNo": "いいえ"
+    },
+    {
+      "id": 16,
+      "question": "MARI_βに関する質問16",
+      "optionYes": "はい",
+      "optionNo": "いいえ"
+    },
+    {
+      "id": 17,
+      "question": "MARI_βに関する質問17",
+      "optionYes": "はい",
+      "optionNo": "いいえ"
+    },
+    {
+      "id": 18,
+      "question": "MARI_βに関する質問18",
+      "optionYes": "はい",
+      "optionNo": "いいえ"
+    },
+    {
+      "id": 19,
+      "question": "MARI_βに関する質問19",
+      "optionYes": "はい",
+      "optionNo": "いいえ"
+    },
+    {
+      "id": 20,
+      "question": "MARI_βに関する質問20",
+      "optionYes": "はい",
+      "optionNo": "いいえ"
+    },
+    {
+      "id": 21,
+      "question": "MARI_βに関する質問21",
+      "optionYes": "はい",
+      "optionNo": "いいえ"
+    }
+  ],
+  "MARI×KINRYU_α": [
+    {
+      "id": 1,
+      "question": "MARI×KINRYU_αに関する質問1",
+      "optionYes": "はい",
+      "optionNo": "いいえ"
+    },
+    {
+      "id": 2,
+      "question": "MARI×KINRYU_αに関する質問2",
+      "optionYes": "はい",
+      "optionNo": "いいえ"
+    },
+    {
+      "id": 3,
+      "question": "MARI×KINRYU_αに関する質問3",
+      "optionYes": "はい",
+      "optionNo": "いいえ"
+    },
+    {
+      "id": 4,
+      "question": "MARI×KINRYU_αに関する質問4",
+      "optionYes": "はい",
+      "optionNo": "いいえ"
+    },
+    {
+      "id": 5,
+      "question": "MARI×KINRYU_αに関する質問5",
+      "optionYes": "はい",
+      "optionNo": "いいえ"
+    },
+    {
+      "id": 6,
+      "question": "MARI×KINRYU_αに関する質問6",
+      "optionYes": "はい",
+      "optionNo": "いいえ"
+    },
+    {
+      "id": 7,
+      "question": "MARI×KINRYU_αに関する質問7",
+      "optionYes": "はい",
+      "optionNo": "いいえ"
+    },
+    {
+      "id": 8,
+      "question": "MARI×KINRYU_αに関する質問8",
+      "optionYes": "はい",
+      "optionNo": "いいえ"
+    },
+    {
+      "id": 9,
+      "question": "MARI×KINRYU_αに関する質問9",
+      "optionYes": "はい",
+      "optionNo": "いいえ"
+    },
+    {
+      "id": 10,
+      "question": "MARI×KINRYU_αに関する質問10",
+      "optionYes": "はい",
+      "optionNo": "いいえ"
+    },
+    {
+      "id": 11,
+      "question": "MARI×KINRYU_αに関する質問11",
+      "optionYes": "はい",
+      "optionNo": "いいえ"
+    },
+    {
+      "id": 12,
+      "question": "MARI×KINRYU_αに関する質問12",
+      "optionYes": "はい",
+      "optionNo": "いいえ"
+    },
+    {
+      "id": 13,
+      "question": "MARI×KINRYU_αに関する質問13",
+      "optionYes": "はい",
+      "optionNo": "いいえ"
+    },
+    {
+      "id": 14,
+      "question": "MARI×KINRYU_αに関する質問14",
+      "optionYes": "はい",
+      "optionNo": "いいえ"
+    },
+    {
+      "id": 15,
+      "question": "MARI×KINRYU_αに関する質問15",
+      "optionYes": "はい",
+      "optionNo": "いいえ"
+    },
+    {
+      "id": 16,
+      "question": "MARI×KINRYU_αに関する質問16",
+      "optionYes": "はい",
+      "optionNo": "いいえ"
+    },
+    {
+      "id": 17,
+      "question": "MARI×KINRYU_αに関する質問17",
+      "optionYes": "はい",
+      "optionNo": "いいえ"
+    },
+    {
+      "id": 18,
+      "question": "MARI×KINRYU_αに関する質問18",
+      "optionYes": "はい",
+      "optionNo": "いいえ"
+    },
+    {
+      "id": 19,
+      "question": "MARI×KINRYU_αに関する質問19",
+      "optionYes": "はい",
+      "optionNo": "いいえ"
+    },
+    {
+      "id": 20,
+      "question": "MARI×KINRYU_αに関する質問20",
+      "optionYes": "はい",
+      "optionNo": "いいえ"
+    },
+    {
+      "id": 21,
+      "question": "MARI×KINRYU_αに関する質問21",
+      "optionYes": "はい",
+      "optionNo": "いいえ"
+    }
+  ],
+  "MARI×KINRYU_β": [
+    {
+      "id": 1,
+      "question": "MARI×KINRYU_βに関する質問1",
+      "optionYes": "はい",
+      "optionNo": "いいえ"
+    },
+    {
+      "id": 2,
+      "question": "MARI×KINRYU_βに関する質問2",
+      "optionYes": "はい",
+      "optionNo": "いいえ"
+    },
+    {
+      "id": 3,
+      "question": "MARI×KINRYU_βに関する質問3",
+      "optionYes": "はい",
+      "optionNo": "いいえ"
+    },
+    {
+      "id": 4,
+      "question": "MARI×KINRYU_βに関する質問4",
+      "optionYes": "はい",
+      "optionNo": "いいえ"
+    },
+    {
+      "id": 5,
+      "question": "MARI×KINRYU_βに関する質問5",
+      "optionYes": "はい",
+      "optionNo": "いいえ"
+    },
+    {
+      "id": 6,
+      "question": "MARI×KINRYU_βに関する質問6",
+      "optionYes": "はい",
+      "optionNo": "いいえ"
+    },
+    {
+      "id": 7,
+      "question": "MARI×KINRYU_βに関する質問7",
+      "optionYes": "はい",
+      "optionNo": "いいえ"
+    },
+    {
+      "id": 8,
+      "question": "MARI×KINRYU_βに関する質問8",
+      "optionYes": "はい",
+      "optionNo": "いいえ"
+    },
+    {
+      "id": 9,
+      "question": "MARI×KINRYU_βに関する質問9",
+      "optionYes": "はい",
+      "optionNo": "いいえ"
+    },
+    {
+      "id": 10,
+      "question": "MARI×KINRYU_βに関する質問10",
+      "optionYes": "はい",
+      "optionNo": "いいえ"
+    },
+    {
+      "id": 11,
+      "question": "MARI×KINRYU_βに関する質問11",
+      "optionYes": "はい",
+      "optionNo": "いいえ"
+    },
+    {
+      "id": 12,
+      "question": "MARI×KINRYU_βに関する質問12",
+      "optionYes": "はい",
+      "optionNo": "いいえ"
+    },
+    {
+      "id": 13,
+      "question": "MARI×KINRYU_βに関する質問13",
+      "optionYes": "はい",
+      "optionNo": "いいえ"
+    },
+    {
+      "id": 14,
+      "question": "MARI×KINRYU_βに関する質問14",
+      "optionYes": "はい",
+      "optionNo": "いいえ"
+    },
+    {
+      "id": 15,
+      "question": "MARI×KINRYU_βに関する質問15",
+      "optionYes": "はい",
+      "optionNo": "いいえ"
+    },
+    {
+      "id": 16,
+      "question": "MARI×KINRYU_βに関する質問16",
+      "optionYes": "はい",
+      "optionNo": "いいえ"
+    },
+    {
+      "id": 17,
+      "question": "MARI×KINRYU_βに関する質問17",
+      "optionYes": "はい",
+      "optionNo": "いいえ"
+    },
+    {
+      "id": 18,
+      "question": "MARI×KINRYU_βに関する質問18",
+      "optionYes": "はい",
+      "optionNo": "いいえ"
+    },
+    {
+      "id": 19,
+      "question": "MARI×KINRYU_βに関する質問19",
+      "optionYes": "はい",
+      "optionNo": "いいえ"
+    },
+    {
+      "id": 20,
+      "question": "MARI×KINRYU_βに関する質問20",
+      "optionYes": "はい",
+      "optionNo": "いいえ"
+    },
+    {
+      "id": 21,
+      "question": "MARI×KINRYU_βに関する質問21",
+      "optionYes": "はい",
+      "optionNo": "いいえ"
+    }
+  ],
+  "SENRI_α": [
+    {
+      "id": 1,
+      "question": "SENRI_αに関する質問1",
+      "optionYes": "はい",
+      "optionNo": "いいえ"
+    },
+    {
+      "id": 2,
+      "question": "SENRI_αに関する質問2",
+      "optionYes": "はい",
+      "optionNo": "いいえ"
+    },
+    {
+      "id": 3,
+      "question": "SENRI_αに関する質問3",
+      "optionYes": "はい",
+      "optionNo": "いいえ"
+    },
+    {
+      "id": 4,
+      "question": "SENRI_αに関する質問4",
+      "optionYes": "はい",
+      "optionNo": "いいえ"
+    },
+    {
+      "id": 5,
+      "question": "SENRI_αに関する質問5",
+      "optionYes": "はい",
+      "optionNo": "いいえ"
+    },
+    {
+      "id": 6,
+      "question": "SENRI_αに関する質問6",
+      "optionYes": "はい",
+      "optionNo": "いいえ"
+    },
+    {
+      "id": 7,
+      "question": "SENRI_αに関する質問7",
+      "optionYes": "はい",
+      "optionNo": "いいえ"
+    },
+    {
+      "id": 8,
+      "question": "SENRI_αに関する質問8",
+      "optionYes": "はい",
+      "optionNo": "いいえ"
+    },
+    {
+      "id": 9,
+      "question": "SENRI_αに関する質問9",
+      "optionYes": "はい",
+      "optionNo": "いいえ"
+    },
+    {
+      "id": 10,
+      "question": "SENRI_αに関する質問10",
+      "optionYes": "はい",
+      "optionNo": "いいえ"
+    },
+    {
+      "id": 11,
+      "question": "SENRI_αに関する質問11",
+      "optionYes": "はい",
+      "optionNo": "いいえ"
+    },
+    {
+      "id": 12,
+      "question": "SENRI_αに関する質問12",
+      "optionYes": "はい",
+      "optionNo": "いいえ"
+    },
+    {
+      "id": 13,
+      "question": "SENRI_αに関する質問13",
+      "optionYes": "はい",
+      "optionNo": "いいえ"
+    },
+    {
+      "id": 14,
+      "question": "SENRI_αに関する質問14",
+      "optionYes": "はい",
+      "optionNo": "いいえ"
+    },
+    {
+      "id": 15,
+      "question": "SENRI_αに関する質問15",
+      "optionYes": "はい",
+      "optionNo": "いいえ"
+    },
+    {
+      "id": 16,
+      "question": "SENRI_αに関する質問16",
+      "optionYes": "はい",
+      "optionNo": "いいえ"
+    },
+    {
+      "id": 17,
+      "question": "SENRI_αに関する質問17",
+      "optionYes": "はい",
+      "optionNo": "いいえ"
+    },
+    {
+      "id": 18,
+      "question": "SENRI_αに関する質問18",
+      "optionYes": "はい",
+      "optionNo": "いいえ"
+    },
+    {
+      "id": 19,
+      "question": "SENRI_αに関する質問19",
+      "optionYes": "はい",
+      "optionNo": "いいえ"
+    },
+    {
+      "id": 20,
+      "question": "SENRI_αに関する質問20",
+      "optionYes": "はい",
+      "optionNo": "いいえ"
+    },
+    {
+      "id": 21,
+      "question": "SENRI_αに関する質問21",
+      "optionYes": "はい",
+      "optionNo": "いいえ"
+    }
+  ],
+  "SENRI_β": [
+    {
+      "id": 1,
+      "question": "SENRI_βに関する質問1",
+      "optionYes": "はい",
+      "optionNo": "いいえ"
+    },
+    {
+      "id": 2,
+      "question": "SENRI_βに関する質問2",
+      "optionYes": "はい",
+      "optionNo": "いいえ"
+    },
+    {
+      "id": 3,
+      "question": "SENRI_βに関する質問3",
+      "optionYes": "はい",
+      "optionNo": "いいえ"
+    },
+    {
+      "id": 4,
+      "question": "SENRI_βに関する質問4",
+      "optionYes": "はい",
+      "optionNo": "いいえ"
+    },
+    {
+      "id": 5,
+      "question": "SENRI_βに関する質問5",
+      "optionYes": "はい",
+      "optionNo": "いいえ"
+    },
+    {
+      "id": 6,
+      "question": "SENRI_βに関する質問6",
+      "optionYes": "はい",
+      "optionNo": "いいえ"
+    },
+    {
+      "id": 7,
+      "question": "SENRI_βに関する質問7",
+      "optionYes": "はい",
+      "optionNo": "いいえ"
+    },
+    {
+      "id": 8,
+      "question": "SENRI_βに関する質問8",
+      "optionYes": "はい",
+      "optionNo": "いいえ"
+    },
+    {
+      "id": 9,
+      "question": "SENRI_βに関する質問9",
+      "optionYes": "はい",
+      "optionNo": "いいえ"
+    },
+    {
+      "id": 10,
+      "question": "SENRI_βに関する質問10",
+      "optionYes": "はい",
+      "optionNo": "いいえ"
+    },
+    {
+      "id": 11,
+      "question": "SENRI_βに関する質問11",
+      "optionYes": "はい",
+      "optionNo": "いいえ"
+    },
+    {
+      "id": 12,
+      "question": "SENRI_βに関する質問12",
+      "optionYes": "はい",
+      "optionNo": "いいえ"
+    },
+    {
+      "id": 13,
+      "question": "SENRI_βに関する質問13",
+      "optionYes": "はい",
+      "optionNo": "いいえ"
+    },
+    {
+      "id": 14,
+      "question": "SENRI_βに関する質問14",
+      "optionYes": "はい",
+      "optionNo": "いいえ"
+    },
+    {
+      "id": 15,
+      "question": "SENRI_βに関する質問15",
+      "optionYes": "はい",
+      "optionNo": "いいえ"
+    },
+    {
+      "id": 16,
+      "question": "SENRI_βに関する質問16",
+      "optionYes": "はい",
+      "optionNo": "いいえ"
+    },
+    {
+      "id": 17,
+      "question": "SENRI_βに関する質問17",
+      "optionYes": "はい",
+      "optionNo": "いいえ"
+    },
+    {
+      "id": 18,
+      "question": "SENRI_βに関する質問18",
+      "optionYes": "はい",
+      "optionNo": "いいえ"
+    },
+    {
+      "id": 19,
+      "question": "SENRI_βに関する質問19",
+      "optionYes": "はい",
+      "optionNo": "いいえ"
+    },
+    {
+      "id": 20,
+      "question": "SENRI_βに関する質問20",
+      "optionYes": "はい",
+      "optionNo": "いいえ"
+    },
+    {
+      "id": 21,
+      "question": "SENRI_βに関する質問21",
+      "optionYes": "はい",
+      "optionNo": "いいえ"
+    }
+  ],
+  "SENRI×AKARI_α": [
+    {
+      "id": 1,
+      "question": "SENRI×AKARI_αに関する質問1",
+      "optionYes": "はい",
+      "optionNo": "いいえ"
+    },
+    {
+      "id": 2,
+      "question": "SENRI×AKARI_αに関する質問2",
+      "optionYes": "はい",
+      "optionNo": "いいえ"
+    },
+    {
+      "id": 3,
+      "question": "SENRI×AKARI_αに関する質問3",
+      "optionYes": "はい",
+      "optionNo": "いいえ"
+    },
+    {
+      "id": 4,
+      "question": "SENRI×AKARI_αに関する質問4",
+      "optionYes": "はい",
+      "optionNo": "いいえ"
+    },
+    {
+      "id": 5,
+      "question": "SENRI×AKARI_αに関する質問5",
+      "optionYes": "はい",
+      "optionNo": "いいえ"
+    },
+    {
+      "id": 6,
+      "question": "SENRI×AKARI_αに関する質問6",
+      "optionYes": "はい",
+      "optionNo": "いいえ"
+    },
+    {
+      "id": 7,
+      "question": "SENRI×AKARI_αに関する質問7",
+      "optionYes": "はい",
+      "optionNo": "いいえ"
+    },
+    {
+      "id": 8,
+      "question": "SENRI×AKARI_αに関する質問8",
+      "optionYes": "はい",
+      "optionNo": "いいえ"
+    },
+    {
+      "id": 9,
+      "question": "SENRI×AKARI_αに関する質問9",
+      "optionYes": "はい",
+      "optionNo": "いいえ"
+    },
+    {
+      "id": 10,
+      "question": "SENRI×AKARI_αに関する質問10",
+      "optionYes": "はい",
+      "optionNo": "いいえ"
+    },
+    {
+      "id": 11,
+      "question": "SENRI×AKARI_αに関する質問11",
+      "optionYes": "はい",
+      "optionNo": "いいえ"
+    },
+    {
+      "id": 12,
+      "question": "SENRI×AKARI_αに関する質問12",
+      "optionYes": "はい",
+      "optionNo": "いいえ"
+    },
+    {
+      "id": 13,
+      "question": "SENRI×AKARI_αに関する質問13",
+      "optionYes": "はい",
+      "optionNo": "いいえ"
+    },
+    {
+      "id": 14,
+      "question": "SENRI×AKARI_αに関する質問14",
+      "optionYes": "はい",
+      "optionNo": "いいえ"
+    },
+    {
+      "id": 15,
+      "question": "SENRI×AKARI_αに関する質問15",
+      "optionYes": "はい",
+      "optionNo": "いいえ"
+    },
+    {
+      "id": 16,
+      "question": "SENRI×AKARI_αに関する質問16",
+      "optionYes": "はい",
+      "optionNo": "いいえ"
+    },
+    {
+      "id": 17,
+      "question": "SENRI×AKARI_αに関する質問17",
+      "optionYes": "はい",
+      "optionNo": "いいえ"
+    },
+    {
+      "id": 18,
+      "question": "SENRI×AKARI_αに関する質問18",
+      "optionYes": "はい",
+      "optionNo": "いいえ"
+    },
+    {
+      "id": 19,
+      "question": "SENRI×AKARI_αに関する質問19",
+      "optionYes": "はい",
+      "optionNo": "いいえ"
+    },
+    {
+      "id": 20,
+      "question": "SENRI×AKARI_αに関する質問20",
+      "optionYes": "はい",
+      "optionNo": "いいえ"
+    },
+    {
+      "id": 21,
+      "question": "SENRI×AKARI_αに関する質問21",
+      "optionYes": "はい",
+      "optionNo": "いいえ"
+    }
+  ],
+  "SENRI×AKARI_β": [
+    {
+      "id": 1,
+      "question": "SENRI×AKARI_βに関する質問1",
+      "optionYes": "はい",
+      "optionNo": "いいえ"
+    },
+    {
+      "id": 2,
+      "question": "SENRI×AKARI_βに関する質問2",
+      "optionYes": "はい",
+      "optionNo": "いいえ"
+    },
+    {
+      "id": 3,
+      "question": "SENRI×AKARI_βに関する質問3",
+      "optionYes": "はい",
+      "optionNo": "いいえ"
+    },
+    {
+      "id": 4,
+      "question": "SENRI×AKARI_βに関する質問4",
+      "optionYes": "はい",
+      "optionNo": "いいえ"
+    },
+    {
+      "id": 5,
+      "question": "SENRI×AKARI_βに関する質問5",
+      "optionYes": "はい",
+      "optionNo": "いいえ"
+    },
+    {
+      "id": 6,
+      "question": "SENRI×AKARI_βに関する質問6",
+      "optionYes": "はい",
+      "optionNo": "いいえ"
+    },
+    {
+      "id": 7,
+      "question": "SENRI×AKARI_βに関する質問7",
+      "optionYes": "はい",
+      "optionNo": "いいえ"
+    },
+    {
+      "id": 8,
+      "question": "SENRI×AKARI_βに関する質問8",
+      "optionYes": "はい",
+      "optionNo": "いいえ"
+    },
+    {
+      "id": 9,
+      "question": "SENRI×AKARI_βに関する質問9",
+      "optionYes": "はい",
+      "optionNo": "いいえ"
+    },
+    {
+      "id": 10,
+      "question": "SENRI×AKARI_βに関する質問10",
+      "optionYes": "はい",
+      "optionNo": "いいえ"
+    },
+    {
+      "id": 11,
+      "question": "SENRI×AKARI_βに関する質問11",
+      "optionYes": "はい",
+      "optionNo": "いいえ"
+    },
+    {
+      "id": 12,
+      "question": "SENRI×AKARI_βに関する質問12",
+      "optionYes": "はい",
+      "optionNo": "いいえ"
+    },
+    {
+      "id": 13,
+      "question": "SENRI×AKARI_βに関する質問13",
+      "optionYes": "はい",
+      "optionNo": "いいえ"
+    },
+    {
+      "id": 14,
+      "question": "SENRI×AKARI_βに関する質問14",
+      "optionYes": "はい",
+      "optionNo": "いいえ"
+    },
+    {
+      "id": 15,
+      "question": "SENRI×AKARI_βに関する質問15",
+      "optionYes": "はい",
+      "optionNo": "いいえ"
+    },
+    {
+      "id": 16,
+      "question": "SENRI×AKARI_βに関する質問16",
+      "optionYes": "はい",
+      "optionNo": "いいえ"
+    },
+    {
+      "id": 17,
+      "question": "SENRI×AKARI_βに関する質問17",
+      "optionYes": "はい",
+      "optionNo": "いいえ"
+    },
+    {
+      "id": 18,
+      "question": "SENRI×AKARI_βに関する質問18",
+      "optionYes": "はい",
+      "optionNo": "いいえ"
+    },
+    {
+      "id": 19,
+      "question": "SENRI×AKARI_βに関する質問19",
+      "optionYes": "はい",
+      "optionNo": "いいえ"
+    },
+    {
+      "id": 20,
+      "question": "SENRI×AKARI_βに関する質問20",
+      "optionYes": "はい",
+      "optionNo": "いいえ"
+    },
+    {
+      "id": 21,
+      "question": "SENRI×AKARI_βに関する質問21",
+      "optionYes": "はい",
+      "optionNo": "いいえ"
+    }
+  ]
+}

@@ -1,3 +1,15 @@
+# Hexa Codex Frontend
+
+This React/TypeScript application provides the questionnaire UI for the Hexa Codex personality diagnosis.
+Questions and feature descriptions are stored locally under `src/constants` as JSON files and imported directly.
+The user answers each yes/no question and the result is calculated on the client side.
+
+## Files
+
+- `src/constants/questions.json` – list of questions grouped by category
+- `src/constants/features.json` – catch copy and description for each category
+- `src/components/Questionnaire.tsx` – main questionnaire logic
+
 # Getting Started with Create React App
 
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
