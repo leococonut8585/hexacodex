@@ -17,7 +17,9 @@ jest.mock('../constants/officialFeatures', () => ({
     variantTitle: 'varTitle',
     variantDescription: 'varDesc',
     subTitle: 'subTitle',
-    subDescription: 'subDesc'
+    subDescription: 'subDesc',
+    acronyms: [{ letter: 'A', meaning_en: 'a' }],
+    componentAcronyms: []
   })
 }));
 

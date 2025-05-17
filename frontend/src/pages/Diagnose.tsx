@@ -71,8 +71,6 @@ function Diagnose() {
       {result && featureInfo && (
         <div style={{ marginTop: "1rem" }}>
           <h3>{featureKey}</h3>
-          <p>{featureInfo.catch}</p>
-          <p>{featureInfo.description}</p>
           {featureInfo.acronyms && (
             <ul>
               {featureInfo.acronyms.map((a, idx) => (
@@ -98,6 +96,8 @@ function Diagnose() {
               ))}
             </div>
           )}
+          <p>{featureInfo.catch}</p>
+          <p>{featureInfo.description}</p>
           <button
             onClick={() => navigate(`/questions/${featureKey}`)}
             style={{ marginTop: '1rem' }}

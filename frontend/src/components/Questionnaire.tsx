@@ -65,8 +65,6 @@ const Questionnaire: React.FC = () => {
       {result ? (
         <div data-testid="result">
           <h3>{result.category}</h3>
-          <p>{result.catch}</p>
-          <p>{result.description}</p>
           {result.acronyms && (
             <ul>
               {result.acronyms.map((a, idx) => (
@@ -92,6 +90,8 @@ const Questionnaire: React.FC = () => {
               ))}
             </div>
           )}
+          <p>{result.catch}</p>
+          <p>{result.description}</p>
         </div>
       ) : (
         <div>
