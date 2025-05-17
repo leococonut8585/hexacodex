@@ -49,7 +49,13 @@ const Questionnaire: React.FC = () => {
     const best = categories.reduce((a, b) => (scores[a] >= scores[b] ? a : b));
     const info: FeatureInfo | null = getInitialFeature(best);
     if (info) {
-      setResult({ category: best, catch: info.catch, description: info.description });
+      setResult({
+        category: best,
+        catch: info.catch,
+        description: info.description,
+        acronyms: info.acronyms,
+        componentAcronyms: info.componentAcronyms,
+      });
     }
   };
 
@@ -61,6 +67,31 @@ const Questionnaire: React.FC = () => {
           <h3>{result.category}</h3>
           <p>{result.catch}</p>
           <p>{result.description}</p>
+          {result.acronyms && (
+            <ul>
+              {result.acronyms.map((a, idx) => (
+                <li key={idx}>
+                  {a.letter}: {a.meaning_en}
+                </li>
+              ))}
+            </ul>
+          )}
+          {result.componentAcronyms && (
+            <div>
+              {result.componentAcronyms.map((c, idx) => (
+                <div key={idx}>
+                  <h4>{c.baseTypeNameJp}</h4>
+                  <ul>
+                    {c.keywords.map((k, i) => (
+                      <li key={i}>
+                        {k.letter}: {k.meaning_en}
+                      </li>
+                    ))}
+                  </ul>
+                </div>
+              ))}
+            </div>
+          )}
         </div>
       ) : (
         <div>
