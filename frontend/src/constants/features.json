@@ -3,96 +3,288 @@
     "catch": "KAIRI_αのキャッチ",
     "description": "KAIRI_αの特徴説明です。"
   },
+  "KAIRI_α-1": {
+    "catch": "KAIRI_α-1のキャッチ",
+    "description": "KAIRI_α-1の特徴説明です。"
+  },
+  "KAIRI_α-2": {
+    "catch": "KAIRI_α-2のキャッチ",
+    "description": "KAIRI_α-2の特徴説明です。"
+  },
   "KAIRI_β": {
     "catch": "KAIRI_βのキャッチ",
     "description": "KAIRI_βの特徴説明です。"
+  },
+  "KAIRI_β-1": {
+    "catch": "KAIRI_β-1のキャッチ",
+    "description": "KAIRI_β-1の特徴説明です。"
+  },
+  "KAIRI_β-2": {
+    "catch": "KAIRI_β-2のキャッチ",
+    "description": "KAIRI_β-2の特徴説明です。"
   },
   "KAIRI×NOAH_α": {
     "catch": "KAIRI×NOAH_αのキャッチ",
     "description": "KAIRI×NOAH_αの特徴説明です。"
   },
+  "KAIRI×NOAH_α-1": {
+    "catch": "KAIRI×NOAH_α-1のキャッチ",
+    "description": "KAIRI×NOAH_α-1の特徴説明です。"
+  },
+  "KAIRI×NOAH_α-2": {
+    "catch": "KAIRI×NOAH_α-2のキャッチ",
+    "description": "KAIRI×NOAH_α-2の特徴説明です。"
+  },
   "KAIRI×NOAH_β": {
     "catch": "KAIRI×NOAH_βのキャッチ",
     "description": "KAIRI×NOAH_βの特徴説明です。"
+  },
+  "KAIRI×NOAH_β-1": {
+    "catch": "KAIRI×NOAH_β-1のキャッチ",
+    "description": "KAIRI×NOAH_β-1の特徴説明です。"
+  },
+  "KAIRI×NOAH_β-2": {
+    "catch": "KAIRI×NOAH_β-2のキャッチ",
+    "description": "KAIRI×NOAH_β-2の特徴説明です。"
   },
   "KINRYU_α": {
     "catch": "KINRYU_αのキャッチ",
     "description": "KINRYU_αの特徴説明です。"
   },
+  "KINRYU_α-1": {
+    "catch": "KINRYU_α-1のキャッチ",
+    "description": "KINRYU_α-1の特徴説明です。"
+  },
+  "KINRYU_α-2": {
+    "catch": "KINRYU_α-2のキャッチ",
+    "description": "KINRYU_α-2の特徴説明です。"
+  },
   "KINRYU_β": {
     "catch": "KINRYU_βのキャッチ",
     "description": "KINRYU_βの特徴説明です。"
+  },
+  "KINRYU_β-1": {
+    "catch": "KINRYU_β-1のキャッチ",
+    "description": "KINRYU_β-1の特徴説明です。"
+  },
+  "KINRYU_β-2": {
+    "catch": "KINRYU_β-2のキャッチ",
+    "description": "KINRYU_β-2の特徴説明です。"
   },
   "KINRYU×MARI_α": {
     "catch": "KINRYU×MARI_αのキャッチ",
     "description": "KINRYU×MARI_αの特徴説明です。"
   },
+  "KINRYU×MARI_α-1": {
+    "catch": "KINRYU×MARI_α-1のキャッチ",
+    "description": "KINRYU×MARI_α-1の特徴説明です。"
+  },
+  "KINRYU×MARI_α-2": {
+    "catch": "KINRYU×MARI_α-2のキャッチ",
+    "description": "KINRYU×MARI_α-2の特徴説明です。"
+  },
   "KINRYU×MARI_β": {
     "catch": "KINRYU×MARI_βのキャッチ",
     "description": "KINRYU×MARI_βの特徴説明です。"
+  },
+  "KINRYU×MARI_β-1": {
+    "catch": "KINRYU×MARI_β-1のキャッチ",
+    "description": "KINRYU×MARI_β-1の特徴説明です。"
+  },
+  "KINRYU×MARI_β-2": {
+    "catch": "KINRYU×MARI_β-2のキャッチ",
+    "description": "KINRYU×MARI_β-2の特徴説明です。"
   },
   "AKARI_α": {
     "catch": "AKARI_αのキャッチ",
     "description": "AKARI_αの特徴説明です。"
   },
+  "AKARI_α-1": {
+    "catch": "AKARI_α-1のキャッチ",
+    "description": "AKARI_α-1の特徴説明です。"
+  },
+  "AKARI_α-2": {
+    "catch": "AKARI_α-2のキャッチ",
+    "description": "AKARI_α-2の特徴説明です。"
+  },
   "AKARI_β": {
     "catch": "AKARI_βのキャッチ",
     "description": "AKARI_βの特徴説明です。"
+  },
+  "AKARI_β-1": {
+    "catch": "AKARI_β-1のキャッチ",
+    "description": "AKARI_β-1の特徴説明です。"
+  },
+  "AKARI_β-2": {
+    "catch": "AKARI_β-2のキャッチ",
+    "description": "AKARI_β-2の特徴説明です。"
   },
   "AKARI×SENRI_α": {
     "catch": "AKARI×SENRI_αのキャッチ",
     "description": "AKARI×SENRI_αの特徴説明です。"
   },
+  "AKARI×SENRI_α-1": {
+    "catch": "AKARI×SENRI_α-1のキャッチ",
+    "description": "AKARI×SENRI_α-1の特徴説明です。"
+  },
+  "AKARI×SENRI_α-2": {
+    "catch": "AKARI×SENRI_α-2のキャッチ",
+    "description": "AKARI×SENRI_α-2の特徴説明です。"
+  },
   "AKARI×SENRI_β": {
     "catch": "AKARI×SENRI_βのキャッチ",
     "description": "AKARI×SENRI_βの特徴説明です。"
+  },
+  "AKARI×SENRI_β-1": {
+    "catch": "AKARI×SENRI_β-1のキャッチ",
+    "description": "AKARI×SENRI_β-1の特徴説明です。"
+  },
+  "AKARI×SENRI_β-2": {
+    "catch": "AKARI×SENRI_β-2のキャッチ",
+    "description": "AKARI×SENRI_β-2の特徴説明です。"
   },
   "NOAH_α": {
     "catch": "NOAH_αのキャッチ",
     "description": "NOAH_αの特徴説明です。"
   },
+  "NOAH_α-1": {
+    "catch": "NOAH_α-1のキャッチ",
+    "description": "NOAH_α-1の特徴説明です。"
+  },
+  "NOAH_α-2": {
+    "catch": "NOAH_α-2のキャッチ",
+    "description": "NOAH_α-2の特徴説明です。"
+  },
   "NOAH_β": {
     "catch": "NOAH_βのキャッチ",
     "description": "NOAH_βの特徴説明です。"
+  },
+  "NOAH_β-1": {
+    "catch": "NOAH_β-1のキャッチ",
+    "description": "NOAH_β-1の特徴説明です。"
+  },
+  "NOAH_β-2": {
+    "catch": "NOAH_β-2のキャッチ",
+    "description": "NOAH_β-2の特徴説明です。"
   },
   "NOAH×KAIRI_α": {
     "catch": "NOAH×KAIRI_αのキャッチ",
     "description": "NOAH×KAIRI_αの特徴説明です。"
   },
+  "NOAH×KAIRI_α-1": {
+    "catch": "NOAH×KAIRI_α-1のキャッチ",
+    "description": "NOAH×KAIRI_α-1の特徴説明です。"
+  },
+  "NOAH×KAIRI_α-2": {
+    "catch": "NOAH×KAIRI_α-2のキャッチ",
+    "description": "NOAH×KAIRI_α-2の特徴説明です。"
+  },
   "NOAH×KAIRI_β": {
     "catch": "NOAH×KAIRI_βのキャッチ",
     "description": "NOAH×KAIRI_βの特徴説明です。"
+  },
+  "NOAH×KAIRI_β-1": {
+    "catch": "NOAH×KAIRI_β-1のキャッチ",
+    "description": "NOAH×KAIRI_β-1の特徴説明です。"
+  },
+  "NOAH×KAIRI_β-2": {
+    "catch": "NOAH×KAIRI_β-2のキャッチ",
+    "description": "NOAH×KAIRI_β-2の特徴説明です。"
   },
   "MARI_α": {
     "catch": "MARI_αのキャッチ",
     "description": "MARI_αの特徴説明です。"
   },
+  "MARI_α-1": {
+    "catch": "MARI_α-1のキャッチ",
+    "description": "MARI_α-1の特徴説明です。"
+  },
+  "MARI_α-2": {
+    "catch": "MARI_α-2のキャッチ",
+    "description": "MARI_α-2の特徴説明です。"
+  },
   "MARI_β": {
     "catch": "MARI_βのキャッチ",
     "description": "MARI_βの特徴説明です。"
+  },
+  "MARI_β-1": {
+    "catch": "MARI_β-1のキャッチ",
+    "description": "MARI_β-1の特徴説明です。"
+  },
+  "MARI_β-2": {
+    "catch": "MARI_β-2のキャッチ",
+    "description": "MARI_β-2の特徴説明です。"
   },
   "MARI×KINRYU_α": {
     "catch": "MARI×KINRYU_αのキャッチ",
     "description": "MARI×KINRYU_αの特徴説明です。"
   },
+  "MARI×KINRYU_α-1": {
+    "catch": "MARI×KINRYU_α-1のキャッチ",
+    "description": "MARI×KINRYU_α-1の特徴説明です。"
+  },
+  "MARI×KINRYU_α-2": {
+    "catch": "MARI×KINRYU_α-2のキャッチ",
+    "description": "MARI×KINRYU_α-2の特徴説明です。"
+  },
   "MARI×KINRYU_β": {
     "catch": "MARI×KINRYU_βのキャッチ",
     "description": "MARI×KINRYU_βの特徴説明です。"
+  },
+  "MARI×KINRYU_β-1": {
+    "catch": "MARI×KINRYU_β-1のキャッチ",
+    "description": "MARI×KINRYU_β-1の特徴説明です。"
+  },
+  "MARI×KINRYU_β-2": {
+    "catch": "MARI×KINRYU_β-2のキャッチ",
+    "description": "MARI×KINRYU_β-2の特徴説明です。"
   },
   "SENRI_α": {
     "catch": "SENRI_αのキャッチ",
     "description": "SENRI_αの特徴説明です。"
   },
+  "SENRI_α-1": {
+    "catch": "SENRI_α-1のキャッチ",
+    "description": "SENRI_α-1の特徴説明です。"
+  },
+  "SENRI_α-2": {
+    "catch": "SENRI_α-2のキャッチ",
+    "description": "SENRI_α-2の特徴説明です。"
+  },
   "SENRI_β": {
     "catch": "SENRI_βのキャッチ",
     "description": "SENRI_βの特徴説明です。"
+  },
+  "SENRI_β-1": {
+    "catch": "SENRI_β-1のキャッチ",
+    "description": "SENRI_β-1の特徴説明です。"
+  },
+  "SENRI_β-2": {
+    "catch": "SENRI_β-2のキャッチ",
+    "description": "SENRI_β-2の特徴説明です。"
   },
   "SENRI×AKARI_α": {
     "catch": "SENRI×AKARI_αのキャッチ",
     "description": "SENRI×AKARI_αの特徴説明です。"
   },
+  "SENRI×AKARI_α-1": {
+    "catch": "SENRI×AKARI_α-1のキャッチ",
+    "description": "SENRI×AKARI_α-1の特徴説明です。"
+  },
+  "SENRI×AKARI_α-2": {
+    "catch": "SENRI×AKARI_α-2のキャッチ",
+    "description": "SENRI×AKARI_α-2の特徴説明です。"
+  },
   "SENRI×AKARI_β": {
     "catch": "SENRI×AKARI_βのキャッチ",
     "description": "SENRI×AKARI_βの特徴説明です。"
+  },
+  "SENRI×AKARI_β-1": {
+    "catch": "SENRI×AKARI_β-1のキャッチ",
+    "description": "SENRI×AKARI_β-1の特徴説明です。"
+  },
+  "SENRI×AKARI_β-2": {
+    "catch": "SENRI×AKARI_β-2のキャッチ",
+    "description": "SENRI×AKARI_β-2の特徴説明です。"
   }
 }

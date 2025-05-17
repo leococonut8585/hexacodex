@@ -29,6 +29,7 @@ function App() {
         <Route path="/" element={<Home />} />
         <Route path="/diagnose" element={<Diagnose />} />
         <Route path="/personality" element={<Personality />} />
+        <Route path="/questions/:category" element={<Personality />} />
         {/* 必要なら他のRouteも追加 */}
       </Routes>
     </div>

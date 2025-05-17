@@ -29,3 +29,13 @@ export interface DiagnosisResult {
   catch: string;
   description: string;
 }
+
+export interface ApiDiagnosis {
+  zodiac: string;
+  star_type: string;
+  jumeri: string;
+}
+
+export interface DetailedDiagnosisResult extends DiagnosisResult {
+  subType: string;
+}

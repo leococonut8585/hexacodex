@@ -1,12 +1,22 @@
 import React, { useState } from "react";
 import axios from "axios";
+import { useNavigate } from "react-router-dom";
+import features from "../constants/features.json";
+import { ApiDiagnosis, Features } from "../types";
+
+/**
+ * Birthdate form that triggers backend calculation and
+ * shows the primary classification result. A button links
+ * to the subtype question flow.
+ */
 
 function Diagnose() {
   const [year, setYear] = useState("");
   const [month, setMonth] = useState("");
   const [day, setDay] = useState("");
-  const [result, setResult] = useState<any>(null);
+  const [result, setResult] = useState<ApiDiagnosis | null>(null);
   const [error, setError] = useState("");
+  const navigate = useNavigate();
 
   const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
@@ -24,25 +34,52 @@ function Diagnose() {
     }
   };
 
-  return (
-  <div>
-    <h2>診断フォーム</h2>
-    <form onSubmit={handleSubmit}>
-      <input type="number" placeholder="年" value={year} onChange={(e) => setYear(e.target.value)} required />
-      <input type="number" placeholder="月" value={month} onChange={(e) => setMonth(e.target.value)} required />
-      <input type="number" placeholder="日" value={day} onChange={(e) => setDay(e.target.value)} required />
-      <button type="submit">診断する</button>
-    </form>
+  const featureInfo = result ? (features as Features)[result.star_type] : null;
 
-    {error && <p style={{ color: "red" }}>{error}</p>}
-    {result && (
-      <div style={{ marginTop: "1rem" }}>
-        <h3>診断結果:</h3>
-        <pre>{JSON.stringify(result, null, 2)}</pre>
-      </div>
-    )}
-  </div>
-);
+  return (
+    <div>
+      <h2>診断フォーム</h2>
+      <form onSubmit={handleSubmit}>
+        <input
+          type="number"
+          placeholder="年"
+          value={year}
+          onChange={(e) => setYear(e.target.value)}
+          required
+        />
+        <input
+          type="number"
+          placeholder="月"
+          value={month}
+          onChange={(e) => setMonth(e.target.value)}
+          required
+        />
+        <input
+          type="number"
+          placeholder="日"
+          value={day}
+          onChange={(e) => setDay(e.target.value)}
+          required
+        />
+        <button type="submit">診断する</button>
+      </form>
+
+      {error && <p style={{ color: "red" }}>{error}</p>}
+      {result && featureInfo && (
+        <div style={{ marginTop: "1rem" }}>
+          <h3>{result.star_type}</h3>
+          <p>{featureInfo.catch}</p>
+          <p>{featureInfo.description}</p>
+          <button
+            onClick={() => navigate(`/questions/${result.star_type}`)}
+            style={{ marginTop: '1rem' }}
+          >
+            さらに本質を探るための質問に進む
+          </button>
+        </div>
+      )}
+    </div>
+  );
 }
 
 export default Diagnose;
