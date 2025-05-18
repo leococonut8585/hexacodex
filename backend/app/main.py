@@ -22,10 +22,10 @@ origins = [
 
 app.add_middleware(
     CORSMiddleware,
-    allow_origins=origins, # 許可するオリジンのリスト
-    allow_credentials=True, # クレデンシャル（Cookieなど）を許可するかどうか
-    allow_methods=["*"], # 全てのHTTPメソッドを許可（GET, POST, PUT, DELETEなど）
-    allow_headers=["*"], # 全てのHTTPヘッダーを許可
+    allow_origins=["*"],  # ここを "*" だけに
+    allow_credentials=True,
+    allow_methods=["*"],
+    allow_headers=["*"],
 )
 
 class Birthdate(BaseModel):
