@@ -32,6 +32,7 @@ const DetailedQuestionnaire: React.FC = () => {
   );
   const [index, setIndex] = useState(0);
   const [result, setResult] = useState<DetailedDiagnosisResult | null>(null);
+  const [error, setError] = useState('');
 
   if (!category) return <p>カテゴリが指定されていません。</p>;
 
@@ -59,20 +60,40 @@ const DetailedQuestionnaire: React.FC = () => {
     if (info) {
       // info already contains only the selected subtype data
       setResult({ category: finalKey, ...info, subType });
+      setError('');
+    } else {
+      setError('結果情報が見つかりません。');
     }
   };
 
   if (result) {
-    const videoPath = `/movie/${result.category.replace('-', '_')}.mp4`;
+    const VIDEO_MAP: Record<string, string> = {
+      'MARI_α-1': 'Mari_alpha_1.mp4',
+      'MARI_α-2': 'Mari_alpha_2.mp4',
+      'MARI_β-1': 'Mari_beta_1.mp4',
+      'MARI_β-2': 'Mari_beta_2.mp4',
+      'AKARI_α-1': 'Akari_alpha_1.mp4',
+      'AKARI_α-2': 'Akari_alpha_2.mp4',
+    };
+
+    const normalizeKey = (key: string) =>
+      key.replace(/\s+/g, '').toUpperCase();
+
+    const videoFile = VIDEO_MAP[normalizeKey(result.category)];
+    const videoPath = videoFile ? `/movie/${videoFile}` : '';
     return (
       <div data-testid="final-result" className="final-result">
-        <video
-          src={videoPath}
-          autoPlay
-          loop
-          muted
-          playsInline
-        />
+        {videoFile ? (
+          <video
+            src={videoPath}
+            autoPlay
+            loop
+            muted
+            playsInline
+          />
+        ) : (
+          <img src="/movie/default_poster.jpg" alt="no video" />
+        )}
         <div className="result-text">
           <h3>{result.category}</h3>
           <p>{result.catch}</p>
@@ -160,6 +181,7 @@ const DetailedQuestionnaire: React.FC = () => {
           </button>
         )}
       </div>
+      {error && <p className="error-text">{error}</p>}
     </div>
   );
 };
