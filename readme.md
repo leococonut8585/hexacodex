@@ -196,3 +196,22 @@ interactive.
 
 No extra dependencies are required; the effect is drawn using the HTML Canvas API.
 
+## Diagnosis Result Videos
+
+The final result page shows a looping video clip that corresponds to each
+subtype. A small utility maps the result key (e.g. `MARI_α-1`) to the exact file
+name found under `frontend/public/movie/`. Only six types are currently
+supported:
+
+| Result key | Video file |
+|-----------|----------------|
+| `MARI_α-1` | `Mari_alpha_1.mp4` |
+| `MARI_α-2` | `Mari_alpha_2.mp4` |
+| `MARI_β-1` | `Mari_beta_1.mp4` |
+| `MARI_β-2` | `Mari_beta_2.mp4` |
+| `AKARI_α-1` | `Akari_alpha_1.mp4` |
+| `AKARI_α-2` | `Akari_alpha_2.mp4` |
+
+If a mapping is missing or the file fails to load, a placeholder image
+`default_poster.jpg` is shown instead.
+
