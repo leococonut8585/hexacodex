@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import React, { useState, useEffect } from 'react';
 import { useParams } from 'react-router-dom';
 import questionsData from '../constants/questions.json';
 import { getDetailedFeature } from '../constants/officialFeatures';
@@ -36,6 +36,27 @@ const DetailedQuestionnaire: React.FC = () => {
   const [error, setError] = useState('');
   const [videoError, setVideoError] = useState(false);
 
+  const videoFile = result ? getVideoFileForCategory(result.category) : undefined;
+  const videoPath = videoFile ? `/movie/${videoFile}` : '';
+
+  useEffect(() => {
+    async function logDebug() {
+      if (!result) return;
+      console.log('診断結果キー:', result.category);
+      console.log('mapping video file:', videoFile);
+      console.log('video src path:', videoPath);
+      try {
+        const resp = await fetch(videoPath, { method: 'HEAD' });
+        console.log('video request status:', resp.status, resp.statusText);
+      } catch (e) {
+        console.log('video fetch error:', e);
+      }
+    }
+    if (result && (!videoFile || videoError)) {
+      logDebug();
+    }
+  }, [result, videoFile, videoError, videoPath]);
+
   if (!category) return <p>カテゴリが指定されていません。</p>;
 
   const handleSelect = (value: boolean) => {
@@ -69,8 +90,6 @@ const DetailedQuestionnaire: React.FC = () => {
   };
 
   if (result) {
-    const videoFile = getVideoFileForCategory(result.category);
-    const videoPath = videoFile ? `/movie/${videoFile}` : '';
     return (
       <div data-testid="final-result" className="final-result">
         {videoFile && !videoError ? (
