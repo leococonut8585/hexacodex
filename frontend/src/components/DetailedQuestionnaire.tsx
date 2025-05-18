@@ -2,6 +2,7 @@ import React, { useState } from 'react';
 import { useParams } from 'react-router-dom';
 import questionsData from '../constants/questions.json';
 import { getDetailedFeature } from '../constants/officialFeatures';
+import { getVideoFileForCategory } from '../constants/videoMap';
 import { Question, DetailedDiagnosisResult, DetailedFeatureInfo } from '../types';
 
 /**
@@ -33,6 +34,7 @@ const DetailedQuestionnaire: React.FC = () => {
   const [index, setIndex] = useState(0);
   const [result, setResult] = useState<DetailedDiagnosisResult | null>(null);
   const [error, setError] = useState('');
+  const [videoError, setVideoError] = useState(false);
 
   if (!category) return <p>カテゴリが指定されていません。</p>;
 
@@ -67,29 +69,18 @@ const DetailedQuestionnaire: React.FC = () => {
   };
 
   if (result) {
-    const VIDEO_MAP: Record<string, string> = {
-      'MARI_α-1': 'Mari_alpha_1.mp4',
-      'MARI_α-2': 'Mari_alpha_2.mp4',
-      'MARI_β-1': 'Mari_beta_1.mp4',
-      'MARI_β-2': 'Mari_beta_2.mp4',
-      'AKARI_α-1': 'Akari_alpha_1.mp4',
-      'AKARI_α-2': 'Akari_alpha_2.mp4',
-    };
-
-    const normalizeKey = (key: string) =>
-      key.replace(/\s+/g, '').toUpperCase();
-
-    const videoFile = VIDEO_MAP[normalizeKey(result.category)];
+    const videoFile = getVideoFileForCategory(result.category);
     const videoPath = videoFile ? `/movie/${videoFile}` : '';
     return (
       <div data-testid="final-result" className="final-result">
-        {videoFile ? (
+        {videoFile && !videoError ? (
           <video
             src={videoPath}
             autoPlay
             loop
             muted
             playsInline
+            onError={() => setVideoError(true)}
           />
         ) : (
           <img src="/movie/default_poster.jpg" alt="no video" />
