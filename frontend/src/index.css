@@ -12,6 +12,17 @@ body {
   text-shadow: 0 0 8px #000, 0 0 2px #0f0;
 }
 
+.home-page {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 60vh;
+}
+
+.app-title {
+  font-size: 3rem;
+}
+
 a {
   color: #0f0;
 }
@@ -92,9 +103,13 @@ label {
 }
 
 .question-text {
-  font-size: 1.5rem;
+  font-size: 1.3rem;
   font-weight: bold;
   text-align: center;
+  max-width: 600px;
+  margin: 0.5rem auto;
+  line-height: 1.4;
+  white-space: pre-wrap;
 }
 
 .result-section {
@@ -109,7 +124,12 @@ label {
   margin-top: 1rem;
 }
 
-.nav-buttons { display: flex; justify-content: center; gap: 1rem; margin-top: 1rem; }
+.nav-buttons {
+  display: flex;
+  justify-content: center;
+  gap: 1rem;
+  margin: 1.5rem 0;
+}
 
 .question-block { margin-bottom: 1rem; text-align: center; }
 .global-nav ul { list-style: none; padding: 0; display: flex; justify-content: center; gap: 1rem; margin-bottom: 2rem; }
@@ -127,16 +147,22 @@ label {
   border-radius: 12px;
   box-shadow: 0 0 20px rgba(0, 0, 0, 0.5);
 }
-.final-result .video-caption {
-  margin-bottom: 1.5rem;
-  font-size: 0.9rem;
-  color: #ccc;
+.final-result ul {
+  list-style: none;
+  padding: 0;
+  margin: 0.5rem 0;
+}
+.final-result li {
+  text-align: center;
 }
 .final-result .result-text {
   max-width: 800px;
   margin: 0 auto;
   padding: 0 1rem;
   text-shadow: 0 0 5px #000;
+}
+.final-result .result-text > * {
+  margin-bottom: 1rem;
 }
 .final-result .result-text p,
 .final-result .result-text li {
