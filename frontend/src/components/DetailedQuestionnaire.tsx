@@ -92,6 +92,10 @@ const DetailedQuestionnaire: React.FC = () => {
   if (result) {
     return (
       <div data-testid="final-result" className="final-result">
+        <div className="result-text">
+          <h3 className="type-name">{result.category}</h3>
+          <p className="catch-copy">{result.catch}</p>
+        </div>
         {videoFile && !videoError ? (
           <video
             src={videoPath}
@@ -105,10 +109,8 @@ const DetailedQuestionnaire: React.FC = () => {
           <img src="/movie/default_poster.jpg" alt="no video" />
         )}
         <div className="result-text">
-          <h3>{result.category}</h3>
-          <p>{result.catch}</p>
           {result.acronyms && (
-            <ul>
+            <ul className="acronym-list">
               {result.acronyms.map((a, idx) => (
                 <li key={idx}>
                   {a.letter}: {a.meaning_en}
