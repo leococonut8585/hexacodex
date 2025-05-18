@@ -3,6 +3,16 @@ import questionsData from '../constants/questions.json';
 import { getInitialFeature } from '../constants/officialFeatures';
 import { CategoryQuestions, AnswerState, DiagnosisResult, FeatureInfo } from '../types';
 
+function formatQuestion(text: string) {
+  const parts = text.split(/(?<=[。?!?])/);
+  return parts.map((line, idx) => (
+    <React.Fragment key={idx}>
+      {line.trim()}
+      {idx < parts.length - 1 && <br />}
+    </React.Fragment>
+  ));
+}
+
 const Questionnaire: React.FC = () => {
   const data: CategoryQuestions = questionsData as CategoryQuestions;
   const categories = Object.keys(data);
@@ -100,7 +110,7 @@ const Questionnaire: React.FC = () => {
           className="question-block"
         >
             <p className="question-text">
-              {currentQuestion.question}
+              {formatQuestion(currentQuestion.question)}
             </p>
             <div className="radio-group">
               <label>

@@ -12,6 +12,16 @@ import { Question, DetailedDiagnosisResult, DetailedFeatureInfo } from '../types
 
 const THRESHOLD = 11; // simple yes count threshold
 
+function formatQuestion(text: string) {
+  const parts = text.split(/(?<=[。?!?])/);
+  return parts.map((line, idx) => (
+    <React.Fragment key={idx}>
+      {line.trim()}
+      {idx < parts.length - 1 && <br />}
+    </React.Fragment>
+  ));
+}
+
 const DetailedQuestionnaire: React.FC = () => {
   const { category } = useParams<{ category: string }>();
   const questions: Question[] =
@@ -63,9 +73,6 @@ const DetailedQuestionnaire: React.FC = () => {
           muted
           playsInline
         />
-        <p className="video-caption">
-          このイラストは{result.category}型を象徴します
-        </p>
         <div className="result-text">
           <h3>{result.category}</h3>
           <p>{result.catch}</p>
@@ -108,7 +115,7 @@ const DetailedQuestionnaire: React.FC = () => {
   return (
     <div>
       <div className="question-block">
-        <p className="question-text">{q.question}</p>
+        <p className="question-text">{formatQuestion(q.question)}</p>
         <div className="radio-group">
           <label>
             <input

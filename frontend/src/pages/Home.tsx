@@ -4,9 +4,8 @@ import React from "react";
 
 function Home() {
   return (
-    <div>
-      <h1>Hexa Codex Home</h1>
-      <p>Welcome to the Hexa Codex app!</p>
+    <div className="home-page">
+      <h1 className="app-title">Hexa Codex</h1>
     </div>
   );
 }
