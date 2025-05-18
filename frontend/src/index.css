@@ -139,7 +139,8 @@ label {
 .final-result {
   text-align: center;
 }
-.final-result video {
+.final-result video,
+.final-result img {
   width: 100%;
   max-width: 600px;
   margin: 0 auto 2rem;
@@ -178,7 +179,8 @@ label {
   margin-top: 1.2rem;
 }
 @media (max-width: 600px) {
-  .final-result video {
+  .final-result video,
+  .final-result img {
     max-width: 100%;
   }
   .final-result .result-text p,
