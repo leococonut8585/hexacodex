@@ -143,7 +143,7 @@ label {
 .final-result img {
   width: 100%;
   max-width: 600px;
-  margin: 0 auto 2rem;
+  margin: 2rem auto;
   display: block;
   border-radius: 12px;
   box-shadow: 0 0 20px rgba(0, 0, 0, 0.5);
@@ -173,6 +173,12 @@ label {
 .final-result .result-text h3 {
   font-size: 2rem;
   margin-bottom: 1rem;
+}
+.final-result .type-name {
+  font-size: 2.4rem;
+}
+.final-result .catch-copy {
+  margin-bottom: 2rem;
 }
 .final-result .result-text h4 {
   font-size: 1.4rem;

@@ -67,6 +67,44 @@ if (info) {
 - 最終結果ページでは `getDetailedFeature()` から得たサブタイプ情報のみを描画し、他のサブタイプの説明が混在しないようロジックを整理しました。
 - テストでは結果表示内の `subTitle` が1つだけ存在するか確認し、重複表示がないことを検証しています。
 
+### 診断最終結果ページのレイアウト
+
+最終結果画面では以下の順序で要素を中央寄せに配置します。
+
+```jsx
+<div className="final-result">
+  <div className="result-text">
+    <h3 className="type-name">{result.category}</h3>
+    <p className="catch-copy">{result.catch}</p>
+  </div>
+  <video className="result-video" src="/movie/TYPE.mp4" autoPlay loop muted playsInline />
+  <div className="result-text">
+    <ul className="acronym-list">{/* ... */}</ul>
+    <p>{result.baseDescription}</p>
+  </div>
+</div>
+```
+
+CSS例:
+
+```css
+.final-result {
+  text-align: center;
+}
+.final-result video {
+  margin: 2rem auto;
+}
+.final-result .type-name {
+  font-size: 2.4rem;
+}
+.final-result .catch-copy {
+  margin-bottom: 2rem;
+}
+```
+
+動画を独立したブロックとして中央に配置し、上部に分類名とキャッチコピー、
+下部にアクロニムや説明文を置くことで読みやすさを高めています。
+
 
 ## ⚙️ 技術スタック
 
