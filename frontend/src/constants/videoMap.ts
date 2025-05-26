@@ -8,14 +8,14 @@ export const VIDEO_MAP: Record<string, string> = {
   'AKARI_SENRI_BETA_1': 'Akari_Senri_beta_1.mp4',
   'AKARI_SENRI_BETA_2': 'Akari_Senri_beta_2.mp4',
   'KAIRI_ALPHA_1': 'Kairi_alpha_1.mp4',
-  'KAIRI_ALPHA_2': 'Kairi_alpha_2.mp4',
+  'KAIRI_ALPHA_2': 'Kaiiri_alpha_2.mp4',
   'KAIRI_BETA_1': 'Kairi_beta_1.mp4',
   'KAIRI_BETA_2': 'Kairi_beta_2.mp4',
   'KAIRI_NOAH_ALPHA_1': 'Kairi_Noah_alpha_1.mp4',
   'KAIRI_NOAH_ALPHA_2': 'Kairi_Noah_alpha_2.mp4',
   'KAIRI_NOAH_BETA_1': 'Kairi_Noah_beta_1.mp4',
   'KAIRI_NOAH_BETA_2': 'Kairi_Noah_beta_2.mp4',
-  'KINAIRYU_ALPHA_1': 'Kinryu_alpha_1.mp4',
+  'KINRYU_ALPHA_1': 'Kinryu_alpha_1.mp4',
   'KINRYU_ALPHA_2': 'Kinryu_alpha_2.mp4',
   'KINRYU_BETA_1': 'Kinryu_beta_1.mp4',
   'KINRYU_BETA_2': 'Kinryu_beta_2.mp4',
@@ -46,7 +46,7 @@ export const VIDEO_MAP: Record<string, string> = {
   'SENRI_ALPHA_1': 'Senri_alpha_1.mp4',
   'SENRI_ALPHA_2': 'Senri_alpha_2.mp4',
   'SENRI_BETA_1': 'Senri_beta_1.mp4',
-  'SENRI_BETA_2': 'Senri_beta_2.mp4',
+  'SENRI_BETA_2': 'Senri_beta2.mp4',
 };
 
 export function getVideoFileForCategory(category: string): string | undefined {
