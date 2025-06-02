@@ -1,7 +1,8 @@
-import React, { useState } from 'react';
+import React, { useState, useEffect } from 'react'; // useEffect を追加
+import { useParams, useNavigate } from 'react-router-dom'; // useParams, useNavigate を追加
 import questionsData from '../constants/questions.json';
-import { getInitialFeature } from '../constants/officialFeatures';
-import { CategoryQuestions, AnswerState, DiagnosisResult, FeatureInfo } from '../types';
+// import { getInitialFeature } from '../constants/officialFeatures'; // 不要になる可能性
+import { CategoryQuestions, AnswerState, Question } from '../types'; // Question 型をインポート, DiagnosisResult, FeatureInfo削除
 
 function formatQuestion(text: string) {
   const parts = text.split(/(?<=[。?!?])/);
@@ -14,165 +15,159 @@ function formatQuestion(text: string) {
 }
 
 const Questionnaire: React.FC = () => {
-  const data: CategoryQuestions = questionsData as CategoryQuestions;
-  const categories = Object.keys(data);
+  const { initial_type } = useParams<{ initial_type: string }>();
+  const navigate = useNavigate();
 
-  // フラットな質問配列（カテゴリー情報を保持）
-  const allQuestions = categories.flatMap((cat) =>
-    data[cat].map((q) => ({ ...q, category: cat }))
-  );
+  const data: CategoryQuestions = questionsData as CategoryQuestions;
+
+  const [currentQuestions, setCurrentQuestions] = useState<Question[]>([]);
+  const [currentCategory, setCurrentCategory] = useState<string>("");
+
+  useEffect(() => {
+    if (initial_type && data[initial_type]) {
+      // `category`プロパティを各質問オブジェクトに追加
+      setCurrentQuestions(data[initial_type].map(q => ({ ...q, category: initial_type })));
+      setCurrentCategory(initial_type);
+    } else {
+      setCurrentQuestions([]);
+      setCurrentCategory("");
+      // Consider navigating to an error page or showing a more specific error
+    }
+  }, [initial_type, data]);
 
   const [answers, setAnswers] = useState<AnswerState>(() => {
     const state: AnswerState = {};
-    categories.forEach((cat) => {
+    // Initialize for all possible categories in questions.json, or just for currentCategory if preferred
+    Object.keys(data).forEach((cat) => {
       state[cat] = {};
     });
     return state;
   });
+
   const [index, setIndex] = useState(0);
-  const [result, setResult] = useState<DiagnosisResult | null>(null);
+  // const [result, setResult] = useState<DiagnosisResult | null>(null); // Removed
 
   const handleAnswer = (
-    category: string,
+    // category: string, // No longer needed as direct param, use currentCategory
     qid: number,
     value: boolean
   ) => {
+    if (!currentCategory) return;
     setAnswers((prev) => ({
       ...prev,
-      [category]: { ...prev[category], [qid]: value },
+      [currentCategory]: { ...prev[currentCategory], [qid]: value },
     }));
   };
 
-  const currentQuestion = allQuestions[index];
+  const currentQuestion = currentQuestions[index];
 
-  const canSubmit = allQuestions.every(
-    (q) => answers[q.category][q.id] !== undefined
+  const canSubmit = currentCategory && currentQuestions.length > 0 && currentQuestions.every(
+    (q) => answers[currentCategory] && answers[currentCategory][q.id] !== undefined
   );
 
   const handleSubmit = () => {
-    if (!canSubmit) return;
-    const scores: Record<string, number> = {};
-    categories.forEach((cat) => {
-      const ans = answers[cat];
-      scores[cat] = Object.values(ans).filter((v) => v).length;
-    });
-    const best = categories.reduce((a, b) => (scores[a] >= scores[b] ? a : b));
-    const info: FeatureInfo | null = getInitialFeature(best);
-    if (info) {
-      setResult({
-        category: best,
-        catch: info.catch,
-        description: info.description,
-        acronyms: info.acronyms,
-        componentAcronyms: info.componentAcronyms,
-      });
-    }
+    if (!canSubmit || !initial_type || !currentCategory) return;
+
+    const categoryAnswers = answers[currentCategory];
+    const yesCount = Object.values(categoryAnswers).filter((v) => v).length;
+
+    const subType = yesCount >= Math.ceil(currentQuestions.length / 2) ? '1' : '2';
+    const finalKey = `${initial_type}-${subType}`;
+
+    navigate(`/personality/${finalKey}`);
   };
+
+  if (!initial_type || !data[initial_type]) {
+    return <div>指定されたタイプの質問が見つかりません。診断をやり直してください。</div>;
+  }
+
+  if (currentQuestions.length === 0 && initial_type && data[initial_type]) {
+    // This case means useEffect has run, but somehow questions are still empty.
+    // Could be a brief moment before state update, or an actual issue.
+    // For now, a simple loading or rely on the above error.
+    return <div>質問を読み込んでいます...</div>;
+  }
+
+  if (!currentQuestion) {
+     // This might happen if currentQuestions is empty and index is 0
+     if (currentQuestions.length === 0) {
+        return <div>このタイプには利用可能な質問がありません。</div>
+     }
+     return <div>質問の読み込みエラー。</div>;
+  }
 
   return (
     <div>
-      <h2>性格診断</h2>
-      {result ? (
-        <div data-testid="result">
-          <h3>{result.category}</h3>
-          {result.acronyms && (
-            <ul>
-              {result.acronyms.map((a, idx) => (
-                <li key={idx}>
-                  {a.letter}: {a.meaning_en}
-                </li>
-              ))}
-            </ul>
-          )}
-          {result.componentAcronyms && (
-            <div>
-              {result.componentAcronyms.map((c, idx) => (
-                <div key={idx}>
-                  <h4>{c.baseTypeNameJp}</h4>
-                  <ul>
-                    {c.keywords.map((k, i) => (
-                      <li key={i}>
-                        {k.letter}: {k.meaning_en}
-                      </li>
-                    ))}
-                  </ul>
-                </div>
-              ))}
-            </div>
-          )}
-          <p>{result.catch}</p>
-          <p>{result.description}</p>
-        </div>
-      ) : (
-        <div>
+      <h2>{initial_type} タイプ診断</h2>
+      {/* Result display removed */}
+      <div>
         <div
-          key={`${currentQuestion.category}-${currentQuestion.id}`}
+          key={`${currentCategory}-${currentQuestion.id}`}
           className="question-block"
         >
-            <p className="question-text">
-              {formatQuestion(currentQuestion.question)}
-            </p>
-            <div className="radio-group">
-              <label>
-                <input
-                  type="radio"
-                  name={`${currentQuestion.category}-${currentQuestion.id}`}
-                  onChange={() =>
-                    handleAnswer(currentQuestion.category, currentQuestion.id, true)
-                  }
-                  checked={
-                    answers[currentQuestion.category][currentQuestion.id] === true
-                  }
-                />{' '}
-                {currentQuestion.optionYes}
-              </label>
-              <label>
-                <input
-                  type="radio"
-                  name={`${currentQuestion.category}-${currentQuestion.id}`}
-                  onChange={() =>
-                    handleAnswer(currentQuestion.category, currentQuestion.id, false)
-                  }
-                  checked={
-                    answers[currentQuestion.category][currentQuestion.id] === false
-                  }
-                />{' '}
-                {currentQuestion.optionNo}
-              </label>
-            </div>
+          <p className="question-text">
+            {formatQuestion(currentQuestion.question)}
+          </p>
+          <div className="radio-group">
+            <label>
+              <input
+                type="radio"
+                name={`${currentCategory}-${currentQuestion.id}`}
+                onChange={() =>
+                  handleAnswer(currentQuestion.id, true)
+                }
+                checked={
+                  answers[currentCategory] && answers[currentCategory][currentQuestion.id] === true
+                }
+              />{' '}
+              {currentQuestion.optionYes}
+            </label>
+            <label>
+              <input
+                type="radio"
+                name={`${currentCategory}-${currentQuestion.id}`}
+                onChange={() =>
+                  handleAnswer(currentQuestion.id, false)
+                }
+                checked={
+                  answers[currentCategory] && answers[currentCategory][currentQuestion.id] === false
+                }
+              />{' '}
+              {currentQuestion.optionNo}
+            </label>
           </div>
-          <div className="nav-buttons">
-            <button onClick={() => setIndex((i) => Math.max(i - 1, 0))} disabled={index === 0}>
-              Back
+        </div>
+        <div className="nav-buttons">
+          <button onClick={() => setIndex((i) => Math.max(i - 1, 0))} disabled={index === 0}>
+            戻る
+          </button>
+          {index < currentQuestions.length - 1 && (
+            <button
+              onClick={() =>
+                setIndex((i) => Math.min(i + 1, currentQuestions.length - 1))
+              }
+              disabled={
+                !(answers[currentCategory] && answers[currentCategory][currentQuestion.id] !== undefined)
+              }
+              data-testid="next"
+            >
+              次へ
             </button>
-            {index < allQuestions.length - 1 && (
-              <button
-                onClick={() =>
-                  setIndex((i) => Math.min(i + 1, allQuestions.length - 1))
-                }
-                disabled={
-                  answers[currentQuestion.category][currentQuestion.id] === undefined
-                }
-                data-testid="next"
-              >
-                Next
-              </button>
-            )}
-            {index === allQuestions.length - 1 && (
-              <button
-                onClick={handleSubmit}
-                disabled={!canSubmit || answers[currentQuestion.category][currentQuestion.id] === undefined}
-                data-testid="submit"
-              >
-                結果を見る
-              </button>
-            )}
-          </div>
-          {!canSubmit && index === allQuestions.length - 1 && (
-            <p className="error-text">未回答の質問があります。</p>
+          )}
+          {index === currentQuestions.length - 1 && (
+            <button
+              onClick={handleSubmit}
+              disabled={!canSubmit} // canSubmit already checks the current question's answer
+              data-testid="submit"
+            >
+              結果を見る
+            </button>
           )}
         </div>
-      )}
+        {!canSubmit && index === currentQuestions.length - 1 && (
+          <p className="error-text">すべての質問に回答してください。</p>
+        )}
+      </div>
     </div>
   );
 };

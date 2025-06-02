@@ -31,19 +31,23 @@ function Diagnose() {
       // setResult(res.data); // No longer needed to display result on this page
 
       const diagnosisResult: ApiDiagnosis = res.data;
-      const featureKey = diagnosisResult.jumeri || diagnosisResult.star_type;
+      // initial_type を決定するロジック。
+      // APIレスポンスのどのフィールドに該当情報があるかによって調整が必要。
+      // ここでは star_type を優先し、なければ jumeri を使うと仮定。
+      const initial_type = diagnosisResult.star_type || diagnosisResult.jumeri;
 
-      if (featureKey) {
-        navigate(`/questions/${featureKey}`);
+      if (initial_type) {
+        // 遷移先を /questionnaire/:initial_type に変更
+        navigate(`/questionnaire/${initial_type}`);
       } else {
-        setError("診断結果から特徴キーを取得できませんでした。");
+        setError("診断結果から初期タイプキーを取得できませんでした。");
       }
     } catch (err: any) {
       setError("診断に失敗しました。サーバーが起動しているか確認してください。");
     }
   };
 
-  // featureKey and featureInfo are no longer needed here as results are not displayed on this page.
+  // initial_type and featureInfo are no longer needed here as results are not displayed on this page.
 
   return (
     <div>
