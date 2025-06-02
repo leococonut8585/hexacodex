@@ -4,32 +4,32 @@
       "jumeri_type_name_jp": "SENRI × AKARI (センリ × アカリ)",
       "original_title_jp": "知略と閃光の二重奏、予測不可能な変革のアルカナ",
       "jumeri_type_composition_jp": "SENRIの「直感と行動」をベースに、AKARIの「行動なき頭脳と感性」が融合。行動派に芸術的なひらめきと知的な深みが加わります。",
-      "new_catchphrase_jp": "行動する閃きの竜巻、予測不能なアイデアを現実に叩きつける実践アーティスト",
+      "new_catchphrase_jp": "知略と閃光の二重奏",
       "component_acronyms": [
         {
           "base_type_name_jp": "SENRI (センリ) の特徴に基づくアクロニム",
           "acronym_source_name_en": "SENRI",
           "keywords": [
-            { "letter": "S", "meaning_en": "Speed-Demon" },
-            { "letter": "E", "meaning_en": "Energetic-Force" },
-            { "letter": "N", "meaning_en": "No-Nonsense-Action" },
-            { "letter": "R", "meaning_en": "Risk-Taker" },
-            { "letter": "I", "meaning_en": "Instinct-Driven" }
+            { "letter": "S", "meaning_en": "Strategic（戦略的）" },
+            { "letter": "E", "meaning_en": "Entrepreneurial（起業家精神）" },
+            { "letter": "N", "meaning_en": "Nonconformist（非同調性）" },
+            { "letter": "R", "meaning_en": "Resourceful（機知に富む）" },
+            { "letter": "I", "meaning_en": "Innovative（革新的）" }
           ]
         },
         {
           "base_type_name_jp": "AKARI (アカリ) の特徴に基づくアクロニム",
           "acronym_source_name_en": "AKARI",
           "keywords": [
-            { "letter": "A", "meaning_en": "Artistic-Mind" },
-            { "letter": "K", "meaning_en": "Keen-Insight" },
-            { "letter": "A", "meaning_en": "Abstract-Thinker" },
-            { "letter": "R", "meaning_en": "Romantic-Visionary" },
-            { "letter": "I", "meaning_en": "Intuitive-Dreamer" }
+            { "letter": "A", "meaning_en": "Artistic（芸術的）" },
+            { "letter": "K", "meaning_en": "Keen（鋭敏）" },
+            { "letter": "A", "meaning_en": "Authentic（真摯）" },
+            { "letter": "R", "meaning_en": "Romantic（ロマンチック）" },
+            { "letter": "I", "meaning_en": "Intuitive（直感的）" }
           ]
         }
       ],
-      "new_description_jp": "SENRIの「考えるより先に体が動く」行動力と直感に、AKARIの「豊かな感性と芸術的アイデア（ただし行動は苦手）」が加わったタイプ。普段は行動的ですが、時にAKARI由来の芸術的なひらめきや知的な視点がその行動を予測不能でユニークなものへと変貌させます。論理よりも、行動と直感的なアートセンスが火花を散らし、時に計画性のないまま突き進むことも。",
+      "new_description_jp": "このコードタイプは「統合的創造性」の最も高度な形態を体現している。彼らの中では、通常は相反するとされる「合理的思考」と「直感的洞察」が、相互に補完し合いながら統合されている。これは心理学者カール・ユングが提唱した「対立物の統合」の理想的な実現例として理解できる。",
       "alpha_variant": {
         "original_title_jp": "戦略を纏い、閃光を放つ、孤高のカリスマティック・イノベーター",
         "new_title_jp": "直感アクション・アーティスト ～閃きを即実行する野生のカリスマ～",
@@ -69,32 +69,32 @@
       "jumeri_type_name_jp": "AKARI × SENRI (アカリ × センリ)",
       "original_title_jp": "情熱の奔流に秘められし知略、閃きを現実に刻むアーティスト・ストラテジスト",
       "jumeri_type_composition_jp": "AKARIの「行動なき頭脳と感性」をベースに、SENRIの「直感と行動」が融合。アイデアが行動力を得て、現実化する。",
-      "new_catchphrase_jp": "アイデアを現実に撃ち込む感性の狙撃手、情熱を知恵と行動力で形にするアーティスト",
+      "new_catchphrase_jp": "情熱の奔流に秘められし知略",
       "component_acronyms": [
         {
           "base_type_name_jp": "AKARI (アカリ) の特徴に基づくアクロニム",
           "acronym_source_name_en": "AKARI",
           "keywords": [
-            { "letter": "A", "meaning_en": "Artistic-Mind" },
-            { "letter": "K", "meaning_en": "Keen-Insight" },
-            { "letter": "A", "meaning_en": "Abstract-Thinker" },
-            { "letter": "R", "meaning_en": "Romantic-Visionary" },
-            { "letter": "I", "meaning_en": "Intuitive-Dreamer" }
+            { "letter": "A", "meaning_en": "Artistic（芸術的）" },
+            { "letter": "K", "meaning_en": "Keen（鋭敏）" },
+            { "letter": "A", "meaning_en": "Authentic（真摯）" },
+            { "letter": "R", "meaning_en": "Romantic（ロマンチック）" },
+            { "letter": "I", "meaning_en": "Intuitive（直感的）" }
           ]
         },
         {
           "base_type_name_jp": "SENRI (センリ) の特徴に基づくアクロニム",
           "acronym_source_name_en": "SENRI",
           "keywords": [
-            { "letter": "S", "meaning_en": "Speed-Demon" },
-            { "letter": "E", "meaning_en": "Energetic-Force" },
-            { "letter": "N", "meaning_en": "No-Nonsense-Action" },
-            { "letter": "R", "meaning_en": "Risk-Taker" },
-            { "letter": "I", "meaning_en": "Instinct-Driven" }
+            { "letter": "S", "meaning_en": "Strategic（戦略的）" },
+            { "letter": "E", "meaning_en": "Entrepreneurial（起業家精神）" },
+            { "letter": "N", "meaning_en": "Nonconformist（非同調性）" },
+            { "letter": "R", "meaning_en": "Resourceful（機知に富む）" },
+            { "letter": "I", "meaning_en": "Innovative（革新的）" }
           ]
         }
       ],
-      "new_description_jp": "AKARIの「豊かな感性と芸術的アイデア、深い思考力（ただし行動は苦手）」がメインとなり、そこにSENRIの「考えるより先に体が動く」行動力がプラス。情熱的な芸術衝動や知的な閃きを、SENRI由来の衝動的かつ効果的な行動力で現実世界で形にする力を持ちます。",
+      "new_description_jp": "このコードタイプは「情熱的合理主義」とでも名付けるべき認知様式を発達させている。彼らは直感的な閃きや感情的な衝動を起点としながらも、それを現実世界で効果的に実現するための戦略的思考を無意識のうちに展開する。これは感性と理性の統合の特殊な形態であり、創造性研究において「感情知性」と「戦略的知性」の理想的な融合例として位置づけることができる。",
       "alpha_variant": {
         "original_title_jp": "閃光のストラテジスト：情熱を武器に、世界を鮮烈にデザインする挑戦者",
         "new_title_jp": "情熱実行のアイデア・ダイナモ ～閃きを行動に変える感性の司令塔～",
@@ -134,32 +134,32 @@
       "jumeri_type_name_jp": "MARI × KINRYU (マリ × キンリュウ)",
       "original_title_jp": "堅実な大地に咲く陽光の花、信頼と革新が織りなす温かな魅力",
       "jumeri_type_composition_jp": "MARIの「身内への愛と堅実さ（時に陰湿で厳しい）」ベースに、KINRYUの「明るく繊細、自己認知弱め」な魅力が加わる。",
-      "new_catchphrase_jp": "愛深き堅守のアーティスト、意外な輝きと脆さを秘めた不屈のサポーター",
+      "new_catchphrase_jp": "堅実な大地に咲く陽光の花",
       "component_acronyms": [
         {
           "base_type_name_jp": "MARI (マリ) の特徴に基づくアクロニム",
           "acronym_source_name_en": "MARI",
           "keywords": [
-            { "letter": "M", "meaning_en": "My-People-Only" },
-            { "letter": "A", "meaning_en": "Ardent-Loyalty" },
-            { "letter": "R", "meaning_en": "Relentless-Protector" },
-            { "letter": "I", "meaning_en": "Intense-Shadow" }
+            { "letter": "M", "meaning_en": "Meticulous（几帳面）" },
+            { "letter": "A", "meaning_en": "Altruistic（利他主義）" },
+            { "letter": "R", "meaning_en": "Reliable（信頼性）" },
+            { "letter": "I", "meaning_en": "Integrity（誠実さ）" }
           ]
         },
         {
           "base_type_name_jp": "KINRYU (キンリュウ) の特徴に基づくアクロニム",
           "acronym_source_name_en": "KINRYU",
           "keywords": [
-            { "letter": "K", "meaning_en": "Kindred-Spirit (but flighty)" },
-            { "letter": "I", "meaning_en": "Imaginative-Child" },
-            { "letter": "N", "meaning_en": "Novelty-Hunter" },
-            { "letter": "R", "meaning_en": "Radiant-Fragility" },
-            { "letter": "Y", "meaning_en": "Youthful-Unawareness" },
-            { "letter": "U", "meaning_en": "Unconventional-Heart" }
+            { "letter": "K", "meaning_en": "Kindred（親しみやすさ）" },
+            { "letter": "I", "meaning_en": "Imaginative（想像力豊か）" },
+            { "letter": "N", "meaning_en": "Novel（新奇）" },
+            { "letter": "R", "meaning_en": "Radiant（輝き）" },
+            { "letter": "Y", "meaning_en": "Youthful（若々しさ）" },
+            { "letter": "U", "meaning_en": "Unconventional（型破り）" }
           ]
         }
       ],
-      "new_description_jp": "MARIの「真面目で堅実、身内への愛は鉄壁（時に他者に厳しく、陰のある執念深さも）」というベースに、KINRYUの「自由で華やか、しかし繊細で自己認知が弱い」魅力がプラスされます。基本は堅実で愛情深いが、KINRYUの要素が意外な明るさや型破りな一面、そして脆さをもたらし、予測不能な魅力を持つバランスの妙が光るタイプです。",
+      "new_description_jp": "このコードタイプは「統合的魅力構造」の理想的な体現者として位置づけることができる。彼らは一見相反する特質である「保守性」と「革新性」、「堅実さ」と「自由さ」を、内的な矛盾として抱えるのではなく、相互補完的な強みとして統合している。これは心理学者カール・ユングが提唱した「対立物の統合」が、最も調和的で機能的な形で実現された例である。",
       "alpha_variant": {
         "original_title_jp": "陽光をまとう堅実なリーダー：信頼と笑顔で、未来を育むコミュニティビルダー",
         "new_title_jp": "鉄壁スマイルの社交的ガーディアン ～愛と意外性、そして厳格さで未来を育む太陽～",
@@ -199,32 +199,32 @@
       "jumeri_type_name_jp": "KINRYU × MARI (キンリュウ × マリ)",
       "original_title_jp": "自由な輝きに宿る誠実の核、華やかな冒険に信頼を灯す人",
       "jumeri_type_composition_jp": "KINRYUの「明るく繊細、自己認知弱め」ベースに、MARIの「身内への愛と堅実さ（時に陰湿で厳しい）」が加わる。",
-      "new_catchphrase_jp": "きらめく冒険家の意外な誠実さと執念、脆さを隠した献身の輝き",
+      "new_catchphrase_jp": "自由な輝きに宿る誠実の核",
       "component_acronyms": [
         {
           "base_type_name_jp": "KINRYU (キンリュウ) の特徴に基づくアクロニム",
           "acronym_source_name_en": "KINRYU",
           "keywords": [
-            { "letter": "K", "meaning_en": "Kindred-Spirit (but flighty)" },
-            { "letter": "I", "meaning_en": "Imaginative-Child" },
-            { "letter": "N", "meaning_en": "Novelty-Hunter" },
-            { "letter": "R", "meaning_en": "Radiant-Fragility" },
-            { "letter": "Y", "meaning_en": "Youthful-Unawareness" },
-            { "letter": "U", "meaning_en": "Unconventional-Heart" }
+            { "letter": "K", "meaning_en": "Kindred（親しみやすさ）" },
+            { "letter": "I", "meaning_en": "Imaginative（想像力豊か）" },
+            { "letter": "N", "meaning_en": "Novel（新奇）" },
+            { "letter": "R", "meaning_en": "Radiant（輝き）" },
+            { "letter": "Y", "meaning_en": "Youthful（若々しさ）" },
+            { "letter": "U", "meaning_en": "Unconventional（型破り）" }
           ]
         },
         {
           "base_type_name_jp": "MARI (マリ) の特徴に基づくアクロニム",
           "acronym_source_name_en": "MARI",
           "keywords": [
-            { "letter": "M", "meaning_en": "My-People-Only" },
-            { "letter": "A", "meaning_en": "Ardent-Loyalty" },
-            { "letter": "R", "meaning_en": "Relentless-Protector" },
-            { "letter": "I", "meaning_en": "Intense-Shadow" }
+            { "letter": "M", "meaning_en": "Meticulous（几帳面）" },
+            { "letter": "A", "meaning_en": "Altruistic（利他主義）" },
+            { "letter": "R", "meaning_en": "Reliable（信頼性）" },
+            { "letter": "I", "meaning_en": "Integrity（誠実さ）" }
           ]
         }
       ],
-      "new_description_jp": "KINRYUの「自由で新しいもの好き、明るいが繊細で自己認知が弱い」冒険家の部分がメイン。そこにMARIの「真面目で堅実、身内への愛は鉄壁（時に他者に厳しく、陰のある執念深さも）」心が加わり、華やかな魅力と意外なほどの信頼感、そして執着心にも似た強さを兼ね備えます。ただし、ベースの脆さと自己理解の浅さは残ります。",
+      "new_description_jp": "このコードタイプは「魅力主導型の信頼構築システム」の最も洗練された形態として位置づけることができる。彼らは自分の魅力や創造性を最大限に活用しながらも、それを確実で持続可能な形で社会に提供するための内的システムを発達させている。これは心理学者エリック・エリクソンが提唱した「親密性」と「生殖性」の発達課題を、創造的で魅力的な方法で統合した理想的な人格発達の例である。",
       "alpha_variant": {
         "original_title_jp": "太陽の実行者：自由な輝きと確かな誠実さで、人々を巻き込み未来を照らすリーダー",
         "new_title_jp": "シャイニング・コマンダー ～危うい輝きと鉄壁の愛、そして執念で未来を照らす～",
@@ -264,31 +264,31 @@
       "jumeri_type_name_jp": "NOAH × KAIRI (ノア × カイリ)",
       "original_title_jp": "慈愛の賢者、温かな理想を現実に紡ぐ、調和と知性の探求者",
       "jumeri_type_composition_jp": "NOAHの「愛と努力、ただしマイ・ルールで支配的」ベースに、KAIRIの「天才気質で見栄っ張り」な知性が加わる。「愛情にあふれた人が才能に目覚め、その才能を誇示しつつ愛のルールで導く」イメージ。",
-      "new_catchphrase_jp": "愛とルールの天才指揮官、華麗なる知性で理想郷を築く愛のカリスマ",
+      "new_catchphrase_jp": "慈愛の賢者",
       "component_acronyms": [
         {
           "base_type_name_jp": "NOAH (ノア) の特徴に基づくアクロニム",
           "acronym_source_name_en": "NOAH",
           "keywords": [
-            { "letter": "N", "meaning_en": "Nurturing-Dominance" },
-            { "letter": "O", "meaning_en": "Order-Driven" },
-            { "letter": "A", "meaning_en": "Affectionate-Effort" },
-            { "letter": "H", "meaning_en": "Heartfelt-Rules" }
+            { "letter": "N", "meaning_en": "Nurturing（育成力）" },
+            { "letter": "O", "meaning_en": "Optimistic（楽観的）" },
+            { "letter": "A", "meaning_en": "Adaptable（適応力）" },
+            { "letter": "H", "meaning_en": "Honest（誠実）" }
           ]
         },
         {
           "base_type_name_jp": "KAIRI (カイリ) の特徴に基づくアクロニム",
           "acronym_source_name_en": "KAIRI",
           "keywords": [
-            { "letter": "K", "meaning_en": "Keen-Intellect" },
-            { "letter": "A", "meaning_en": "Ambitious-Showman" },
-            { "letter": "I", "meaning_en": "Ideal-Seeker" },
-            { "letter": "R", "meaning_en": "Radiant-Genius" },
-            { "letter": "I", "meaning_en": "Impressive-Mind" }
+            { "letter": "K", "meaning_en": "Knowledgeable（知識豊富）" },
+            { "letter": "A", "meaning_en": "Analytical（分析的）" },
+            { "letter": "I", "meaning_en": "Idealistic（理想主義）" },
+            { "letter": "R", "meaning_en": "Rational（合理的）" },
+            { "letter": "I", "meaning_en": "Introspective（内省的）" }
           ]
         }
       ],
-      "new_description_jp": "NOAHの「温厚で平和主義、しかしマイ・ルールが強く時に支配的」な愛情深さがメイン。そこにKAIRIの「知的で理想を追い求める天才気質と見栄っ張り」な賢さがプラス。ただ優しいだけでなく、華やかで時に強引な知性と理想追求が加わり、独自の愛の形とルールで人々を導き、その才能と成果を誇示します。",
+      "new_description_jp": "このコードタイプは「統合的指導性」の理想的な体現者として位置づけることができる。彼らは感情的知性と認知的知性の両方を高度に発達させており、人々を導く際に心の温かさと論理的説得力を巧妙に組み合わせる。これは心理学者ダニエル・ゴールマンが提唱した「感情知性」の概念を超えて、愛情と理性の完全な統合を実現した人格である。",
       "alpha_variant": {
         "original_title_jp": "理想を掲げる希望の灯台：知性と慈愛で、人々を導き育むビジョナリー・リーダー",
         "new_title_jp": "愛と才覚のグランド・アーキテクト ～華麗なる理想を掲げる愛の指導者～",
@@ -328,31 +328,31 @@
       "jumeri_type_name_jp": "KAIRI × NOAH (カイリ × ノア)",
       "original_title_jp": "知の灯台に宿る慈愛の風、高潔な理想と温かな眼差しで未来を育む者",
       "jumeri_type_composition_jp": "KAIRIの「天才気質で見栄っ張り」ベースに、NOAHの「愛と努力、ただしマイ・ルールで支配的」な要素が加わる。「才能あふれる人が愛に目覚め、その愛を独自の理想とルールで示す」イメージ。",
-      "new_catchphrase_jp": "華麗なる才知の愛執政、理想と愛、そして独自のルールで人々を育む見栄っ張りな賢者",
+      "new_catchphrase_jp": "知の灯台に宿る慈愛の風",
       "component_acronyms": [
         {
           "base_type_name_jp": "KAIRI (カイリ) の特徴に基づくアクロニム",
           "acronym_source_name_en": "KAIRI",
           "keywords": [
-            { "letter": "K", "meaning_en": "Keen-Intellect" },
-            { "letter": "A", "meaning_en": "Ambitious-Showman" },
-            { "letter": "I", "meaning_en": "Ideal-Seeker" },
-            { "letter": "R", "meaning_en": "Radiant-Genius" },
-            { "letter": "I", "meaning_en": "Impressive-Mind" }
+            { "letter": "K", "meaning_en": "Knowledgeable（知識豊富）" },
+            { "letter": "A", "meaning_en": "Analytical（分析的）" },
+            { "letter": "I", "meaning_en": "Idealistic（理想主義）" },
+            { "letter": "R", "meaning_en": "Rational（合理的）" },
+            { "letter": "I", "meaning_en": "Introspective（内省的）" }
           ]
         },
         {
           "base_type_name_jp": "NOAH (ノア) の特徴に基づくアクロニム",
           "acronym_source_name_en": "NOAH",
           "keywords": [
-            { "letter": "N", "meaning_en": "Nurturing-Dominance" },
-            { "letter": "O", "meaning_en": "Order-Driven" },
-            { "letter": "A", "meaning_en": "Affectionate-Effort" },
-            { "letter": "H", "meaning_en": "Heartfelt-Rules" }
+            { "letter": "N", "meaning_en": "Nurturing（育成力）" },
+            { "letter": "O", "meaning_en": "Optimistic（楽観的）" },
+            { "letter": "A", "meaning_en": "Adaptable（適応力）" },
+            { "letter": "H", "meaning_en": "Honest（誠実）" }
           ]
         }
       ],
-      "new_description_jp": "KAIRIの「知的で理想を求める天才気質と見栄っ張り」な部分がメイン。そこにNOAHの「温厚な優しさ、育成力、しかしマイ・ルールが強く時に支配的」な要素がプラス。人間的な温かみと柔軟性が加わりますが、ベースの天才的自負と理想追求、そしてそれを誇示したい欲求は健在です。愛や育成も、自らの天才的な理想とルールに基づいて行われます。",
+      "new_description_jp": "このコードタイプは「理想実現型の知的指導者」として位置づけることができる。彼らは純粋な理論家でも単なる慈善家でもなく、高い知的理想を現実世界で人間的に実現しようとする稀有な存在である。これは心理学者アブラハム・マズローが提唱した「自己実現者」の概念を超えて、個人の自己実現と他者への貢献を同時に追求する統合的人格の典型例である。",
       "alpha_variant": {
         "original_title_jp": "理想を現実に根付かせる育成者：知性と温情で、希望の未来をデザインするリーダー",
         "new_title_jp": "才知と愛のグランド・デザイナー ～理想を独自の愛で実現するカリスマ育成家～",
