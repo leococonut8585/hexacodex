@@ -123,11 +123,39 @@ export function getDetailedFeature(finalKey: string): DetailedFeatureInfo | null
   let oneTwoTypeDescription = '';
 
   if (entry.__source === 'base') {
-    alphaBetaTypeDescription = variantInfo.variant_description || ''; // Fallback to empty string
-    oneTwoTypeDescription = sub.sub_type_description || ''; // Fallback to empty string
+    // Access variant_description only if entry is from base and variantInfo exists
+    if (variantInfo && 'variant_description' in variantInfo && typeof variantInfo.variant_description === 'string') {
+      alphaBetaTypeDescription = variantInfo.variant_description;
+    } else if (variantInfo && 'new_description_jp' in variantInfo && typeof variantInfo.new_description_jp === 'string') {
+      // Fallback for base if variant_description is missing but new_description_jp (unexpected case, but safe)
+      alphaBetaTypeDescription = variantInfo.new_description_jp;
+    } else {
+      alphaBetaTypeDescription = ''; // Ensure it's always a string
+    }
+
+    // Access sub_type_description only if entry is from base and sub exists
+    if (sub && 'sub_type_description' in sub && typeof sub.sub_type_description === 'string') {
+      oneTwoTypeDescription = sub.sub_type_description;
+    } else if (sub && 'new_description_jp' in sub && typeof sub.new_description_jp === 'string') {
+      // Fallback for base if sub_type_description is missing
+      oneTwoTypeDescription = sub.new_description_jp;
+    } else {
+      oneTwoTypeDescription = ''; // Ensure it's always a string
+    }
   } else if (entry.__source === 'giumeri') {
-    alphaBetaTypeDescription = variantInfo.new_description_jp || ''; // Fallback to empty string
-    oneTwoTypeDescription = sub.new_description_jp || ''; // Fallback to empty string
+    // Access new_description_jp if entry is from giumeri and variantInfo exists
+    if (variantInfo && 'new_description_jp' in variantInfo && typeof variantInfo.new_description_jp === 'string') {
+      alphaBetaTypeDescription = variantInfo.new_description_jp;
+    } else {
+      alphaBetaTypeDescription = ''; // Ensure it's always a string
+    }
+
+    // Access new_description_jp if entry is from giumeri and sub exists
+    if (sub && 'new_description_jp' in sub && typeof sub.new_description_jp === 'string') {
+      oneTwoTypeDescription = sub.new_description_jp;
+    } else {
+      oneTwoTypeDescription = ''; // Ensure it's always a string
+    }
   }
 
   return {
