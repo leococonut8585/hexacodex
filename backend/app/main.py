@@ -1,3 +1,5 @@
+import os
+import sys
 from fastapi import FastAPI, HTTPException
 from pydantic import BaseModel
 from fastapi.middleware.cors import CORSMiddleware # CORSMiddlewareをインポート
@@ -13,6 +15,16 @@ from fastapi.responses import FileResponse
 from .logic.horoscope_calc import calculate_horoscope
 
 app = FastAPI()
+
+frontend_build_dir = "../../frontend/build"
+
+# Check if the frontend build directory exists
+if not os.path.isdir(frontend_build_dir):
+    sys.stderr.write(
+        f"Error: Frontend build directory not found at {frontend_build_dir}.\n"
+        "Please run 'cd frontend && npm run build' to build the frontend.\n"
+    )
+    sys.exit(1)
 
 # CORS設定
 origins = [
@@ -31,7 +43,7 @@ app.add_middleware(
 )
 
 # Serve static files from the frontend build directory
-app.mount("/static", StaticFiles(directory="../../frontend/build"), name="static")
+app.mount("/static", StaticFiles(directory=frontend_build_dir), name="static")
 
 class Birthdate(BaseModel):
     year: int
