@@ -66,30 +66,52 @@ export function getInitialFeature(starType: string): FeatureInfo | null {
 export function getDetailedFeature(finalKey: string): DetailedFeatureInfo | null {
   const match = finalKey.match(/([^_]+)_([αβ])-(\d)/);
   if (!match) return null;
-  const [, baseKey, variant, subIdxStr] = match;
+  const [, baseKey, variantChar, subIdxStr] = match;
   const subIdx = parseInt(subIdxStr, 10) - 1;
-  const entry = findBaseEntry(baseKey) || findGiumeriEntry(baseKey); // giumeriData にも同様の構造があるか確認が必要
+
+  const entry = findBaseEntry(baseKey) || findGiumeriEntry(baseKey);
   if (!entry) return null;
 
-  const variantInfo = entry[variant === 'α' ? 'alpha_variant' : 'beta_variant'];
-  if (!variantInfo) return null; // variantInfo が存在するか確認
+  // 型アサーションを強化
+  const variantInfo = entry[variantChar === 'α' ? 'alpha_variant' : 'beta_variant'] as {
+    original_title_jp: string;
+    new_title_jp: string;
+    variant_description?: string; // ★オプショナルで追加
+    new_description_jp: string;
+    sub_types?: Array<{
+      original_title_jp: string;
+      new_title_jp: string;
+      sub_type_description?: string; // ★オプショナルで追加
+      new_description_jp: string;
+    }>;
+  } | undefined;
 
-  const sub = variantInfo.sub_types?.[subIdx]; // sub_types が存在し、subIdx が範囲内か確認
+  if (!variantInfo) return null;
+
+  // 型アサーションを強化
+  const sub = variantInfo.sub_types?.[subIdx] as {
+    original_title_jp: string;
+    new_title_jp: string;
+    sub_type_description?: string; // ★オプショナルで追加
+    new_description_jp: string;
+  } | undefined;
+
   if (!sub) return null;
 
-  const baseAcronyms = (entry as any).new_keywords_acronym;
-  const compAcronyms = (entry as any).component_acronyms;
+  const baseAcro = (entry as any).new_keywords_acronym;
+  const compAcro = (entry as any).component_acronyms;
+
   return {
     catch: (entry as any).new_catchphrase_jp,
-    baseDescription: (entry as any).new_description_jp, // メインタイプの解説
+    baseDescription: (entry as any).new_description_jp,
     variantTitle: variantInfo.new_title_jp,
-    variant_description_sub_title_explanation: variantInfo.new_description_jp, // α/βタイプの短い説明
-    variant_description_main: variantInfo.variant_description, // α/βタイプのメイン解説(今回追加)
+    variant_description_sub_title_explanation: variantInfo.new_description_jp,
+    variant_description_main: variantInfo.variant_description,
     subTitle: sub.new_title_jp,
-    sub_type_description_sub_title_explanation: sub.new_description_jp, // 1/2タイプの短い説明
-    sub_type_description_main: sub.sub_type_description, // 1/2タイプのメイン解説(今回追加)
-    acronyms: baseAcronyms,
-    componentAcronyms: compAcronyms,
+    sub_type_description_sub_title_explanation: sub.new_description_jp,
+    sub_type_description_main: sub.sub_type_description,
+    acronyms: baseAcro,
+    componentAcronyms: compAcro,
   };
 }
 
