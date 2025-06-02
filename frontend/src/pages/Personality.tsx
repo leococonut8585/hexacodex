@@ -1,96 +1,202 @@
-import React from 'react';
+import React, { useEffect, useState } from 'react';
 import { useParams } from 'react-router-dom';
-import { getDetailedFeature, DetailedFeatureInfo, Acronym, ComponentAcronym } from '../constants/officialFeatures'; // Assuming officialFeatures.ts is in constants
-// import VideoPlayerComponent from '../components/VideoPlayerComponent'; // Placeholder for actual video player
+import { getDetailedFeature, DetailedFeatureInfo, Acronym, ComponentAcronym } from '../constants/officialFeatures';
+import { getVideoFileForCategory } from '../constants/videoMap';
+
+// Helper function to format finalKey for videoMap
+function formatKeyForVideo(finalKey: string | undefined): string {
+  if (!finalKey) return '';
+  return finalKey
+    .replace('_α-', '_ALPHA_')
+    .replace('_β-', '_BETA_')
+    .toUpperCase();
+}
+
+// Helper function to extract main part of type name (e.g., "KINRYU" from "KINRYU (キンリュウ)")
+function extractBaseName(typeNameJp: string | undefined): string {
+  if (!typeNameJp) return '';
+  const match = typeNameJp.match(/^([^(]+)/);
+  return match ? match[1].trim() : typeNameJp;
+}
+
+// Helper function to extract catchphrase from title (e.g., "慈愛と調和の体現者" from "【ＮＯＡＨ（ノア）　慈愛と調和の体現者】")
+// Also removes parentheses and their content if they exist after the main catchphrase part.
+function extractMainCatchphrase(title: string | undefined): string {
+    if (!title) return '';
+    // First, try to get content within 【】
+    let mainPart = title;
+    const bracketMatch = title.match(/【([^】]+)】/);
+    if (bracketMatch && bracketMatch[1]) {
+        mainPart = bracketMatch[1];
+    }
+    // Then, remove any subsequent Japanese parentheses and their content
+    // Example: "ＮＯＡＨ（ノア）　慈愛と調和の体現者" -> "ＮＯＡＨ　慈愛と調和の体現者"
+    // Example: "慈愛と調和の体現者" -> "慈愛と調和の体現者"
+    mainPart = mainPart.replace(/（[^）]+）/g, '').trim();
+    // If there's a space now (like "ＮＯＡＨ　慈愛と調和の体現者"), take the part after the first space.
+    // This is to isolate the catchphrase part if the name was included.
+    const spaceIndex = mainPart.indexOf('　'); // Full-width space
+    if (spaceIndex > -1 && mainPart.substring(0, spaceIndex).match(/^[A-Z]+$/)) { // Check if part before space is all caps (likely the name)
+         const potentialCatchphrase = mainPart.substring(spaceIndex + 1).trim();
+         if (potentialCatchphrase) return potentialCatchphrase;
+    }
+    // Fallback for titles like "【キャッチコピー】" or "キャッチコピー"
+    return mainPart;
+}
+
 
 const Personality: React.FC = () => {
   const { finalKey } = useParams<{ finalKey: string }>();
-  // Ensure finalKey is not undefined before calling getDetailedFeature
-  const feature: DetailedFeatureInfo | null = finalKey ? getDetailedFeature(finalKey) : null;
+  const [feature, setFeature] = useState<DetailedFeatureInfo | null>(null);
+  const [pageTitle, setPageTitle] = useState<string>('');
+  const [videoSrc, setVideoSrc] = useState<string>('/movie/default_poster.jpg');
 
-  // ★★★ デバッグコード追加 ★★★
-  console.log("Feature data received in Personality.tsx:", JSON.stringify(feature, null, 2));
-  // ★★★ ここまで ★★★
+  useEffect(() => {
+    if (finalKey) {
+      const loadedFeature = getDetailedFeature(finalKey);
+      setFeature(loadedFeature);
 
-  // Video logic placeholder: Replace with actual video determination logic
-  const videoSrc = `/assets/videos/${finalKey}.mp4`; // Example path
+      if (loadedFeature) {
+        // Generate Page Title (Item ①)
+        const keyParts = finalKey.split('_'); // e.g., ["KINRYU", "α-2"]
+        const baseName = extractBaseName(loadedFeature.mainTypeNameJp); // Extracts "KINRYU"
+        
+        let variantChar = '';
+        let subTypeNum = '';
+        if (keyParts[1]) {
+          const variantAndSub = keyParts[1].split('-'); // e.g., ["α", "2"]
+          variantChar = variantAndSub[0]; // "α"
+          subTypeNum = variantAndSub[1]; // "2"
+        }
+        const subTypeName = subTypeNum === '1' ? 'I型' : subTypeNum === '2' ? 'Ⅱ型' : '';
+        setPageTitle(`${baseName} ${variantChar} ${subTypeName}`.trim());
+
+        // Video Logic (Item ②)
+        const videoMapKey = formatKeyForVideo(finalKey);
+        const videoFileName = getVideoFileForCategory(videoMapKey);
+        setVideoSrc(videoFileName ? `/movie/${videoFileName}` : '/movie/default_poster.jpg');
+      }
+    }
+  }, [finalKey]);
 
   if (!feature) {
-    return <div>特徴情報が見つかりません。</div>;
+    return <div className="loading-message">特徴情報が見つかりません。</div>;
   }
+  
+  // Prepare parts for titles (Items ⑦ and ⑩)
+  const baseNameForTitles = extractBaseName(feature.mainTypeNameJp);
+  const variantCharForTitles = finalKey?.split('_')[1]?.split('-')[0] || '';
+  const subTypeNumForTitles = finalKey?.split('_')[1]?.split('-')[1] || '';
+  const subTypeNameForTitles = subTypeNumForTitles === '1' ? 'I型' : subTypeNumForTitles === '2' ? 'Ⅱ型' : '';
 
-  // 新しいタイトル文字列を生成
-  const pageTitle = [
-    feature.mainTypeNameJp,
-    feature.variantTitle,
-    feature.subTitle
-  ].filter(Boolean).join(' '); // filter(Boolean)でundefinedや空文字を除外して連結
 
   return (
     <div className="personality-page-container">
-      {/* タイトル */}
-      <h1 className="personality-title">{pageTitle}</h1> {/* ★変更箇所 */}
+      {/* ① ページタイトル (総合タイトル) */}
+      <h1 className="personality-main-title">{pageTitle}</h1>
 
-      {/* 映像 */}
+      {/* ② 映像 */}
       <div className="video-player-section">
-        {/* ★修正箇所 */}
-        <video controls width="100%" key={videoSrc}> {/* key={videoSrc} を追加して finalKey 変更時に動画を再読み込みさせる */}
+        <video controls width="100%" key={videoSrc} poster={videoSrc === '/movie/default_poster.jpg' ? videoSrc : undefined}>
           <source src={videoSrc} type="video/mp4" />
           お使いのブラウザは動画タグをサポートしていません。
         </video>
-        {/* ★ここまで */}
       </div>
 
-      {/* アクロニム */}
-      {feature.acronyms && feature.acronyms.length > 0 && (
-        <div className="acronym-section">
-          <h2 className="section-title">アクロニム</h2>
-          <ul className="acronym-list">
-            {feature.acronyms.map((acronym: Acronym, index: number) => (
-              <li key={index} className="acronym-item">{acronym.letter}: {acronym.meaning_en}</li>
-            ))}
-          </ul>
-        </div>
-      )}
-      {feature.componentAcronyms && feature.componentAcronyms.length > 0 && (
-        <div className="component-acronym-section">
-          <h2 className="section-title">構成アクロニム</h2>
-          {feature.componentAcronyms.map((compAcronym: ComponentAcronym, index: number) => (
-            <div key={index} className="component-acronym-group">
-              <h3 className="subsection-title">{compAcronym.acronymSourceNameEn}</h3> {/* 修正後: キャメルケースに変更 */}
-              <ul className="acronym-list">
-                {compAcronym.keywords.map((keyword: Acronym, kIndex: number) => (
-                  <li key={kIndex} className="acronym-item">{keyword.letter}: {keyword.meaning_en}</li>
-                ))}
-              </ul>
+      {/* ③ メイン部分（12タイプ）のタイトル */}
+      <section className="main-type-title-section section-padding">
+        <h2 className="section-title">{feature.mainTypeTitle}</h2>
+      </section>
+
+      {/* ④ メイン部分（12タイプ）のタイトルと、その下にキャッチコピー */}
+      <section className="main-type-catchphrase-section section-padding">
+        <h3 className="subsection-title">{feature.mainTypeTitle}</h3>
+        <p className="catchphrase-text">{extractMainCatchphrase(feature.mainTypeCatchphrase)}</p>
+      </section>
+
+      {/* ⑤ アクロニム */}
+      {feature.mainTypeAcronyms && (
+        <section className="acronym-section section-padding">
+          <h3 className="subsection-title">Acronyms</h3>
+          {Array.isArray(feature.mainTypeAcronyms) && !(feature.mainTypeAcronyms as any)[0]?.baseTypeNameJp && (
+            <ul className="acronym-list">
+              {(feature.mainTypeAcronyms as Acronym[]).map((acronym, index) => (
+                <li key={index} className="acronym-item">
+                  <span className="acronym-letter">{acronym.letter}:</span> {acronym.meaning_en}
+                </li>
+              ))}
+            </ul>
+          )}
+          {Array.isArray(feature.mainTypeAcronyms) && (feature.mainTypeAcronyms as any)[0]?.baseTypeNameJp && (
+            <div className="component-acronym-container">
+              {(feature.mainTypeAcronyms as ComponentAcronym[]).map((compAcronym, index) => (
+                <div key={index} className="component-acronym-group">
+                  <h4 className="component-acronym-title">{compAcronym.acronymSourceNameEn} Base</h4>
+                  <ul className="acronym-list">
+                    {compAcronym.keywords.map((keyword, kIndex) => (
+                      <li key={kIndex} className="acronym-item">
+                        <span className="acronym-letter">{keyword.letter}:</span> {keyword.meaning_en}
+                      </li>
+                    ))}
+                  </ul>
+                </div>
+              ))}
             </div>
+          )}
+        </section>
+      )}
+
+      {/* ⑥ メイン部分の解説 */}
+      <section className="main-type-description-section section-padding">
+        <h3 className="subsection-title">解説</h3>
+        <div className="description-text">
+          {feature.mainTypeDescription.split('\n').map((line, i) => (
+            <React.Fragment key={i}>{line}<br /></React.Fragment>
           ))}
         </div>
-      )}
+      </section>
 
-      {/* メインタイプの解説 */}
-      {feature.baseDescription && (
-        <div className="description-section base-description-section">
-          <h2 className="section-title">基本特性</h2>
-          <p className="description-text">{feature.baseDescription.split('\n').map((line, i) => <React.Fragment key={i}>{line}<br/></React.Fragment>)}</p>
-        </div>
-      )}
+      {/* ⑦ メイン部分のタイトル + αかβかをタイトルとして */}
+      <section className="alpha-beta-title-section section-padding">
+        <h2 className="section-title">{`${baseNameForTitles} ${variantCharForTitles}`}</h2>
+      </section>
+      
+      {/* ⑧ αかβ分類キャッチコピー */}
+      <section className="alpha-beta-catchphrase-section section-padding">
+         <h3 className="subsection-title">キャッチコピー</h3>
+        <p className="catchphrase-text">{feature.alphaBetaTypeCatchphrase}</p>
+      </section>
 
-      {/* α/βタイプの解説 */}
-      {feature.variantTitle && feature.variant_description_main && (
-        <div className="description-section variant-description-section">
-          <h2 className="section-title">{feature.variantTitle}</h2>
-          <p className="description-text">{feature.variant_description_main.split('\n').map((line, i) => <React.Fragment key={i}>{line}<br/></React.Fragment>)}</p>
+      {/* ⑨ αかβ分類の解説 */}
+      <section className="alpha-beta-description-section section-padding">
+        <h3 className="subsection-title">解説</h3>
+        <div className="description-text">
+          {feature.alphaBetaTypeDescription.split('\n').map((line, i) => (
+            <React.Fragment key={i}>{line}<br /></React.Fragment>
+          ))}
         </div>
-      )}
+      </section>
 
-      {/* 1/2タイプの解説 */}
-      {feature.subTitle && feature.sub_type_description_main && (
-        <div className="description-section sub-type-description-section">
-          <h2 className="section-title">{feature.subTitle}</h2>
-          <p className="description-text">{feature.sub_type_description_main.split('\n').map((line, i) => <React.Fragment key={i}>{line}<br/></React.Fragment>)}</p>
+      {/* ⑩ メイン部分のタイトル + αかβ + 一型か二型か、をタイトルとして */}
+      <section className="one-two-type-title-section section-padding">
+        <h2 className="section-title">{`${baseNameForTitles} ${variantCharForTitles} ${subTypeNameForTitles}`}</h2>
+      </section>
+
+      {/* ⑪ 1型、Ⅱ型分類のキャッチコピー */}
+      <section className="one-two-type-catchphrase-section section-padding">
+        <h3 className="subsection-title">キャッチコピー</h3>
+        <p className="catchphrase-text">{feature.oneTwoTypeCatchphrase}</p>
+      </section>
+
+      {/* ⑫ 1型、Ⅱ型分類の解説 */}
+      <section className="one-two-type-description-section section-padding">
+        <h3 className="subsection-title">解説</h3>
+        <div className="description-text">
+          {feature.oneTwoTypeDescription.split('\n').map((line, i) => (
+            <React.Fragment key={i}>{line}<br /></React.Fragment>
+          ))}
         </div>
-      )}
+      </section>
     </div>
   );
 };

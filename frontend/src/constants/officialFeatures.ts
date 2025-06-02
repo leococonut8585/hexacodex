@@ -20,45 +20,80 @@ export interface FeatureInfo {
 }
 
 export interface DetailedFeatureInfo {
-  catch: string;
-  baseDescription: string;
-  mainTypeNameJp?: string; // ★追加
-  variantTitle: string;
-  variant_description_sub_title_explanation: string; // 元の variantDescription
-  variant_description_main?: string; // 新しく追加する解説文
-  subTitle: string;
-  sub_type_description_sub_title_explanation: string; // 元の subDescription
-  sub_type_description_main?: string; // 新しく追加する解説文
-  acronyms?: Acronym[];
-  componentAcronyms?: ComponentAcronym[];
+  // Existing fields (can be deprecated or re-mapped if needed)
+  catch: string; // Potentially old main catchphrase or title
+  baseDescription: string; // Potentially old main description
+  mainTypeNameJp?: string; // Original name from JSON for reference
+  variantTitle: string; // Potentially old variant title
+  variant_description_sub_title_explanation: string; // Potentially old variant description part 1
+  variant_description_main?: string; // Potentially old variant description part 2
+  subTitle: string; // Potentially old sub-type title
+  sub_type_description_sub_title_explanation: string; // Potentially old sub-type description part 1
+  sub_type_description_main?: string; // Potentially old sub-type description part 2
+  acronyms?: Acronym[]; // Old acronyms field
+  componentAcronyms?: ComponentAcronym[]; // Old component acronyms field
+
+  // New comprehensive fields
+  mainTypeTitle: string;
+  mainTypeCatchphrase: string;
+  mainTypeAcronyms: Acronym[] | ComponentAcronym[] | undefined;
+  mainTypeDescription: string;
+  alphaBetaTypeFullTitle: string;
+  alphaBetaTypeCatchphrase: string;
+  alphaBetaTypeDescription: string;
+  oneTwoTypeFullTitle: string;
+  oneTwoTypeCatchphrase: string;
+  oneTwoTypeDescription: string;
 }
 
 function extractKey(name: string): string {
   return name.split('(')[0].trim().replace(/\s+/g, '');
 }
 
-function findBaseEntry(typeKey: string) {
-  return baseData.hexacodex_types.find(
-    (e) => extractKey(e.type_name_jp) === typeKey
+// Helper function to extract catchphrase from titles like "TITLE 「CATCHPHRASE」"
+function extractCatchphrase(fullTitle: string): string {
+  const match = fullTitle.match(/「([^」]+)」/);
+  if (match && match[1]) {
+    return match[1];
+  }
+  return fullTitle; // Return the full title if no 「」 pattern is found
+}
+
+const baseEntries = baseData.hexacodex_types.map(entry => ({ ...entry, __source: 'base' as const }));
+const giumeriEntries = giumeriData.jumeri_types.map(entry => ({ ...entry, __source: 'giumeri' as const }));
+const allEntries = [...baseEntries, ...giumeriEntries];
+
+function findEntry(typeKey: string): (typeof baseEntries[number] | typeof giumeriEntries[number]) | undefined {
+  return allEntries.find(
+    (e) => extractKey((e as any).type_name_jp || (e as any).jumeri_type_name_jp) === typeKey
   );
 }
 
-function findGiumeriEntry(typeKey: string) {
-  return giumeriData.jumeri_types.find(
-    (e) => extractKey(e.jumeri_type_name_jp) === typeKey
-  );
-}
 
 export function getInitialFeature(starType: string): FeatureInfo | null {
   const [baseKey, variant] = starType.split('_');
-  const entry = findBaseEntry(baseKey) || findGiumeriEntry(baseKey);
+  // Preserve existing find logic for getInitialFeature if it's different or simpler
+  const entry = baseData.hexacodex_types.find(e => extractKey(e.type_name_jp) === baseKey) ||
+                giumeriData.jumeri_types.find(e => extractKey(e.jumeri_type_name_jp) === baseKey);
+
   if (!entry) return null;
-  const variantInfo = entry[variant === 'α' ? 'alpha_variant' : 'beta_variant'];
+  const variantInfo = (entry as any)[variant === 'α' ? 'alpha_variant' : 'beta_variant'];
+  if (!variantInfo) return null; // Ensure variantInfo exists
+
   const baseAcronyms = (entry as any).new_keywords_acronym;
   const giumeriAcronyms = (entry as any).component_acronyms;
+
+  // Determine description based on source, similar to getDetailedFeature
+  let description = '';
+  if ('hexacodex_types' in baseData && (baseData.hexacodex_types as any[]).includes(entry)) {
+    description = variantInfo.variant_description || variantInfo.new_description_jp; // Fallback if variant_description is empty
+  } else if ('jumeri_types' in giumeriData && (giumeriData.jumeri_types as any[]).includes(entry)) {
+    description = variantInfo.new_description_jp;
+  }
+  
   return {
-    catch: (entry as any).new_catchphrase_jp,
-    description: variantInfo.new_description_jp,
+    catch: (entry as any).new_catchphrase_jp || (entry as any).original_title_jp,
+    description: description,
     acronyms: baseAcronyms,
     componentAcronyms: giumeriAcronyms,
   };
@@ -70,50 +105,56 @@ export function getDetailedFeature(finalKey: string): DetailedFeatureInfo | null
   const [, baseKey, variantChar, subIdxStr] = match;
   const subIdx = parseInt(subIdxStr, 10) - 1;
 
-  const entry = findBaseEntry(baseKey) || findGiumeriEntry(baseKey);
+  const entry = findEntry(baseKey);
   if (!entry) return null;
 
-  // 型アサーションを強化
-  const variantInfo = entry[variantChar === 'α' ? 'alpha_variant' : 'beta_variant'] as {
-    original_title_jp: string;
-    new_title_jp: string;
-    variant_description?: string; // ★オプショナルで追加
-    new_description_jp: string;
-    sub_types?: Array<{
-      original_title_jp: string;
-      new_title_jp: string;
-      sub_type_description?: string; // ★オプショナルで追加
-      new_description_jp: string;
-    }>;
-  } | undefined;
-
+  const variantInfo = entry[variantChar === 'α' ? 'alpha_variant' : 'beta_variant'];
   if (!variantInfo) return null;
 
-  // 型アサーションを強化
-  const sub = variantInfo.sub_types?.[subIdx] as {
-    original_title_jp: string;
-    new_title_jp: string;
-    sub_type_description?: string; // ★オプショナルで追加
-    new_description_jp: string;
-  } | undefined;
-
+  const sub = variantInfo.sub_types?.[subIdx];
   if (!sub) return null;
 
-  const baseAcro = (entry as any).new_keywords_acronym;
-  const compAcro = (entry as any).component_acronyms;
+  const mainTypeAcronyms = (entry as any).new_keywords_acronym || (entry as any).component_acronyms;
+  const mainTypeNameJp = (entry as any).type_name_jp || (entry as any).jumeri_type_name_jp;
+  const mainTypeTitle = (entry as any).new_catchphrase_jp || mainTypeNameJp; // Fallback to original name if new_catchphrase_jp is missing
+
+  // Determine descriptions based on the source of the entry
+  let alphaBetaTypeDescription = '';
+  let oneTwoTypeDescription = '';
+
+  if (entry.__source === 'base') {
+    alphaBetaTypeDescription = variantInfo.variant_description || ''; // Fallback to empty string
+    oneTwoTypeDescription = sub.sub_type_description || ''; // Fallback to empty string
+  } else if (entry.__source === 'giumeri') {
+    alphaBetaTypeDescription = variantInfo.new_description_jp || ''; // Fallback to empty string
+    oneTwoTypeDescription = sub.new_description_jp || ''; // Fallback to empty string
+  }
 
   return {
-    catch: (entry as any).new_catchphrase_jp,
+    // Deprecated / Old fields (populated for compatibility if needed, or remove)
+    catch: mainTypeTitle, 
     baseDescription: (entry as any).new_description_jp,
-    mainTypeNameJp: (entry as any).type_name_jp || (entry as any).jumeri_type_name_jp, // ★追加： entry.type_name_jp または entry.jumeri_type_name_jp を想定
+    mainTypeNameJp: mainTypeNameJp,
     variantTitle: variantInfo.new_title_jp,
-    variant_description_sub_title_explanation: variantInfo.new_description_jp,
-    variant_description_main: variantInfo.variant_description,
+    variant_description_sub_title_explanation: alphaBetaTypeDescription, // Or map to a specific part if applicable
+    variant_description_main: alphaBetaTypeDescription, // Or map to a specific part
     subTitle: sub.new_title_jp,
-    sub_type_description_sub_title_explanation: sub.new_description_jp,
-    sub_type_description_main: sub.sub_type_description,
-    acronyms: baseAcro,
-    componentAcronyms: compAcro,
+    sub_type_description_sub_title_explanation: oneTwoTypeDescription, // Or map to a specific part
+    sub_type_description_main: oneTwoTypeDescription, // Or map to a specific part
+    acronyms: (entry as any).new_keywords_acronym,
+    componentAcronyms: (entry as any).component_acronyms,
+
+    // New comprehensive fields
+    mainTypeTitle: mainTypeTitle,
+    mainTypeCatchphrase: mainTypeTitle, // As per instruction: "mainTypeTitle を優先的に設定"
+    mainTypeAcronyms: mainTypeAcronyms,
+    mainTypeDescription: (entry as any).new_description_jp,
+    alphaBetaTypeFullTitle: variantInfo.new_title_jp,
+    alphaBetaTypeCatchphrase: extractCatchphrase(variantInfo.new_title_jp),
+    alphaBetaTypeDescription: alphaBetaTypeDescription,
+    oneTwoTypeFullTitle: sub.new_title_jp,
+    oneTwoTypeCatchphrase: extractCatchphrase(sub.new_title_jp),
+    oneTwoTypeDescription: oneTwoTypeDescription,
   };
 }
 
