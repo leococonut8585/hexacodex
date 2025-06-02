@@ -28,16 +28,22 @@ function Diagnose() {
         month: parseInt(month),
         day: parseInt(day),
       });
-      setResult(res.data);
+      // setResult(res.data); // No longer needed to display result on this page
+
+      const diagnosisResult: ApiDiagnosis = res.data;
+      const featureKey = diagnosisResult.jumeri || diagnosisResult.star_type;
+
+      if (featureKey) {
+        navigate(`/questions/${featureKey}`);
+      } else {
+        setError("診断結果から特徴キーを取得できませんでした。");
+      }
     } catch (err: any) {
       setError("診断に失敗しました。サーバーが起動しているか確認してください。");
     }
   };
 
-  const featureKey = result?.jumeri || result?.star_type;
-  const featureInfo: FeatureInfo | null = featureKey
-    ? getInitialFeature(featureKey)
-    : null;
+  // featureKey and featureInfo are no longer needed here as results are not displayed on this page.
 
   return (
     <div>
@@ -67,44 +73,7 @@ function Diagnose() {
         <button type="submit">診断する</button>
       </form>
       {error && <p className="error-text">{error}</p>}
-      {result && featureInfo && (
-        <div className="result-section">
-          <h3>{featureKey}</h3>
-          {featureInfo.acronyms && (
-            <ul>
-              {featureInfo.acronyms.map((a, idx) => (
-                <li key={idx}>
-                  {a.letter}: {a.meaning_en}
-                </li>
-              ))}
-            </ul>
-          )}
-          {featureInfo.componentAcronyms && (
-            <div>
-              {featureInfo.componentAcronyms.map((c, idx) => (
-                <div key={idx}>
-                  <h4>{c.baseTypeNameJp}</h4>
-                  <ul>
-                    {c.keywords.map((k, i) => (
-                      <li key={i}>
-                        {k.letter}: {k.meaning_en}
-                      </li>
-                    ))}
-                  </ul>
-                </div>
-              ))}
-            </div>
-          )}
-          <p>{featureInfo.catch}</p>
-          <p>{featureInfo.description}</p>
-          <button
-            onClick={() => navigate(`/questions/${featureKey}`)}
-            className="result-next"
-          >
-            さらに本質を探るための質問に進む
-          </button>
-        </div>
-      )}
+      {/* Result display section is removed as per requirements */}
     </div>
   );
 }

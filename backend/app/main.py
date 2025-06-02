@@ -1,6 +1,8 @@
 from fastapi import FastAPI, HTTPException
 from pydantic import BaseModel
 from fastapi.middleware.cors import CORSMiddleware # CORSMiddlewareをインポート
+from fastapi.staticfiles import StaticFiles
+from fastapi.responses import FileResponse
 
 # 以前の .logic.horoscope_calc からのインポートは、
 # penta-only.ts ベースの新しい計算ロジックを呼び出すように修正されている前提です。
@@ -28,6 +30,9 @@ app.add_middleware(
     allow_headers=["*"],
 )
 
+# Serve static files from the frontend build directory
+app.mount("/static", StaticFiles(directory="../../frontend/build"), name="static")
+
 class Birthdate(BaseModel):
     year: int
     month: int
@@ -41,6 +46,16 @@ def diagnose(birthdate: Birthdate):
     if result.get("error"):
         raise HTTPException(status_code=400, detail=result["error"])
     return result
+
+# Serve the frontend's index.html for the root path
+@app.get("/")
+async def read_index():
+    return FileResponse("../../frontend/build/index.html")
+
+# Catch-all route to serve index.html for client-side routing
+@app.get("/{full_path:path}")
+async def read_full_path(full_path: str): # Added type hint for full_path
+    return FileResponse("../../frontend/build/index.html")
 
 # 動作確認用 (変更なし)
 if __name__ == "__main__":
