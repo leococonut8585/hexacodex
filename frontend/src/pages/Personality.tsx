@@ -47,7 +47,7 @@ const Personality: React.FC = () => {
           <h2 className="section-title">構成アクロニム</h2>
           {feature.componentAcronyms.map((compAcronym: ComponentAcronym, index: number) => (
             <div key={index} className="component-acronym-group">
-              <h3 className="subsection-title">{compAcronym.acronym_source_name_en}</h3>
+              <h3 className="subsection-title">{compAcronym.acronymSourceNameEn}</h3> {/* 修正後: キャメルケースに変更 */}
               <ul className="acronym-list">
                 {compAcronym.keywords.map((keyword: Acronym, kIndex: number) => (
                   <li key={kIndex} className="acronym-item">{keyword.letter}: {keyword.meaning_en}</li>
