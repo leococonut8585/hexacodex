@@ -136,9 +136,9 @@ const DetailedQuestionnaire: React.FC = () => {
           )}
           <p>{result.baseDescription}</p>
           <h4>{result.variantTitle}</h4>
-          <p>{result.variantDescription}</p>
+          <p>{result.variant_description_sub_title_explanation}</p>
           <h4>{result.subTitle}</h4>
-          <p>{result.subDescription}</p>
+          <p>{result.sub_type_description_sub_title_explanation}</p>
         </div>
       </div>
     );
