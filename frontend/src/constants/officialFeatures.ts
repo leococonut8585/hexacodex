@@ -22,6 +22,7 @@ export interface FeatureInfo {
 export interface DetailedFeatureInfo {
   catch: string;
   baseDescription: string;
+  mainTypeNameJp?: string; // ★追加
   variantTitle: string;
   variant_description_sub_title_explanation: string; // 元の variantDescription
   variant_description_main?: string; // 新しく追加する解説文
@@ -104,6 +105,7 @@ export function getDetailedFeature(finalKey: string): DetailedFeatureInfo | null
   return {
     catch: (entry as any).new_catchphrase_jp,
     baseDescription: (entry as any).new_description_jp,
+    mainTypeNameJp: (entry as any).type_name_jp || (entry as any).jumeri_type_name_jp, // ★追加： entry.type_name_jp または entry.jumeri_type_name_jp を想定
     variantTitle: variantInfo.new_title_jp,
     variant_description_sub_title_explanation: variantInfo.new_description_jp,
     variant_description_main: variantInfo.variant_description,
@@ -115,4 +117,5 @@ export function getDetailedFeature(finalKey: string): DetailedFeatureInfo | null
   };
 }
 
-export default {};
+const defaultExport = {};
+export default defaultExport;

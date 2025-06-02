@@ -19,16 +19,26 @@ const Personality: React.FC = () => {
     return <div>特徴情報が見つかりません。</div>;
   }
 
+  // 新しいタイトル文字列を生成
+  const pageTitle = [
+    feature.mainTypeNameJp,
+    feature.variantTitle,
+    feature.subTitle
+  ].filter(Boolean).join(' '); // filter(Boolean)でundefinedや空文字を除外して連結
+
   return (
     <div className="personality-page-container">
       {/* タイトル */}
-      <h1 className="personality-title">{feature.catch}</h1>
+      <h1 className="personality-title">{pageTitle}</h1> {/* ★変更箇所 */}
 
       {/* 映像 */}
       <div className="video-player-section">
-        {/* Replace with actual video player component and logic */}
-        {/* <VideoPlayerComponent src={videoSrc} /> */}
-        <p><i>Video for {finalKey} would be here. Path: {videoSrc}</i></p>
+        {/* ★修正箇所 */}
+        <video controls width="100%" key={videoSrc}> {/* key={videoSrc} を追加して finalKey 変更時に動画を再読み込みさせる */}
+          <source src={videoSrc} type="video/mp4" />
+          お使いのブラウザは動画タグをサポートしていません。
+        </video>
+        {/* ★ここまで */}
       </div>
 
       {/* アクロニム */}
