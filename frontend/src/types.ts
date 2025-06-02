@@ -31,9 +31,11 @@ export interface DetailedFeatureInfo {
   catch: string;
   baseDescription: string;
   variantTitle: string;
-  variantDescription: string;
+  variant_description_sub_title_explanation: string; // プロパティ名を変更
+  variant_description_main?: string;                 // 新しいプロパティを追加 (オプショナル)
   subTitle: string;
-  subDescription: string;
+  sub_type_description_sub_title_explanation: string;  // プロパティ名を変更
+  sub_type_description_main?: string;                  // 新しいプロパティを追加 (オプショナル)
   acronyms?: Acronym[];
   componentAcronyms?: ComponentAcronym[];
 }
