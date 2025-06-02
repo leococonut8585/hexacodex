@@ -1,8 +1,8 @@
 import React, { useState } from "react";
 import axios from "axios";
 import { useNavigate } from "react-router-dom";
-import { getInitialFeature } from "../constants/officialFeatures";
-import { ApiDiagnosis, FeatureInfo } from "../types";
+// import { getInitialFeature } from "../constants/officialFeatures"; // Removed
+import { ApiDiagnosis } from "../types"; // FeatureInfo removed
 
 /**
  * Birthdate form that triggers backend calculation and
@@ -14,14 +14,14 @@ function Diagnose() {
   const [year, setYear] = useState("");
   const [month, setMonth] = useState("");
   const [day, setDay] = useState("");
-  const [result, setResult] = useState<ApiDiagnosis | null>(null);
+  // const [result, setResult] = useState<ApiDiagnosis | null>(null); // Removed
   const [error, setError] = useState("");
   const navigate = useNavigate();
 
   const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
     setError("");
-    setResult(null);
+    // setResult(null); // Removed
     try {
       const res = await axios.post(`${process.env.REACT_APP_API_URL}/diagnose`, {
         year: parseInt(year),
