@@ -23,9 +23,11 @@ export interface DetailedFeatureInfo {
   catch: string;
   baseDescription: string;
   variantTitle: string;
-  variantDescription: string;
+  variant_description_sub_title_explanation: string; // 元の variantDescription
+  variant_description_main?: string; // 新しく追加する解説文
   subTitle: string;
-  subDescription: string;
+  sub_type_description_sub_title_explanation: string; // 元の subDescription
+  sub_type_description_main?: string; // 新しく追加する解説文
   acronyms?: Acronym[];
   componentAcronyms?: ComponentAcronym[];
 }
@@ -66,20 +68,26 @@ export function getDetailedFeature(finalKey: string): DetailedFeatureInfo | null
   if (!match) return null;
   const [, baseKey, variant, subIdxStr] = match;
   const subIdx = parseInt(subIdxStr, 10) - 1;
-  const entry = findBaseEntry(baseKey) || findGiumeriEntry(baseKey);
+  const entry = findBaseEntry(baseKey) || findGiumeriEntry(baseKey); // giumeriData にも同様の構造があるか確認が必要
   if (!entry) return null;
+
   const variantInfo = entry[variant === 'α' ? 'alpha_variant' : 'beta_variant'];
-  const sub = variantInfo.sub_types[subIdx];
+  if (!variantInfo) return null; // variantInfo が存在するか確認
+
+  const sub = variantInfo.sub_types?.[subIdx]; // sub_types が存在し、subIdx が範囲内か確認
   if (!sub) return null;
+
   const baseAcronyms = (entry as any).new_keywords_acronym;
   const compAcronyms = (entry as any).component_acronyms;
   return {
     catch: (entry as any).new_catchphrase_jp,
-    baseDescription: (entry as any).new_description_jp,
+    baseDescription: (entry as any).new_description_jp, // メインタイプの解説
     variantTitle: variantInfo.new_title_jp,
-    variantDescription: variantInfo.new_description_jp,
+    variant_description_sub_title_explanation: variantInfo.new_description_jp, // α/βタイプの短い説明
+    variant_description_main: variantInfo.variant_description, // α/βタイプのメイン解説(今回追加)
     subTitle: sub.new_title_jp,
-    subDescription: sub.new_description_jp,
+    sub_type_description_sub_title_explanation: sub.new_description_jp, // 1/2タイプの短い説明
+    sub_type_description_main: sub.sub_type_description, // 1/2タイプのメイン解説(今回追加)
     acronyms: baseAcronyms,
     componentAcronyms: compAcronyms,
   };
