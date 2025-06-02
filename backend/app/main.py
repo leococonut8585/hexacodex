@@ -1,5 +1,6 @@
 import os
 import sys
+from pathlib import Path
 from fastapi import FastAPI, HTTPException
 from pydantic import BaseModel
 from fastapi.middleware.cors import CORSMiddleware # CORSMiddlewareをインポート
@@ -16,12 +17,14 @@ from .logic.horoscope_calc import calculate_horoscope
 
 app = FastAPI()
 
-frontend_build_dir = "../../frontend/build"
+# Determine the absolute path to the frontend build directory
+APP_DIR = Path(__file__).resolve().parent
+FRONTEND_BUILD_DIR = APP_DIR.parent.parent / "frontend" / "build"
 
 # Check if the frontend build directory exists
-if not os.path.isdir(frontend_build_dir):
+if not FRONTEND_BUILD_DIR.is_dir():
     sys.stderr.write(
-        f"Error: Frontend build directory not found at {frontend_build_dir}.\n"
+        f"Error: Frontend build directory not found at {str(FRONTEND_BUILD_DIR)}.\n"
         "Please run 'cd frontend && npm run build' to build the frontend.\n"
     )
     sys.exit(1)
@@ -43,7 +46,7 @@ app.add_middleware(
 )
 
 # Serve static files from the frontend build directory
-app.mount("/static", StaticFiles(directory=frontend_build_dir), name="static")
+app.mount("/static", StaticFiles(directory=FRONTEND_BUILD_DIR), name="static")
 
 class Birthdate(BaseModel):
     year: int
@@ -62,12 +65,12 @@ def diagnose(birthdate: Birthdate):
 # Serve the frontend's index.html for the root path
 @app.get("/")
 async def read_index():
-    return FileResponse("../../frontend/build/index.html")
+    return FileResponse(FRONTEND_BUILD_DIR / "index.html")
 
 # Catch-all route to serve index.html for client-side routing
 @app.get("/{full_path:path}")
 async def read_full_path(full_path: str): # Added type hint for full_path
-    return FileResponse("../../frontend/build/index.html")
+    return FileResponse(FRONTEND_BUILD_DIR / "index.html")
 
 # 動作確認用 (変更なし)
 if __name__ == "__main__":
