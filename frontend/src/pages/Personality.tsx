@@ -138,7 +138,7 @@ const Personality: React.FC = () => {
       {/* ⑤ アクロニム */}
       {feature.mainTypeAcronyms && (
         <section className="acronym-section section-padding">
-          <h2 className="section-title">アクロニム</h2> {/* Changed from h3 and "Acronyms" text */}
+          {/* <h2 className="section-title">アクロニム</h2> */}{/* Removed as per user feedback */}
           {Array.isArray(feature.mainTypeAcronyms) && !(feature.mainTypeAcronyms as any)[0]?.baseTypeNameJp && (
             <ul className="acronym-list">
               {(feature.mainTypeAcronyms as Acronym[]).map((acronym, index) => (
@@ -168,9 +168,9 @@ const Personality: React.FC = () => {
       )}
 
       {/* ⑥ メイン部分の解説 */}
-      <section className="main-type-description-section section-padding">
+      <section className="main-type-description-section section-padding mb-6">
         <h2 className="section-title">基本特性</h2> {/* Changed from h3 and "解説" */}
-        <div className="description-text">
+        <div className="description-text text-center">
           {feature.mainTypeDescription.split('\n').map((line, i) => (
             <React.Fragment key={i}>{line}<br /></React.Fragment>
           ))}
@@ -189,9 +189,9 @@ const Personality: React.FC = () => {
       </section>
 
       {/* ⑨ αかβ分類の解説 */}
-      <section className="alpha-beta-description-section section-padding">
+      <section className="alpha-beta-description-section section-padding mb-6">
         <h3 className="subsection-title">解説</h3> {/* Kept h3 as it's a subsection of α/β */}
-        <div className="description-text">
+        <div className="description-text text-center">
           {feature.alphaBetaTypeDescription.split('\n').map((line, i) => (
             <React.Fragment key={i}>{line}<br /></React.Fragment>
           ))}
@@ -212,7 +212,7 @@ const Personality: React.FC = () => {
       {/* ⑫ 1型、Ⅱ型分類の解説 */}
       <section className="one-two-type-description-section section-padding">
         <h3 className="subsection-title">解説</h3> {/* Kept h3 as it's a subsection of 1/2 type */}
-        <div className="description-text">
+        <div className="description-text text-center">
           {feature.oneTwoTypeDescription.split('\n').map((line, i) => (
             <React.Fragment key={i}>{line}<br /></React.Fragment>
           ))}
