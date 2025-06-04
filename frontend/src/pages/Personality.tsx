@@ -168,7 +168,7 @@ const Personality: React.FC = () => {
       )}
 
       {/* ⑥ メイン部分の解説 */}
-      <section className="main-type-description-section section-padding mb-6">
+      <section className="main-type-description-section section-padding mb-12">
         <h2 className="section-title">基本特性</h2> {/* Changed from h3 and "解説" */}
         <div className="description-text text-center">
           {feature.mainTypeDescription.split('\n').map((line, i) => (
@@ -189,7 +189,7 @@ const Personality: React.FC = () => {
       </section>
 
       {/* ⑨ αかβ分類の解説 */}
-      <section className="alpha-beta-description-section section-padding mb-6">
+      <section className="alpha-beta-description-section section-padding mb-12">
         <h3 className="subsection-title">解説</h3> {/* Kept h3 as it's a subsection of α/β */}
         <div className="description-text text-center">
           {feature.alphaBetaTypeDescription.split('\n').map((line, i) => (
