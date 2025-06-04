@@ -90,7 +90,7 @@ export function getInitialFeature(starType: string): FeatureInfo | null {
   } else if ('jumeri_types' in giumeriData && (giumeriData.jumeri_types as any[]).includes(entry)) {
     description = variantInfo.new_description_jp;
   }
-  
+
   return {
     catch: (entry as any).new_catchphrase_jp || (entry as any).original_title_jp,
     description: description,
@@ -160,7 +160,7 @@ export function getDetailedFeature(finalKey: string): DetailedFeatureInfo | null
 
   return {
     // Deprecated / Old fields (populated for compatibility if needed, or remove)
-    catch: mainTypeTitle, 
+    catch: mainTypeTitle,
     baseDescription: (entry as any).new_description_jp,
     mainTypeNameJp: mainTypeNameJp,
     variantTitle: variantInfo.new_title_jp,
