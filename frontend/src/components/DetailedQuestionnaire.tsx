@@ -3,6 +3,7 @@ import { useParams } from 'react-router-dom';
 import questionsData from '../constants/questions.json';
 import { getDetailedFeature } from '../constants/officialFeatures';
 import { getVideoFileForCategory } from '../constants/videoMap';
+import { getPlaybackRateForCategory } from '../constants/videoPlayback';
 import { Question, DetailedDiagnosisResult, DetailedFeatureInfo } from '../types';
 
 /**
@@ -44,20 +45,7 @@ const DetailedQuestionnaire: React.FC = () => {
   // Update playback rate based on result key
   useEffect(() => {
     if (result) {
-      const key = result.category
-        .replace(/\s+/g, '')
-        .replace('α', 'ALPHA')
-        .replace('β', 'BETA')
-        .replace('-', '_')
-        .replace('ー', '_')
-        .replace('–', '_')
-        .toUpperCase();
-      let rate = 1;
-      if (key === 'MARI_ALPHA_2' || key === 'SENRI_ALPHA_2') {
-        rate = 1.5;
-      } else if (key === 'MARI_BETA_1') {
-        rate = 1.3;
-      }
+      const rate = getPlaybackRateForCategory(result.category);
       setPlaybackRate(rate);
     }
   }, [result]);

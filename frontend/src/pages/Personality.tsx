@@ -2,6 +2,7 @@ import React, { useEffect, useState, useRef } from 'react';
 import { useParams } from 'react-router-dom';
 import { getDetailedFeature, DetailedFeatureInfo, Acronym, ComponentAcronym } from '../constants/officialFeatures';
 import { getVideoFileForCategory } from '../constants/videoMap';
+import { getPlaybackRateForCategory } from '../constants/videoPlayback';
 
 // Helper function to format finalKey for videoMap
 function formatKeyForVideo(finalKey: string | undefined): string {
@@ -82,15 +83,10 @@ const Personality: React.FC = () => {
         const videoMapKey = formatKeyForVideo(finalKey);
         const videoFileName = getVideoFileForCategory(videoMapKey);
         const newVideoSrc = videoFileName ? `/movie/${videoFileName}` : '/movie/default_poster.jpg';
-        setVideoSrc(newVideoSrc); // This line remains crucial
+        setVideoSrc(newVideoSrc);
 
-        // Determine target playback rate based on key
-        let rate = 1;
-        if (videoMapKey === 'MARI_ALPHA_2' || videoMapKey === 'SENRI_ALPHA_2') {
-          rate = 1.5;
-        } else if (videoMapKey === 'MARI_BETA_1') {
-          rate = 1.3;
-        }
+        // Determine target playback rate using utility
+        const rate = getPlaybackRateForCategory(finalKey);
         setPlaybackRate(rate);
       }
     }
