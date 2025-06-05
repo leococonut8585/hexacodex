@@ -195,6 +195,15 @@ label {
   }
 }
 
+/* Page-specific title styles */
+.personality-main-title {
+  font-size: clamp(2.5rem, 5vw, 4rem); /* Responsive font size */
+  text-align: center; /* Ensure center alignment */
+  line-height: 1.2; /* Adjust line height for larger font */
+  margin-bottom: 1rem; /* Space before video */
+  word-break: keep-all; /* Prevent awkward breaks in Japanese titles */
+}
+
 /* Custom utility classes */
 .custom-margin-bottom-lg {
   margin-bottom: 4rem !important; /* Using !important to ensure override if necessary */
