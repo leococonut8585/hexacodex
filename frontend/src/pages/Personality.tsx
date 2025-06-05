@@ -86,34 +86,38 @@ const Personality: React.FC = () => {
         setVideoSrc(newVideoSrc);
 
         if (videoRef.current) {
-            let targetPlaybackRate = 1.0;
-            if (videoMapKey === "MARI_ALPHA_2") {
-                targetPlaybackRate = 2.0;
-            } else if (videoMapKey === "MARI_BETA_1") {
-                targetPlaybackRate = 1.7;
-            } else if (videoMapKey === "SENRI_ALPHA_2") { // New case for Senri α-2
-                targetPlaybackRate = 1.5;
-            }
+                // --- Start of new logic to insert ---
+                const videoElement = videoRef.current; // Capture the current video element for use in the listener
 
-            const videoElement = videoRef.current;
-
-            const applyRate = () => {
-                // Check if the rate actually needs changing to avoid unnecessary operations
-                if (videoElement.playbackRate !== targetPlaybackRate) {
-                    videoElement.playbackRate = targetPlaybackRate;
+                let targetPlaybackRate = 1.0;
+                if (videoMapKey === "MARI_ALPHA_2") {
+                    targetPlaybackRate = 2.0;
+                } else if (videoMapKey === "MARI_BETA_1") {
+                    targetPlaybackRate = 1.7;
+                } else if (videoMapKey === "SENRI_ALPHA_2") {
+                    targetPlaybackRate = 1.5;
                 }
-            };
 
-            if (videoElement.readyState >= 2) { // HAVE_CURRENT_DATA
-                applyRate();
-            } else {
-                const onLoadedDataListener = () => {
-                    applyRate();
-                    videoElement.removeEventListener('loadeddata', onLoadedDataListener); // Clean up
+                // Define a named function for the event listener
+                // This allows it to be potentially removed later if needed, although with key={videoSrc}
+                // the element itself is replaced, which handles listener cleanup.
+                const onPlayingListener = () => {
+                    if (videoElement.playbackRate !== targetPlaybackRate) {
+                        videoElement.playbackRate = targetPlaybackRate;
+                    }
+                    // Optional: If the listener should only fire once per video load, remove it here.
+                    // videoElement.removeEventListener('playing', onPlayingListener);
                 };
-                videoElement.addEventListener('loadeddata', onLoadedDataListener);
+
+                // Add the 'playing' event listener to the video element
+                videoElement.addEventListener('playing', onPlayingListener);
+
+                // Note: The cleanup of this listener is expected to be handled by React when the
+                // <video> element is unmounted and remounted due to the `key={videoSrc}` prop changing.
+                // Explicitly returning a cleanup function from this specific block is not required
+                // for this subtask, as the main useEffect's cleanup (if any) is separate.
+                // --- End of new logic to insert ---
             }
-        }
       }
     }
   }, [finalKey]);
