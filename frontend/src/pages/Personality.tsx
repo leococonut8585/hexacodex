@@ -83,38 +83,36 @@ const Personality: React.FC = () => {
         const newVideoSrc = videoFileName ? `/movie/${videoFileName}` : '/movie/default_poster.jpg';
         setVideoSrc(newVideoSrc); // This line remains crucial
 
-        // --- Start of new video playback speed logic and cleanup ---
+        // --- Start of playback speed logic and cleanup ---
         if (videoRef.current) {
-          const videoElement = videoRef.current; // Capture instance for use in listener & cleanup
+          const videoElement = videoRef.current;
 
-          let currentTargetPlaybackRate = 1.0;
-          if (videoMapKey === "MARI_ALPHA_2") {
-            currentTargetPlaybackRate = 1.5;
-          } else if (videoMapKey === "MARI_BETA_1") {
-            currentTargetPlaybackRate = 1.3;
-          } else if (videoMapKey === "SENRI_ALPHA_2") {
-            currentTargetPlaybackRate = 1.5;
+          const setPlaybackRate = () => {
+            let rate = 1.0;
+            if (videoMapKey === "MARI_ALPHA_2") {
+              rate = 1.5;
+            } else if (videoMapKey === "MARI_BETA_1") {
+              rate = 1.3;
+            } else if (videoMapKey === "SENRI_ALPHA_2") {
+              rate = 1.5;
+            }
+            videoElement.playbackRate = rate;
+            videoElement.defaultPlaybackRate = rate;
+          };
+
+          const onLoadedMetadata = () => setPlaybackRate();
+
+          videoElement.addEventListener('loadedmetadata', onLoadedMetadata);
+
+          if (videoElement.readyState >= 1) {
+            setPlaybackRate();
           }
 
-          const onPlayingListener = () => {
-            requestAnimationFrame(() => {
-              if (videoElement.playbackRate !== currentTargetPlaybackRate) {
-                videoElement.playbackRate = currentTargetPlaybackRate;
-              }
-            });
-            // Optional: Remove listener after first play if it should only run once.
-            // videoElement.removeEventListener('playing', onPlayingListener);
-          };
-
-          videoElement.addEventListener('playing', onPlayingListener);
-
-          // Return a cleanup function for this specific effect execution path
           return () => {
-            if (videoElement) { // Use the captured instance
-              videoElement.removeEventListener('playing', onPlayingListener);
-            }
+            videoElement.removeEventListener('loadedmetadata', onLoadedMetadata);
           };
-        } // --- End of new video playback speed logic and cleanup ---
+        }
+        // --- End of playback speed logic and cleanup ---
       } // End of if (loadedFeature)
     } // End of if (finalKey)
 
