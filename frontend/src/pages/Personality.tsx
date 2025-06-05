@@ -45,24 +45,24 @@ const Personality: React.FC = () => {
   const [pageTitle, setPageTitle] = useState<string>('');
   const [videoSrc, setVideoSrc] = useState<string>('/movie/default_poster.jpg');
   const videoRef = useRef<HTMLVideoElement>(null);
-  const [isPlaying, setIsPlaying] = useState<boolean>(false);
+  // const [isPlaying, setIsPlaying] = useState<boolean>(false);
 
-  const togglePlay = () => {
-    if (videoRef.current) {
-      if (isPlaying) {
-        videoRef.current.pause();
-      } else {
-        videoRef.current.play();
-      }
-      setIsPlaying(!isPlaying);
-    }
-  };
+  // const togglePlay = () => {
+  //   if (videoRef.current) {
+  //     if (isPlaying) {
+  //       videoRef.current.pause();
+  //     } else {
+  //       videoRef.current.play();
+  //     }
+  //     setIsPlaying(!isPlaying);
+  //   }
+  // };
 
   useEffect(() => {
     if (finalKey) {
       const loadedFeature = getDetailedFeature(finalKey);
       setFeature(loadedFeature);
-      setIsPlaying(false); // Reset playing state on feature change
+      // setIsPlaying(false); // Reset playing state on feature change
 
       if (loadedFeature) {
         // Generate Page Title (Item ①)
@@ -107,18 +107,19 @@ const Personality: React.FC = () => {
       <h1 className="personality-main-title">{pageTitle}</h1>
 
       {/* ② 映像 */}
-      <div className="video-player-section" onClick={togglePlay} style={{ cursor: 'pointer' }}>
+      <div className="video-player-section">
         <video
           ref={videoRef}
           controls={false}
           width="100%"
           key={videoSrc}
           poster={videoSrc === '/movie/default_poster.jpg' ? videoSrc : undefined}
-          onPlay={() => setIsPlaying(true)}
-          onPause={() => setIsPlaying(false)}
+          // onPlay={() => setIsPlaying(true)}
+          // onPause={() => setIsPlaying(false)}
           playsInline // For better mobile experience
           loop // Optional: if videos should loop
           muted // Optional: if videos should start muted; click will unmute if browser policy allows
+          autoPlay // Add autoPlay attribute
         >
           <source src={videoSrc} type="video/mp4" />
           お使いのブラウザは動画タグをサポートしていません。
