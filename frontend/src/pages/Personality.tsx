@@ -131,11 +131,6 @@ const Personality: React.FC = () => {
         <h2 className="section-title">{feature.mainTypeTitle}</h2>
       </section>
 
-      {/* ④ メイン部分（12タイプ）のキャッチコピー (タイトルから抽出) */}
-      <section className="main-type-extracted-catchphrase-section section-padding"> {/* Changed class name */}
-        <p className="catchphrase-text">{extractActualCatchphrase(feature.mainTypeTitle)}</p>
-      </section>
-
       {/* ⑤ アクロニム */}
       {feature.mainTypeAcronyms && (
         <section className="acronym-section section-padding">
