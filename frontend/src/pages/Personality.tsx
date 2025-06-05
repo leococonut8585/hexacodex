@@ -62,13 +62,11 @@ const Personality: React.FC = () => {
     if (finalKey) {
       const loadedFeature = getDetailedFeature(finalKey);
       setFeature(loadedFeature);
-      // setIsPlaying(false); // Reset playing state on feature change
 
       if (loadedFeature) {
-        // Generate Page Title (Item ①)
+        // Page title logic (remains the same)
         const keyParts = finalKey.split('_');
         const baseName = extractBaseName(loadedFeature.mainTypeNameJp);
-
         let variantChar = '';
         let subTypeNum = '';
         if (keyParts[1]) {
@@ -79,48 +77,50 @@ const Personality: React.FC = () => {
         const subTypeName = subTypeNum === '1' ? 'I型' : subTypeNum === '2' ? 'Ⅱ型' : '';
         setPageTitle(`${baseName} ${variantChar} ${subTypeName}`.trim());
 
-        // Video Logic (Item ②)
+        // Video Logic
         const videoMapKey = formatKeyForVideo(finalKey);
         const videoFileName = getVideoFileForCategory(videoMapKey);
         const newVideoSrc = videoFileName ? `/movie/${videoFileName}` : '/movie/default_poster.jpg';
-        setVideoSrc(newVideoSrc);
+        setVideoSrc(newVideoSrc); // This line remains crucial
 
+        // --- Start of new video playback speed logic and cleanup ---
         if (videoRef.current) {
-                // --- Start of new logic to insert ---
-                const videoElement = videoRef.current; // Capture the current video element for use in the listener
+          const videoElement = videoRef.current; // Capture instance for use in listener & cleanup
 
-                let targetPlaybackRate = 1.0;
-                if (videoMapKey === "MARI_ALPHA_2") {
-                    targetPlaybackRate = 2.0;
-                } else if (videoMapKey === "MARI_BETA_1") {
-                    targetPlaybackRate = 1.7;
-                } else if (videoMapKey === "SENRI_ALPHA_2") {
-                    targetPlaybackRate = 1.5;
-                }
+          let currentTargetPlaybackRate = 1.0;
+          if (videoMapKey === "MARI_ALPHA_2") {
+            currentTargetPlaybackRate = 2.0;
+          } else if (videoMapKey === "MARI_BETA_1") {
+            currentTargetPlaybackRate = 1.7;
+          } else if (videoMapKey === "SENRI_ALPHA_2") {
+            currentTargetPlaybackRate = 1.5;
+          }
 
-                // Define a named function for the event listener
-                // This allows it to be potentially removed later if needed, although with key={videoSrc}
-                // the element itself is replaced, which handles listener cleanup.
-                const onPlayingListener = () => {
-                    if (videoElement.playbackRate !== targetPlaybackRate) {
-                        videoElement.playbackRate = targetPlaybackRate;
-                    }
-                    // Optional: If the listener should only fire once per video load, remove it here.
-                    // videoElement.removeEventListener('playing', onPlayingListener);
-                };
+          const onPlayingListener = () => {
+            requestAnimationFrame(() => {
+              if (videoElement.playbackRate !== currentTargetPlaybackRate) {
+                videoElement.playbackRate = currentTargetPlaybackRate;
+              }
+            });
+            // Optional: Remove listener after first play if it should only run once.
+            // videoElement.removeEventListener('playing', onPlayingListener);
+          };
 
-                // Add the 'playing' event listener to the video element
-                videoElement.addEventListener('playing', onPlayingListener);
+          videoElement.addEventListener('playing', onPlayingListener);
 
-                // Note: The cleanup of this listener is expected to be handled by React when the
-                // <video> element is unmounted and remounted due to the `key={videoSrc}` prop changing.
-                // Explicitly returning a cleanup function from this specific block is not required
-                // for this subtask, as the main useEffect's cleanup (if any) is separate.
-                // --- End of new logic to insert ---
+          // Return a cleanup function for this specific effect execution path
+          return () => {
+            if (videoElement) { // Use the captured instance
+              videoElement.removeEventListener('playing', onPlayingListener);
             }
-      }
-    }
-  }, [finalKey]);
+          };
+        } // --- End of new video playback speed logic and cleanup ---
+      } // End of if (loadedFeature)
+    } // End of if (finalKey)
+
+    // Default cleanup function if the above conditions were not met (e.g., no finalKey, no loadedFeature)
+    return () => {};
+  }, [finalKey]); // useEffect dependency array
 
   if (!feature) {
     return <div className="loading-message">特徴情報が見つかりません。</div>;
