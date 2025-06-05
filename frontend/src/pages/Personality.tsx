@@ -89,9 +89,9 @@ const Personality: React.FC = () => {
 
           let currentTargetPlaybackRate = 1.0;
           if (videoMapKey === "MARI_ALPHA_2") {
-            currentTargetPlaybackRate = 2.0;
+            currentTargetPlaybackRate = 1.5;
           } else if (videoMapKey === "MARI_BETA_1") {
-            currentTargetPlaybackRate = 1.7;
+            currentTargetPlaybackRate = 1.3;
           } else if (videoMapKey === "SENRI_ALPHA_2") {
             currentTargetPlaybackRate = 1.5;
           }
