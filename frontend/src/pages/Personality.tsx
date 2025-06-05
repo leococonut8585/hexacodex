@@ -44,6 +44,7 @@ const Personality: React.FC = () => {
   const [feature, setFeature] = useState<DetailedFeatureInfo | null>(null);
   const [pageTitle, setPageTitle] = useState<string>('');
   const [videoSrc, setVideoSrc] = useState<string>('/movie/default_poster.jpg');
+  const [playbackRate, setPlaybackRate] = useState<number>(1);
   const videoRef = useRef<HTMLVideoElement>(null);
   // const [isPlaying, setIsPlaying] = useState<boolean>(false);
 
@@ -83,44 +84,24 @@ const Personality: React.FC = () => {
         const newVideoSrc = videoFileName ? `/movie/${videoFileName}` : '/movie/default_poster.jpg';
         setVideoSrc(newVideoSrc); // This line remains crucial
 
-        // --- Start of new video playback speed logic and cleanup ---
-        if (videoRef.current) {
-          const videoElement = videoRef.current; // Capture instance for use in listener & cleanup
-
-          let currentTargetPlaybackRate = 1.0;
-          if (videoMapKey === "MARI_ALPHA_2") {
-            currentTargetPlaybackRate = 1.5;
-          } else if (videoMapKey === "MARI_BETA_1") {
-            currentTargetPlaybackRate = 1.3;
-          } else if (videoMapKey === "SENRI_ALPHA_2") {
-            currentTargetPlaybackRate = 1.5;
-          }
-
-          const onPlayingListener = () => {
-            requestAnimationFrame(() => {
-              if (videoElement.playbackRate !== currentTargetPlaybackRate) {
-                videoElement.playbackRate = currentTargetPlaybackRate;
-              }
-            });
-            // Optional: Remove listener after first play if it should only run once.
-            // videoElement.removeEventListener('playing', onPlayingListener);
-          };
-
-          videoElement.addEventListener('playing', onPlayingListener);
-
-          // Return a cleanup function for this specific effect execution path
-          return () => {
-            if (videoElement) { // Use the captured instance
-              videoElement.removeEventListener('playing', onPlayingListener);
-            }
-          };
-        } // --- End of new video playback speed logic and cleanup ---
-      } // End of if (loadedFeature)
-    } // End of if (finalKey)
-
-    // Default cleanup function if the above conditions were not met (e.g., no finalKey, no loadedFeature)
-    return () => {};
+        // Determine target playback rate based on key
+        let rate = 1;
+        if (videoMapKey === 'MARI_ALPHA_2' || videoMapKey === 'SENRI_ALPHA_2') {
+          rate = 1.5;
+        } else if (videoMapKey === 'MARI_BETA_1') {
+          rate = 1.3;
+        }
+        setPlaybackRate(rate);
+      }
+    }
   }, [finalKey]); // useEffect dependency array
+
+  // Apply playback rate whenever source or rate changes
+  useEffect(() => {
+    if (videoRef.current) {
+      videoRef.current.playbackRate = playbackRate;
+    }
+  }, [videoSrc, playbackRate]);
 
   if (!feature) {
     return <div className="loading-message">特徴情報が見つかりません。</div>;
@@ -150,6 +131,11 @@ const Personality: React.FC = () => {
           loop // Optional: if videos should loop
           muted // Optional: if videos should start muted; click will unmute if browser policy allows
           autoPlay // Add autoPlay attribute
+          onLoadedMetadata={() => {
+            if (videoRef.current) {
+              videoRef.current.playbackRate = playbackRate;
+            }
+          }}
         >
           <source src={videoSrc} type="video/mp4" />
           お使いのブラウザは動画タグをサポートしていません。
