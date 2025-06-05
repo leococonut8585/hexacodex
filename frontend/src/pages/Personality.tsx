@@ -84,10 +84,21 @@ const Personality: React.FC = () => {
         const videoFileName = getVideoFileForCategory(videoMapKey);
         const newVideoSrc = videoFileName ? `/movie/${videoFileName}` : '/movie/default_poster.jpg';
         setVideoSrc(newVideoSrc);
-        if (videoRef.current && videoRef.current.src !== newVideoSrc) {
-            videoRef.current.load(); // Load new video source
-        }
 
+        if (videoRef.current) {
+          if (videoRef.current.src !== newVideoSrc) {
+            videoRef.current.load(); // Load new video source
+          }
+          // Set playback speed based on finalKey
+          // const formattedKey = formatKeyForVideo(finalKey); // videoMapKey can be reused
+          if (videoMapKey === "MARI_ALPHA_2") {
+            videoRef.current.playbackRate = 1.5;
+          } else if (videoMapKey === "MARI_BETA_1") {
+            videoRef.current.playbackRate = 1.3;
+          } else {
+            videoRef.current.playbackRate = 1.0;
+          }
+        }
       }
     }
   }, [finalKey]);
