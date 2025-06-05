@@ -98,7 +98,7 @@ const Questionnaire: React.FC = () => {
 
   return (
     <div>
-      <h2>{initial_type} タイプ診断</h2>
+      {/* <h2>{initial_type} タイプ診断</h2> */}
       {/* Result display removed */}
       <div>
         <div
