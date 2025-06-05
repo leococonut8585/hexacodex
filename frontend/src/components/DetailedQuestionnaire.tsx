@@ -1,4 +1,4 @@
-import React, { useState, useEffect } from 'react';
+import React, { useState, useEffect, useRef } from 'react';
 import { useParams } from 'react-router-dom';
 import questionsData from '../constants/questions.json';
 import { getDetailedFeature } from '../constants/officialFeatures';
@@ -35,9 +35,38 @@ const DetailedQuestionnaire: React.FC = () => {
   const [result, setResult] = useState<DetailedDiagnosisResult | null>(null);
   const [error, setError] = useState('');
   const [videoError, setVideoError] = useState(false);
+  const [playbackRate, setPlaybackRate] = useState<number>(1);
+  const videoRef = useRef<HTMLVideoElement>(null);
 
   const videoFile = result ? getVideoFileForCategory(result.category) : undefined;
   const videoPath = videoFile ? `/movie/${videoFile}` : '';
+
+  // Update playback rate based on result key
+  useEffect(() => {
+    if (result) {
+      const key = result.category
+        .replace(/\s+/g, '')
+        .replace('α', 'ALPHA')
+        .replace('β', 'BETA')
+        .replace('-', '_')
+        .replace('ー', '_')
+        .replace('–', '_')
+        .toUpperCase();
+      let rate = 1;
+      if (key === 'MARI_ALPHA_2' || key === 'SENRI_ALPHA_2') {
+        rate = 1.5;
+      } else if (key === 'MARI_BETA_1') {
+        rate = 1.3;
+      }
+      setPlaybackRate(rate);
+    }
+  }, [result]);
+
+  useEffect(() => {
+    if (videoRef.current) {
+      videoRef.current.playbackRate = playbackRate;
+    }
+  }, [playbackRate, videoFile]);
 
   useEffect(() => {
     async function logDebug() {
@@ -98,11 +127,17 @@ const DetailedQuestionnaire: React.FC = () => {
         </div>
         {videoFile && !videoError ? (
           <video
+            ref={videoRef}
             src={videoPath}
             autoPlay
             loop
             muted
             playsInline
+            onLoadedMetadata={() => {
+              if (videoRef.current) {
+                videoRef.current.playbackRate = playbackRate;
+              }
+            }}
             onError={() => setVideoError(true)}
           />
         ) : (
