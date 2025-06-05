@@ -92,9 +92,9 @@ const Personality: React.FC = () => {
           // Set playback speed based on finalKey
           // const formattedKey = formatKeyForVideo(finalKey); // videoMapKey can be reused
           if (videoMapKey === "MARI_ALPHA_2") {
-            videoRef.current.playbackRate = 1.5;
+            videoRef.current.playbackRate = 2.0;
           } else if (videoMapKey === "MARI_BETA_1") {
-            videoRef.current.playbackRate = 1.3;
+            videoRef.current.playbackRate = 1.7;
           } else {
             videoRef.current.playbackRate = 1.0;
           }
