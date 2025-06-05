@@ -195,3 +195,7 @@ label {
   }
 }
 
+/* Custom utility classes */
+.custom-margin-bottom-lg {
+  margin-bottom: 4rem !important; /* Using !important to ensure override if necessary */
+}
