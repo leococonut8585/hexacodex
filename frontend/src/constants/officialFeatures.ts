@@ -94,6 +94,32 @@ interface NOAHData {
   beta: NOAHSubType;
 }
 
+interface KAIRIFeature {
+  catch: string;
+  description: string;
+}
+
+interface KAIRISubType {
+  main: KAIRIFeature; // alpha または beta の主要なキャッチコピーと説明
+  type1: KAIRIFeature; // 1型 のキャッチコピーと説明
+  type2: KAIRIFeature; // 2型 のキャッチコピーと説明
+}
+
+interface KAIRIData {
+  alpha: KAIRISubType;
+  beta: KAIRISubType;
+}
+
+function normalizeKey(key: string): string {
+  return key
+    .replace(/ＫＡＩＲＩ/g, 'KAIRI')
+    .replace(/ＮＯＡＨ/g, 'NOAH')
+    .replace(/ＳＥＮＲＩ/g, 'SENRI')
+    .replace(/ＡＫＡＲＩ/g, 'AKARI')
+    .replace(/ＭＡＲＩ/g, 'MARI') // MARIも追加（将来のため）
+    .replace(/ＫＩＮＲＹＵ/g, 'KINRYU'); // KINRYUも追加（将来のため）
+}
+
 function extractKey(name: string): string {
   return name.split('(')[0].trim().replace(/\s+/g, '');
 }
@@ -144,6 +170,37 @@ const AKARI_FEATURES: AKARIData = {
     type2: {
       catch: "夢見の詩人型",
       description: "ＡＫＡＲＩ ｂｅｔａ ２型は、「現実逃避の芸術家」とでも呼ぶべき特異な存在である。彼らは現実世界の厳しさや複雑さから身を守るために、幻想的で美しい内的世界を構築し、その中で生きることを選択する。"
+    }
+  }
+};
+
+const KAIRI_FEATURES: KAIRIData = {
+  alpha: {
+    main: {
+      catch: "理想を掲げ、現実を切り拓く賢者",
+      description: "ＫＡＩＲＩ　ａｌｐｈａタイプは、ＫＡＩＲＩの基本的特質に外向性と行動力が加わった、極めて野心的で影響力のある人格である。彼らは「才能あふれるカリスマ」とでも呼ぶべき存在で、その分析力と理想主義を武器に、社会に大きなインパクトを与えようとする。"
+    },
+    type1: {
+      catch: "理想構築型",
+      description: "ＫＡＩＲＩ　ａｌｐｈａ　１型は、「理想を描き出す設計士」とでも呼ぶべき存在である。彼らは抽象的な理想を具体的な実行可能な計画に落とし込む能力に長けており、ビジョンを持ったリーダーとしての資質を持っている。「未来志向性」と「システム思考」を高度に発達させた人格である。"
+    },
+    type2: {
+      catch: "信念探求型",
+      description: "ＫＡＩＲＩ　ａｌｐｈａ〠２型は、「革命的思想家」としての側面を強く持つ人格である。彼らは既存の価値観や社会システムに疑問を投げかけ、より良い世界を目指して絶えず思考と行動を続ける。心理学的には「批判的思考」と「変革への意志」を併せ持った人格である。"
+    }
+  },
+  beta: {
+    main: {
+      catch: "静かに理想を抱き、孤高を歩む探究者",
+      description: "ＫＡＩＲＩ　ｂｅｔａタイプは、ＫＡＩＲＩの基本的特質を内向的で静謐な形で表現する人格である。彼らは「孤高の思索者」とでも呼ぶべき存在で、表立った行動よりも深い思考と内的探求を通じて自分なりの真理を追求する。"
+    },
+    type1: {
+      catch: "孤高の職人型",
+      description: "ＫＡＩＲＩ　ｂｅｔａ　１型は、「完璧主義の芸術家」とでも形容すべき存在である。彼らは自分が選んだ専門分野において、妥協を許さない完璧性を追求し続ける。いわゆる「フロー状態」に入りやすい人格であり、集中力と持続力において並外れた能力を発揮する。"
+    },
+    type2: {
+      catch: "静かな哲学者型",
+      description: "ＫＡＩＲＩ　ｂｅｔａ ２型は、「内省的賢者」として機能する人格である。彼らは世界の本質や人生の意味について深く思索し、独自の哲学的洞察を発達させる。心理学的には「実存的知性」と「形而上学的思考」を併せ持った人格である。"
     }
   }
 };
@@ -242,16 +299,48 @@ export function getInitialFeature(starType: string): FeatureInfo | null {
 export function getDetailedFeature(finalKey: string): DetailedFeatureInfo | null {
   const match = finalKey.match(/([^_]+)_([αβ])-(\d)/);
   if (!match) return null;
-  let [, baseKey, variantChar, subIdxStr] = match; // baseKeyをletで宣言していることを確認
-  const subTypeNum = parseInt(subIdxStr, 10); // 1 or 2
+  let [, baseKey, variantChar, subIdxStr] = match;
+  const subTypeNum = parseInt(subIdxStr, 10);
 
-  // baseKeyの正規化処理を追加
-  if (baseKey === "ＮＯＡＨ") { // 全角のＮＯＡＨかどうかをチェック
-    baseKey = "NOAH"; // 半角のNOAHに置き換える
-  }
+  // ★ baseKeyの正規化処理を追加 ★
+  baseKey = normalizeKey(baseKey);
 
-  // 以降の if-else if ブロックは、この正規化された baseKey を使って判定する
-  if (baseKey.toUpperCase() === 'AKARI') {
+  if (baseKey.toUpperCase() === 'KAIRI') { // KAIRIタイプの処理を追加
+    const variant = variantChar === 'α' ? KAIRI_FEATURES.alpha : KAIRI_FEATURES.beta;
+    if (!variant) return null;
+
+    let typeSpecificFeature: KAIRIFeature;
+    if (subTypeNum === 1) typeSpecificFeature = variant.type1;
+    else if (subTypeNum === 2) typeSpecificFeature = variant.type2;
+    else return null;
+
+    const mainTypeNameJp = "KAIRI (カイリ)";
+    const mainTypeBaseCatchphrase = "知性と理想の探求者"; // KAIRIの基本キャッチ
+    const mainTypeTitle = `【ＫＡＩＲＩ（カイリ） ${mainTypeBaseCatchphrase}】`; // 全角で統一
+    const mainTypeDescription = "「ＫＡＩＲＩ」タイプは、知的好奇心と真実への探求を象徴します。彼らは論理的な思考と深い洞察力を持ち、複雑な問題を解決することに長けています。しかし、時にはその知性が他者との間に距離を生むこともあります。"; // catch_base.jsonから取得したKAIRIの基本説明
+
+    return {
+      mainTypeTitle: mainTypeTitle,
+      mainTypeCatchphrase: mainTypeBaseCatchphrase,
+      mainTypeDescription: mainTypeDescription,
+      mainTypeAcronyms: undefined, // KAIRI用のアクロニムがあれば設定
+      alphaBetaTypeFullTitle: `ＫＡＩＲＩ ${variantChar === 'α' ? 'ａｌｐｈａ' : 'ｂｅｔａ'} 「${variant.main.catch}」`, // 全角で統一
+      alphaBetaTypeCatchphrase: variant.main.catch,
+      alphaBetaTypeDescription: variant.main.description,
+      oneTwoTypeFullTitle: `ＫＡＩＲＩ ${variantChar === 'α' ? 'ａｌｐｈａ' : 'ｂｅｔａ'} ${subTypeNum === 1 ? '１型' : '２型'} 「${typeSpecificFeature.catch}」`, // 全角で統一
+      oneTwoTypeCatchphrase: typeSpecificFeature.catch,
+      oneTwoTypeDescription: typeSpecificFeature.description,
+      catch: mainTypeTitle,
+      baseDescription: mainTypeDescription,
+      mainTypeNameJp: mainTypeNameJp,
+      variantTitle: variant.main.catch,
+      variant_description_sub_title_explanation: variant.main.description,
+      subTitle: typeSpecificFeature.catch,
+      sub_type_description_sub_title_explanation: typeSpecificFeature.description,
+      acronyms: undefined,
+      componentAcronyms: undefined,
+    };
+  } else if (baseKey.toUpperCase() === 'AKARI') {
     const variant = variantChar === 'α' ? AKARI_FEATURES.alpha : AKARI_FEATURES.beta;
     if (!variant) return null;
 
@@ -382,8 +471,8 @@ export function getDetailedFeature(finalKey: string): DetailedFeatureInfo | null
     };
   }
 
-  // === 以下は AKARI, SENRI, NOAH 以外の場合の既存のロジック (変更なし) ===
-  const entry = findEntry(baseKey);
+  // === 以下は KAIRI, AKARI, SENRI, NOAH 以外の場合の既存のロジック (変更なし) ===
+  const entry = findEntry(baseKey); // 正規化されたbaseKeyが使われる
   // ... (残りの既存ロジックは変更しない) ...
   if (!entry) return null;
 
