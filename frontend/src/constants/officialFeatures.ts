@@ -78,6 +78,22 @@ interface SENRIData {
   beta: SENRISubType;
 }
 
+interface NOAHFeature {
+  catch: string;
+  description: string;
+}
+
+interface NOAHSubType {
+  main: NOAHFeature; // alpha または beta の主要なキャッチコピーと説明
+  type1: NOAHFeature; // 1型 のキャッチコピーと説明
+  type2: NOAHFeature; // 2型 のキャッチコピーと説明
+}
+
+interface NOAHData {
+  alpha: NOAHSubType;
+  beta: NOAHSubType;
+}
+
 function extractKey(name: string): string {
   return name.split('(')[0].trim().replace(/\s+/g, '');
 }
@@ -128,6 +144,37 @@ const AKARI_FEATURES: AKARIData = {
     type2: {
       catch: "夢見の詩人型",
       description: "ＡＫＡＲＩ ｂｅｔａ ２型は、「現実逃避の芸術家」とでも呼ぶべき特異な存在である。彼らは現実世界の厳しさや複雑さから身を守るために、幻想的で美しい内的世界を構築し、その中で生きることを選択する。"
+    }
+  }
+};
+
+const NOAH_FEATURES: NOAHData = {
+  alpha: {
+    main: {
+      catch: "明るく育み、未来を拓く希望の使者",
+      description: "ＮＯＡＨ　ａｌｐｈａタイプは、ＮＯＡＨの基本的特質に外向性と行動力が加わった、極めてダイナミックな人格である。彼らは「愛情のカリスマ」とでも呼ぶべき存在で、その明るいエネルギーと献身的な姿勢で多くの人々を魅了し、同時に影響下に置く。"
+    },
+    type1: {
+      catch: "希望の架け橋型",
+      description: "ＮＯＡＨ　ａｌｐｈａ　１型は、「希望の架け橋」とも呼ぶべき存在である。彼らは単に明るく振る舞うだけでなく、具体的な希望のビジョンを描き、それを現実化するための道筋を示すことができる。強い「未来志向性」と「建設的楽観主義」を併せ持った人格である。"
+    },
+    type2: {
+      catch: "成長促進型",
+      description: "ＮＯＡＨ　ａｌｐｈａ　２型は、「才能の錬金術師」とでも呼ぶべき特殊な能力を持っている。彼らは他者の隠れた才能や可能性を発見し、それを開花させることに並外れた情熱を注ぐ。心理学的には「メンタリング能力」と「育成本能」が高度に発達した人格である。"
+    }
+  },
+  beta: {
+    main: {
+      catch: "静かに寄り添い、温もりを灯す癒し手",
+      description: "ＮＯＡＨ　ｂｅｔａタイプは、ＮＯＡＨの基本的特質を内向的で静謐な形で表現する人格である。彼らは「静かなる治療者」とでも呼ぶべき存在で、表立った行動よりも深い共感と理解を通じて他者に影響を与える。"
+    },
+    type1: {
+      catch: "静かな癒し型",
+      description: "ＮＯＡＨ　ｂｅｔａ　１型は、「沈黙の治療者」とでも形容すべき存在である。彼らは言葉よりも存在感で、行動よりも共感で、周囲の人々に深い癒しをもたらす。心理学的には「非言語的コミュニケーション」の達人であり、相手の微細な感情の変化を敏感に察知し、適切に対応する能力を持っている。"
+    },
+    type2: {
+      catch: "慎重な守護型",
+      description: "ＮＯＡＨ　ｂｅｔａ　２型は、「賢明なる保護者」として機能する人格である。彼らは急激な変化を避け、安定性と継続性を重視しながら、周囲の人々を守り育てていく。「安全基地」としての機能を果たしており、他者が外的世界で挑戦する際の心の支えとなっている。"
     }
   }
 };
@@ -195,8 +242,13 @@ export function getInitialFeature(starType: string): FeatureInfo | null {
 export function getDetailedFeature(finalKey: string): DetailedFeatureInfo | null {
   const match = finalKey.match(/([^_]+)_([αβ])-(\d)/);
   if (!match) return null;
-  const [, baseKey, variantChar, subIdxStr] = match;
+  let [, baseKey, variantChar, subIdxStr] = match; // baseKeyをletに変更
   const subTypeNum = parseInt(subIdxStr, 10); // 1 or 2
+
+  // Handle NOAH key variations if necessary (e.g. "ＮＯＡＨ" to "NOAH")
+  // For simplicity, assuming baseKey will be "NOAH" after parsing finalKey.
+  // If finalKey could be "ＮＯＡＨ_α-1", then baseKey needs normalization here.
+  // For now, we rely on the finalKey format being consistent e.g. "NOAH_alpha-1" or "noah_alpha-1"
 
   if (baseKey.toUpperCase() === 'AKARI') {
     const variant = variantChar === 'α' ? AKARI_FEATURES.alpha : AKARI_FEATURES.beta;
@@ -286,16 +338,58 @@ export function getDetailedFeature(finalKey: string): DetailedFeatureInfo | null
       acronyms: undefined,
       componentAcronyms: undefined,
     };
+  } else if (baseKey.toUpperCase() === 'NOAH') { // NOAHタイプの処理を追加
+    const variant = variantChar === 'α' ? NOAH_FEATURES.alpha : NOAH_FEATURES.beta;
+    if (!variant) return null;
+
+    let typeSpecificFeature: NOAHFeature;
+    if (subTypeNum === 1) {
+      typeSpecificFeature = variant.type1;
+    } else if (subTypeNum === 2) {
+      typeSpecificFeature = variant.type2;
+    } else {
+      return null; // Invalid subTypeNum
+    }
+    // NOAHの基本情報を設定 (catch_base.json の NOAH エントリを参照するか、固定値を使用)
+    // ユーザー指示書にある「慈愛と調和の体現者」を基本キャッチとして使用
+    const mainTypeNameJp = "NOAH (ノア)"; // 全角ＮＯＡＨは表示時にゆだねるか、ここで定義
+    const mainTypeBaseCatchphrase = "慈愛と調和の体現者";
+    const mainTypeTitle = `【ＮＯＡＨ（ノア） ${mainTypeBaseCatchphrase}】`; // 全角で統一
+    const mainTypeDescription = "「ＮＯＡＨ」コードは、人間の本能的な「育成性」と「愛情性」を表現する。このコードを持つ人々は、他者を守り、育て、調和をもたらすことに深い喜びを感じる。しかし、その愛情は時として支配的で独善的な側面も持つ。まるで大きな母なる木のように、多くの生命を包み込みながらも、その影響下に置こうとする本能を持っている。"; // catch_base.json から取得したNOAHの基本説明
+
+    return {
+      mainTypeTitle: mainTypeTitle,
+      mainTypeCatchphrase: mainTypeBaseCatchphrase, // 「【】」なしのキャッチ
+      mainTypeDescription: mainTypeDescription,
+      mainTypeAcronyms: undefined, // NOAH用のアクロニムがあれば設定
+      alphaBetaTypeFullTitle: `ＮＯＡＨ ${variantChar === 'α' ? 'ａｌｐｈａ' : 'ｂｅｔａ'} 「${variant.main.catch}」`, // 全角で統一
+      alphaBetaTypeCatchphrase: variant.main.catch,
+      alphaBetaTypeDescription: variant.main.description,
+      oneTwoTypeFullTitle: `ＮＯＡＨ ${variantChar === 'α' ? 'ａｌｐｈａ' : 'ｂｅｔａ'} ${subTypeNum === 1 ? '１型' : '２型'} 「${typeSpecificFeature.catch}」`, // 全角で統一
+      oneTwoTypeCatchphrase: typeSpecificFeature.catch,
+      oneTwoTypeDescription: typeSpecificFeature.description,
+      // 以下は旧フィールドまたは互換性のためのフィールド
+      catch: mainTypeTitle,
+      baseDescription: mainTypeDescription,
+      mainTypeNameJp: mainTypeNameJp, // "NOAH (ノア)"
+      variantTitle: variant.main.catch,
+      variant_description_sub_title_explanation: variant.main.description,
+      subTitle: typeSpecificFeature.catch,
+      sub_type_description_sub_title_explanation: typeSpecificFeature.description,
+      acronyms: undefined,
+      componentAcronyms: undefined,
+    };
   }
 
-  // === 以下は AKARI および SENRI 以外の場合の既存のロジック (変更なし) ===
+  // === 以下は AKARI, SENRI, NOAH 以外の場合の既存のロジック (変更なし) ===
   const entry = findEntry(baseKey);
+  // ... (残りの既存ロジックは変更しない) ...
   if (!entry) return null;
 
   const variantInfo = entry[variantChar === 'α' ? 'alpha_variant' : 'beta_variant'];
   if (!variantInfo) return null;
 
-  const sub = variantInfo.sub_types?.[subIdx];
+  const sub = variantInfo.sub_types?.[parseInt(subIdxStr, 10) - 1];
   if (!sub) return null;
 
   const mainTypeAcronyms = (entry as any).new_keywords_acronym || (entry as any).component_acronyms;
