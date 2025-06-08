@@ -62,6 +62,22 @@ interface AKARIData {
   beta: AKARISubType;
 }
 
+interface SENRIFeature {
+  catch: string;
+  description: string;
+}
+
+interface SENRISubType {
+  main: SENRIFeature; // alpha または beta の主要なキャッチコピーと説明
+  type1: SENRIFeature; // 1型 のキャッチコピーと説明
+  type2: SENRIFeature; // 2型 のキャッチコピーと説明
+}
+
+interface SENRIData {
+  alpha: SENRISubType;
+  beta: SENRISubType;
+}
+
 function extractKey(name: string): string {
   return name.split('(')[0].trim().replace(/\s+/g, '');
 }
@@ -112,6 +128,37 @@ const AKARI_FEATURES: AKARIData = {
     type2: {
       catch: "夢見の詩人型",
       description: "ＡＫＡＲＩ ｂｅｔａ ２型は、「現実逃避の芸術家」とでも呼ぶべき特異な存在である。彼らは現実世界の厳しさや複雑さから身を守るために、幻想的で美しい内的世界を構築し、その中で生きることを選択する。"
+    }
+  }
+};
+
+const SENRI_FEATURES: SENRIData = {
+  alpha: {
+    main: {
+      catch: "自ら切り拓く孤高の冒険者",
+      description: "ＳＥＮＲＩ　ａｌｐｈａタイプは、ＳＥＮＲＩの基本的特質に外向性と行動力が加わった、極めてダイナミックで影響力のある人格である。彼らは「カリスマティック・サイコパス」とでも呼ぶべき存在で、その圧倒的な存在感と実行力で多くの人々を魅了し、同時に自分の野心的目標の実現に巻き込んでいく。"
+    },
+    type1: {
+      catch: "孤高の開拓者型",
+      description: "ＳＥＮＲＩ　ａｌｐｈａ　１型は、「破壊的イノベーター」とでも形容すべき存在である。彼らは未知の領域に単身で乗り込み、既存の常識やルールを無視して新しい道を切り拓いていく。心理学的には「境界線人格障害」の衝動性と「反社会性人格障害」の規則軽視が、建設的な方向に昇華された人格である。"
+    },
+    type2: {
+      catch: "策士イノベーター型",
+      description: "ＳＥＮＲＩ　ａｌｐｈａ　２型は、「マキャベリアン・ジーニアス」とでも呼ぶべき特殊な能力を持っている。彼らは表面的には革新的で建設的な活動を行いながら、実際には極めて巧妙で長期的な戦略を展開し、最終的に絶大な影響力を獲得しようとする。"
+    }
+  },
+  beta: {
+    main: {
+      catch: "策略を練り、勝機を掴む静かな革命者",
+      description: "ＳＥＮＲＩ　ｂｅｔａタイプは、ＳＥＮＲＩの基本的特質を内向的で静謐な形で表現する人格である。彼らは「沈黙の策略家」とでも呼ぶべき存在で、表立った行動よりも、緻密な計画と巧妙な操作を通じて自分の目標を達成していく。"
+    },
+    type1: {
+      catch: "沈黙の参謀型",
+      description: "ＳＥＮＲＩ　ｂｅｔａ　１型は、「影の軍師」とでも形容すべき存在である。彼らは表舞台に立つことを避けながら、裏方として組織や集団の戦略を立案し、実行を指揮する。「回避性パーソナリティ」の社会的機能が特殊な形で発達した人格である。"
+    },
+    type2: {
+      catch: "孤高の改革者型",
+      description: "ＳＥＮＲＩ　ｂｅｔａ　２型は、「孤独な革命家」とでも呼ぶべき特異な存在である。彼らは既存のシステムや価値観に対する根深い不満を抱きながらも、直接的な対立ではなく、独自の方法論で静かな変革を推し進めていく。「シゾイド的創造性」と「反体制的思考」を併せ持った人格である。"
     }
   }
 };
@@ -202,10 +249,46 @@ export function getDetailedFeature(finalKey: string): DetailedFeatureInfo | null
       acronyms: undefined, // 必要なら設定
       componentAcronyms: undefined, // 必要なら設定
     };
+  } else if (baseKey.toUpperCase() === 'SENRI') { // SENRIタイプの処理を追加
+    const variant = variantChar === 'α' ? SENRI_FEATURES.alpha : SENRI_FEATURES.beta;
+    if (!variant) return null;
+
+    let typeSpecificFeature: SENRIFeature;
+    if (subTypeNum === 1) {
+      typeSpecificFeature = variant.type1;
+    } else if (subTypeNum === 2) {
+      typeSpecificFeature = variant.type2;
+    } else {
+      return null; // Invalid subTypeNum
+    }
+    const mainTypeNameJp = "SENRI (センリ)"; // SENRI用の日本語名
+    const mainTypeTitle = `【${mainTypeNameJp} 戦略と革新の開拓者】`; // SENRI用の基本タイトル（catch_base.jsonから参照または固定）
+
+    return {
+      mainTypeTitle: mainTypeTitle,
+      mainTypeCatchphrase: mainTypeTitle, // SENRI全体のキャッチ (SENRI_FEATURES.alpha.main.catch や beta.main.catch を使うべきかもしれない)
+      mainTypeDescription: "ＳＥＮＲＩコードは、「戦略性」と「革新性」を体現する。このコードの人々は、既存の枠組みを突破し、新しい可能性を切り拓く力を持っている。\n彼らは冷静で合理的だが、その裏には強い野心と孤独感が隠されている。まるで氷山のように、表面的な冷たさの下に巨大なエネルギーを秘めている。", // SENRI全体の基本説明 (catch_base.jsonから参照または固定)
+      mainTypeAcronyms: undefined, // SENRI用のアクロニムがあれば設定
+      alphaBetaTypeFullTitle: `${mainTypeNameJp} ${variantChar === 'α' ? 'alpha' : 'beta'} 「${variant.main.catch}」`,
+      alphaBetaTypeCatchphrase: variant.main.catch,
+      alphaBetaTypeDescription: variant.main.description,
+      oneTwoTypeFullTitle: `${mainTypeNameJp} ${variantChar === 'α' ? 'alpha' : 'beta'}-${subTypeNum} 「${typeSpecificFeature.catch}」`,
+      oneTwoTypeCatchphrase: typeSpecificFeature.catch,
+      oneTwoTypeDescription: typeSpecificFeature.description,
+      // 以下は旧フィールドまたは互換性のためのフィールド（AKARIと同様に設定）
+      catch: mainTypeTitle,
+      baseDescription: "SENRI base description", // 必要なら適切な値に
+      mainTypeNameJp: mainTypeNameJp,
+      variantTitle: variant.main.catch,
+      variant_description_sub_title_explanation: variant.main.description,
+      subTitle: typeSpecificFeature.catch,
+      sub_type_description_sub_title_explanation: typeSpecificFeature.description,
+      acronyms: undefined,
+      componentAcronyms: undefined,
+    };
   }
 
-  // === 以下は AKARI 以外の場合の既存のロジック (変更なし) ===
-  const subIdx = parseInt(subIdxStr, 10) - 1; // Existing logic uses 0-based index
+  // === 以下は AKARI および SENRI 以外の場合の既存のロジック (変更なし) ===
   const entry = findEntry(baseKey);
   if (!entry) return null;
 
