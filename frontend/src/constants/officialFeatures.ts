@@ -242,14 +242,15 @@ export function getInitialFeature(starType: string): FeatureInfo | null {
 export function getDetailedFeature(finalKey: string): DetailedFeatureInfo | null {
   const match = finalKey.match(/([^_]+)_([αβ])-(\d)/);
   if (!match) return null;
-  let [, baseKey, variantChar, subIdxStr] = match; // baseKeyをletに変更
+  let [, baseKey, variantChar, subIdxStr] = match; // baseKeyをletで宣言していることを確認
   const subTypeNum = parseInt(subIdxStr, 10); // 1 or 2
 
-  // Handle NOAH key variations if necessary (e.g. "ＮＯＡＨ" to "NOAH")
-  // For simplicity, assuming baseKey will be "NOAH" after parsing finalKey.
-  // If finalKey could be "ＮＯＡＨ_α-1", then baseKey needs normalization here.
-  // For now, we rely on the finalKey format being consistent e.g. "NOAH_alpha-1" or "noah_alpha-1"
+  // baseKeyの正規化処理を追加
+  if (baseKey === "ＮＯＡＨ") { // 全角のＮＯＡＨかどうかをチェック
+    baseKey = "NOAH"; // 半角のNOAHに置き換える
+  }
 
+  // 以降の if-else if ブロックは、この正規化された baseKey を使って判定する
   if (baseKey.toUpperCase() === 'AKARI') {
     const variant = variantChar === 'α' ? AKARI_FEATURES.alpha : AKARI_FEATURES.beta;
     if (!variant) return null;
