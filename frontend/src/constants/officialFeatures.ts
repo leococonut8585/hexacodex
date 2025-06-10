@@ -133,26 +133,33 @@ interface AllJumeriData {
 
 function normalizeKey(key: string): string {
   let normalized = key;
-  // 全角タイプ名を半角に
+
+  // 全角タイプ名を半角大文字に (既存の置換もここに含める)
   normalized = normalized
     .replace(/ＫＡＩＲＩ/g, 'KAIRI')
     .replace(/ＮＯＡＨ/g, 'NOAH')
     .replace(/ＳＥＮＲＩ/g, 'SENRI')
     .replace(/ＡＫＡＲＩ/g, 'AKARI')
     .replace(/ＭＡＲＩ/g, 'MARI')
-    .replace(/ＫＩＮＲＹＵ/g, 'KINRYU');
+    .replace(/ＫＩＮＲＹＵ/g, 'KINRYU')
+    .toUpperCase(); // 一旦全て大文字に
 
-  // ジュメリキー特有の正規化 (スペース除去、×記号の統一)
-  // 例: "NOAH × KAIRI" -> "NOAH×KAIRI"
-  // 例: "NOAH　×　KAIRI" -> "NOAH×KAIRI"
-  // 例: "NOAHxKAIRI" -> "NOAH×KAIRI" (半角xも一応考慮)
-  normalized = normalized.replace(/\s*×\s*/g, '×') // 全角・半角スペースに囲まれた×をスペースなし×に
-                     .replace(/\s*ｘ\s*/g, '×'); // 全角・半角スペースに囲まれたxをスペースなし×に (小文字x)
+  // 区切り文字の正規化: アンダースコアや様々なスペース、"x"などを半角"×"に統一
+  // まずスペースを削除し、その後アンダースコアや'X'を'×'に置換
+  normalized = normalized.replace(/\s+/g, ''); // 全てのスペースを削除
+  normalized = normalized.replace(/_/g, '×');   // アンダースコアを×に
+  normalized = normalized.replace(/X/g, '×');    // 半角大文字Xを×に (小文字xはtoUpperCaseでXになっているはず)
 
-  // アンダースコア区切りを×に置換 (例: noah_kairi -> noah×kairi)
-  // これは finalKey のパース方法と競合する可能性があるため、一旦コメントアウト。
-  // finalKey のパースで `baseKey` が "NOAH×KAIRI" のように抽出されることを期待。
-  // normalized = normalized.replace(/_/g, '×');
+  // 念のため、連続する×記号があれば1つにまとめる（例: TYPE1××TYPE2 -> TYPE1×TYPE2）
+  normalized = normalized.replace(/×+/g, '×');
+
+  // タイプ名が直接連結している場合(例: AKARISENRI)への対応は、
+  // 明確な区切り文字がないと誤判定のリスクが高いため、
+  // 現状の正規表現 `([^_]+)_([αβ])-(\d)` で `baseKey` が
+  // "AKARI×SENRI" や "AKARI_SENRI" のように区切り文字付きで渡されることを前提とします。
+  // もし "AKARISENRI_alpha-1" のようなキーが実際に存在するなら、
+  // `finalKey.match` の正規表現自体も見直す必要があります。
+  // 今回は normalizeKey で対応できる範囲に留めます。
 
   return normalized;
 }
@@ -207,6 +214,66 @@ const AKARI_FEATURES: AKARIData = {
     type2: {
       catch: "夢見の詩人型",
       description: "ＡＫＡＲＩ ｂｅｔａ ２型は、「現実逃避の芸術家」とでも呼ぶべき特異な存在である。彼らは現実世界の厳しさや複雑さから身を守るために、幻想的で美しい内的世界を構築し、その中で生きることを選択する。"
+    }
+  },
+  "AKARI×SENRI": {
+    alpha: {
+      main: {
+        catch: "情熱を武器に、世界を鮮烈にデザインする、閃光のストラテジスト",
+        description: "ＡＫＡＲＩ　×　ＳＥＮＲＩ　ａｌｐｈａタイプは、この感性主導型戦略を外向的で積極的な形で表現する人格である。彼らは「情熱的革命家」とでも呼ぶべき存在で、その燃えるような創造性と巧妙な戦略的思考を武器に、既存の価値観や社会構造に果敢に挑戦していく。"
+      },
+      type1: {
+        catch: "情熱の開拓アーティスト",
+        description: "このサブタイプは「閃きを羅針盤に、未知の表現領域を切り拓く先駆者」として機能する。"
+      },
+      type2: {
+        catch: "戦略的カリスマデザイナー",
+        description: "このサブタイプは「美と知略で常識を挑発し、社会を覚醒させる扇動の芸術家」として機能する。"
+      }
+    },
+    beta: {
+      main: {
+        catch: "内なる炎を秘め、深遠なる言葉と美で静かに世界を刺す、孤高の戦略的詩人",
+        description: "ＡＫＡＲＩ　×　ＳＥＮＲＩ　ｂｅｔａタイプは、この感性主導型戦略を内向的で深遠な形で表現する人格である。彼らは「静寂の革命家」として機能し、表面的には控えめでありながら、その内に秘めた情熱と戦略的洞察によって、文化や思想の深層部分に持続的な影響を与え続ける。"
+      },
+      type1: {
+        catch: "孤高の錬金術的参謀",
+        description: "このサブタイプは「秘めたる美意識と深慮遠謀で、真価を静かに創造する者」として機能する。"
+      },
+      type2: {
+        catch: "夢幻の戦略的吟遊詩人",
+        description: "このサブタイプは「秘めたる反骨と幻想のヴェールで、静かに時代を覚醒させる者」として機能する。"
+      }
+    }
+  },
+  "SENRI×AKARI": {
+    alpha: {
+      main: {
+        catch: "戦略を纏い、閃光を放つ、孤高のカリスマティック・イノベーター",
+        description: "ＳＥＮＲＩ　×　ＡＫＡＲＩ　ａｌｐｈａタイプは、この複雑なジュメリ特性を外向的で積極的な形で表現する人格である。彼らは「カリスマティック・ディスラプター」とでも呼ぶべき存在で、その圧倒的な存在感と予測不可能な創造性で、社会に根本的な変革をもたらそうとする。"
+      },
+      type1: {
+        catch: "戦略的閃光アーティスト",
+        description: "このサブタイプは「華麗なる一撃の開拓者」として機能する。彼らは瞬間的なインスピレーションを緻密な戦略に変換し、それを芸術的な美しさで包装して世界に提示する。"
+      },
+      type2: {
+        catch: "知略の革命デザイナー",
+        description: "このサブタイプは「カリスマ的扇動者」としての側面を強く持つ。彼らは美学と戦略を巧妙に組み合わせることで、社会構造そのものに挑戦する新しい価値観をデザインする。"
+      }
+    },
+    beta: {
+      main: {
+        catch: "深淵なる知性と秘めたる情熱、影で世界を操るミスティック・ストラテジスト",
+        description: "ＳＥＮＲＩ　×　ＡＫＡＲＩ　ｂｅｔａタイプは、このジュメリ特性を内向的で深遠な形で表現する人格である。彼らは「影の支配者」「孤高の芸術家」として機能し、表面的には目立たないが、深いレベルで世界に持続的な影響を与え続ける。"
+      },
+      type1: {
+        catch: "深淵のアルケミスト",
+        description: "このサブタイプは「真理と美の結晶を錬成する者」として機能する。彼らは孤独な探求の果てに、時代を超えた価値を持つ作品や思想を生み出す。"
+      },
+      type2: {
+        catch: "影の詩的改革者",
+        description: "このサブタイプは「ミステリアスな異端児」として機能する。彼らは幻想のベールで現実を刺す詩的表現を通じて、人々の心に静かな革命を起こす。その手法は直接的な主張ではなく、美しい比喩や象徴を通じた間接的な覚醒である。"
+      }
     }
   }
 };
@@ -418,23 +485,26 @@ export function getDetailedFeature(finalKey: string): DetailedFeatureInfo | null
     // jumeri_type_name_jp を JUMERI_FEATURES から取得するか、または finalKey から再構築
     // 例: normalizedBaseKey が "NOAH×KAIRI" の場合
     const nameParts = normalizedBaseKey.split('×');
-    const type1Name = nameParts[0]; // 例: NOAH
-    const type2Name = nameParts[1]; // 例: KAIRI
+    const type1Name = nameParts[0];
+    const type2Name = nameParts[1];
 
     // 表示用の名前 (全角等、ユーザー指示書に合わせる)
-    // この部分は必要に応じて catch_giumeri.json の jumeri_type_name_jp を参照するロジックも検討可能
-    // ここでは簡易的に構成
-    const displayType1Name = type1Name.replace("NOAH", "ＮＯＡＨ").replace("KAIRI", "ＫＡＩＲＩ"); // 他タイプも同様に
-    const displayType2Name = type2Name.replace("NOAH", "ＮＯＡＨ").replace("KAIRI", "ＫＡＩＲＩ");
-    const mainTypeNameJp = `${displayType1Name} × ${displayType2Name}`; // 例: ＮＯＡＨ × ＫＡＩＲＩ
-    const mainTypeBaseCatchphrase = variantData.main.catch; // ジュメリのメインキャッチを使用
-    const mainTypeTitle = `${mainTypeNameJp} 「${mainTypeBaseCatchphrase}」`; // タイトル形式に
+    // 注意: ここでのreplaceは単純な例。より多くのタイプに対応するには改善が必要。
+    const displayType1Name = type1Name.replace("AKARI", "ＡＫＡＲＩ").replace("SENRI", "ＳＥＮＲＩ").replace("NOAH", "ＮＯＡＨ").replace("KAIRI", "ＫＡＩＲＩ");
+    const displayType2Name = type2Name.replace("AKARI", "ＡＫＡＲＩ").replace("SENRI", "ＳＥＮＲＩ").replace("NOAH", "ＮＯＡＨ").replace("KAIRI", "ＫＡＩＲＩ");
+
+    const mainTypeNameJp = `${displayType1Name}　×　${displayType2Name}`; // 全角スペースと全角×を使用
+    const mainTypeBaseCatchphrase = variantData.main.catch;
+    // タイトルはキーから再構築するのではなく、jumeri_type_name_jp のようなフィールドを JUMERI_FEATURES に持たせる方が良いかもしれないが、今回は指示に従い組み立てる。
+    // ユーザー指示書では alpha/beta のキャッチコピーがそのまま使われているため、それに倣う。
+    const mainTypeTitle = `${mainTypeNameJp} ${variantChar === 'α' ? 'ａｌｐｈａ' : 'ｂｅｔａ'}`;
+
 
     return {
-      mainTypeTitle: mainTypeTitle,
-      mainTypeCatchphrase: mainTypeBaseCatchphrase,
-      mainTypeDescription: variantData.main.description, // ジュメリのメイン解説
-      mainTypeAcronyms: undefined, // ジュメリ用のアクロニムがあれば設定 (catch_giumeri.json参照など)
+      mainTypeTitle: `${mainTypeNameJp} ${variantChar === 'α' ? 'ａｌｐｈａ' : 'ｂｅｔａ'} 「${variantData.main.catch}」`, // 指示書の形式に合わせる
+      mainTypeCatchphrase: variantData.main.catch, // αまたはβのメインキャッチ
+      mainTypeDescription: variantData.main.description, // αまたはβのメイン解説
+      mainTypeAcronyms: undefined,
 
       alphaBetaTypeFullTitle: `${mainTypeNameJp} ${variantChar === 'α' ? 'ａｌｐｈａ' : 'ｂｅｔａ'} 「${variantData.main.catch}」`,
       alphaBetaTypeCatchphrase: variantData.main.catch,
@@ -444,9 +514,9 @@ export function getDetailedFeature(finalKey: string): DetailedFeatureInfo | null
       oneTwoTypeCatchphrase: typeSpecificFeature.catch,
       oneTwoTypeDescription: typeSpecificFeature.description,
 
-      catch: mainTypeTitle,
+      catch: `${mainTypeNameJp} ${variantChar === 'α' ? 'ａｌｐｈａ' : 'ｂｅｔａ'} 「${variantData.main.catch}」`,
       baseDescription: variantData.main.description,
-      mainTypeNameJp: normalizedBaseKey, // "NOAH×KAIRI" など
+      mainTypeNameJp: normalizedBaseKey,
       variantTitle: variantData.main.catch,
       variant_description_sub_title_explanation: variantData.main.description,
       subTitle: typeSpecificFeature.catch,
