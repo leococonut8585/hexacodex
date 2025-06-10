@@ -275,6 +275,66 @@ const AKARI_FEATURES: AKARIData = {
         description: "このサブタイプは「ミステリアスな異端児」として機能する。彼らは幻想のベールで現実を刺す詩的表現を通じて、人々の心に静かな革命を起こす。その手法は直接的な主張ではなく、美しい比喩や象徴を通じた間接的な覚醒である。"
       }
     }
+  },
+  "MARI×KINRYU": {
+    alpha: {
+      main: {
+        catch: "陽光をまとう堅実なリーダー：信頼と笑顔で、未来を育むコミュニティビルダー",
+        description: "ＭＡＲＩ　×　ＫＩＮＲＹＵ　ａｌｐｈａタイプは、この堅実的創造性を外向的で積極的な形で表現する人格である。彼らは「太陽のような守護者」とでも呼ぶべき存在で、その確固たる信頼性と明るい魅力を武器に、コミュニティや組織の中心となって多くの人々を結びつけ、共に成長していく環境を創造する。"
+      },
+      type1: {
+        catch: "信頼と冒険のハーモニー・リーダー",
+        description: "このサブタイプは「堅実な航路に、未知の喜びを運ぶ船長」として機能する。"
+      },
+      type2: {
+        catch: "育むエンターテイナー・マイスター",
+        description: "このサブタイプは「確かな技術と遊び心で、才能を開花させる演出家」として機能する。"
+      }
+    },
+    beta: {
+      main: {
+        catch: "縁の下の輝く支援者：控えめな誠実さの奥に、個性的な輝きを秘めた癒し手",
+        description: "ＭＡＲＩ　×　ＫＩＮＲＹＵ　ｂｅｔａタイプは、この堅実的創造性を内向的で静謐な形で表現する人格である。彼らは「静かな安心感と心地よい刺激を与える存在」として機能し、表面的には控えめでありながら、その確実な支援と独特の感性によって、周囲の人々に深い安らぎと密やかな喜びをもたらす。"
+      },
+      type1: {
+        catch: "静寂の自由なる守護者",
+        description: "このタイプは「不動の誠実さに、型破りな美学を秘めたガーディアン」として機能する。"
+      },
+      type2: {
+        catch: "微笑みの縁結びイノベーター",
+        description: "このサブタイプは「温かな絆と斬新なアイデアで、調和と変革を静かに紡ぐ者」として機能する。"
+      }
+    }
+  },
+  "KINRYU×MARI": {
+    alpha: {
+      main: {
+        catch: "太陽の実行者：輝きと誠実さで、人々を巻き込み未来を照らすリーダー",
+        description: "ＫＩＮＲＹＵ　×　ＭＡＲＩ　ａｌｐｈａタイプは、この魅力的信頼構築を外向的で積極的な形で表現する人格である。彼らは「行動する希望そのもの」とでも呼ぶべき存在で、その圧倒的な魅力と確実な実行力を武器に、多くの人々を巻き込みながら革新的なプロジェクトや社会変革を推進していく。"
+      },
+      type1: {
+        catch: "陽気な信頼のパイオニア",
+        description: "このサブタイプは「自由な魂と誠実な心で、未知の喜びを共に切り拓くリーダー」として機能する。"
+      },
+      type2: {
+        catch: "変幻自在の育成エンターテイナー",
+        description: "このサブタイプは「華麗な演出と温かな眼差しで、才能を解き放つマジシャン」として機能する。"
+      }
+    },
+    beta: {
+      main: {
+        catch: "静かなる華やぎの奉仕者：独自のセンスと誠意で、心に寄り添い貢献する",
+        description: "ＫＩＮＲＹＵ　×　ＭＡＲＩ　ｂｅｔａタイプは、この魅力的信頼構築を内向的で静謐な形で表現する人格である。彼らは「静かな喜びと確かな安心感を与える存在」として機能し、表面的には控えめでありながら、その独特のセンスと確実な配慮によって、周囲の人々の日常に豊かさと安定をもたらす。"
+      },
+      type1: {
+        catch: "自由なる魂の堅実な守り手",
+        description: "このサブタイプは「独自の美学と確かな誠意で、静かに個性を守り育むガーディアン」として機能する。"
+      },
+      type2: {
+        catch: "静かなる絆のイノベーター",
+        description: "このサブタイプは「型破りな発想と温かな配慮で、人と未来を繋ぐ発明家」として機能する。"
+      }
+    }
   }
 };
 
@@ -490,8 +550,20 @@ export function getDetailedFeature(finalKey: string): DetailedFeatureInfo | null
 
     // 表示用の名前 (全角等、ユーザー指示書に合わせる)
     // 注意: ここでのreplaceは単純な例。より多くのタイプに対応するには改善が必要。
-    const displayType1Name = type1Name.replace("AKARI", "ＡＫＡＲＩ").replace("SENRI", "ＳＥＮＲＩ").replace("NOAH", "ＮＯＡＨ").replace("KAIRI", "ＫＡＩＲＩ");
-    const displayType2Name = type2Name.replace("AKARI", "ＡＫＡＲＩ").replace("SENRI", "ＳＥＮＲＩ").replace("NOAH", "ＮＯＡＨ").replace("KAIRI", "ＫＡＩＲＩ");
+    const displayType1Name = type1Name
+      .replace("AKARI", "ＡＫＡＲＩ")
+      .replace("SENRI", "ＳＥＮＲＩ")
+      .replace("NOAH", "ＮＯＡＨ")
+      .replace("KAIRI", "ＫＡＩＲＩ")
+      .replace("MARI", "ＭＡＲＩ")
+      .replace("KINRYU", "ＫＩＮＲＹＵ");
+    const displayType2Name = type2Name
+      .replace("AKARI", "ＡＫＡＲＩ")
+      .replace("SENRI", "ＳＥＮＲＩ")
+      .replace("NOAH", "ＮＯＡＨ")
+      .replace("KAIRI", "ＫＡＩＲＩ")
+      .replace("MARI", "ＭＡＲＩ")
+      .replace("KINRYU", "ＫＩＮＲＹＵ");
 
     const mainTypeNameJp = `${displayType1Name}　×　${displayType2Name}`; // 全角スペースと全角×を使用
     const mainTypeBaseCatchphrase = variantData.main.catch;
