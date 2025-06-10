@@ -110,14 +110,51 @@ interface KAIRIData {
   beta: KAIRISubType;
 }
 
+interface JumeriFeatureDetail { // KAIRIFeatureなどと共通化も可能だが、明確化のため別名に
+  catch: string;
+  description: string;
+}
+
+interface JumeriSubTypeData {
+  main: JumeriFeatureDetail;
+  type1: JumeriFeatureDetail;
+  type2: JumeriFeatureDetail;
+}
+
+interface JumeriVariantData {
+  alpha: JumeriSubTypeData;
+  beta: JumeriSubTypeData;
+}
+
+// JUMERI_FEATURES定数の型 (キーは "TYPE1×TYPE2" 形式)
+interface AllJumeriData {
+  [jumeriKey: string]: JumeriVariantData;
+}
+
 function normalizeKey(key: string): string {
-  return key
+  let normalized = key;
+  // 全角タイプ名を半角に
+  normalized = normalized
     .replace(/ＫＡＩＲＩ/g, 'KAIRI')
     .replace(/ＮＯＡＨ/g, 'NOAH')
     .replace(/ＳＥＮＲＩ/g, 'SENRI')
     .replace(/ＡＫＡＲＩ/g, 'AKARI')
-    .replace(/ＭＡＲＩ/g, 'MARI') // MARIも追加（将来のため）
-    .replace(/ＫＩＮＲＹＵ/g, 'KINRYU'); // KINRYUも追加（将来のため）
+    .replace(/ＭＡＲＩ/g, 'MARI')
+    .replace(/ＫＩＮＲＹＵ/g, 'KINRYU');
+
+  // ジュメリキー特有の正規化 (スペース除去、×記号の統一)
+  // 例: "NOAH × KAIRI" -> "NOAH×KAIRI"
+  // 例: "NOAH　×　KAIRI" -> "NOAH×KAIRI"
+  // 例: "NOAHxKAIRI" -> "NOAH×KAIRI" (半角xも一応考慮)
+  normalized = normalized.replace(/\s*×\s*/g, '×') // 全角・半角スペースに囲まれた×をスペースなし×に
+                     .replace(/\s*ｘ\s*/g, '×'); // 全角・半角スペースに囲まれたxをスペースなし×に (小文字x)
+
+  // アンダースコア区切りを×に置換 (例: noah_kairi -> noah×kairi)
+  // これは finalKey のパース方法と競合する可能性があるため、一旦コメントアウト。
+  // finalKey のパースで `baseKey` が "NOAH×KAIRI" のように抽出されることを期待。
+  // normalized = normalized.replace(/_/g, '×');
+
+  return normalized;
 }
 
 function extractKey(name: string): string {
@@ -170,6 +207,69 @@ const AKARI_FEATURES: AKARIData = {
     type2: {
       catch: "夢見の詩人型",
       description: "ＡＫＡＲＩ ｂｅｔａ ２型は、「現実逃避の芸術家」とでも呼ぶべき特異な存在である。彼らは現実世界の厳しさや複雑さから身を守るために、幻想的で美しい内的世界を構築し、その中で生きることを選択する。"
+    }
+  }
+};
+
+const JUMERI_FEATURES: AllJumeriData = {
+  "NOAH×KAIRI": { // 正規化後のキー
+    alpha: {
+      main: {
+        catch: "才知と慈愛で、人々を導き育む、灯台の如きビジョンあるリーダー",
+        description: "ＮＯＡＨ　×　ＫＡＩＲＩ　ａｌｐｈａタイプは、この慈愛的才覚を外向的で積極的な形で表現する人格である。彼らは「理想実現型リーダー」とでも呼ぶべき存在で、その温かい人間性と明確なビジョンを武器に、多くの人々を理想的な未来に向けて導いていこうとする。"
+      },
+      type1: {
+        catch: "夢の建築家",
+        description: "このサブタイプは「慈愛と戦略で、理想の未来図を描き築き上げる構築者」として機能する。"
+      },
+      type2: {
+        catch: "信念と魂の育成者",
+        description: "このサブタイプは「温かな導きと揺るぎない理想で、個と組織の成長を加速させる触媒」として機能する。"
+      }
+    },
+    beta: {
+      main: {
+        catch: "深い共感と知恵で、個の成長と調和を支える、静かなる洞察の守護者",
+        description: "ＮＯＡＨ　×　ＫＡＩＲＩ　ｂｅｔａタイプは、この慈愛的知性を内向的で深遠な形で表現する人格である。彼らは「静寂の賢者」として機能し、表面的には控えめでありながら、その深い洞察力と温かい共感によって、周囲の人々の心の奥深くに持続的な影響を与え続ける。"
+      },
+      type1: {
+        catch: "静かなる理想の職人",
+        description: "このサブタイプは「深い共感と揺るぎない探求心で、本質的な癒しと完成を追求する者」として機能する。"
+      },
+      type2: {
+        catch: "思索する守護の哲学者",
+        description: "このサブタイプは「静かな眼差しと深い知恵で、本質的な価値と心の平和を見守る賢者」として機能する。"
+      }
+    }
+  },
+  "KAIRI×NOAH": { // 正規化後のキー
+    alpha: {
+      main: {
+        catch: "理想を現実に根付かせる育成者：知性と温情で、希望の未来をデザインするリーダー",
+        description: "ＫＡＩＲＩ　×　ＮＯＡＨ　ａｌｐｈａタイプは、この知的愛情主義を外向的で積極的な形で表現する人格である。彼らは「啓蒙的建設者」とでも呼ぶべき存在で、その深い知性と温かい人間性を武器に、理想的な社会や組織の構築に向けて積極的に行動していく。"
+      },
+      type1: {
+        catch: "理想の架け橋を築く賢者",
+        description: "このサブタイプは「知性と温情で、希望ある未来図を現実化するリーダー」として機能する。"
+      },
+      type2: {
+        catch: "信念を育む賢明な指導者",
+        description: "このサブタイプは「理想への情熱と温かな眼差しで、個と社会の成長を促す探求者」として機能する。"
+      }
+    },
+    beta: {
+      main: {
+        catch: "内省する慈愛の探求者：静かな知恵と深い共感で、本質的な成長と調和を育む賢人",
+        description: "ＫＡＩＲＩ　×　ＮＯＡＨ　ｂｅｔａタイプは、この知的愛情主義を内向的で深遠な形で表現する人格である。彼らは「静寂の導師」として機能し、表面的には控えめでありながら、その深い洞察力と温かい理解によって、周囲の人々の心の深奥に持続的で根本的な変化をもたらす。"
+      },
+      type1: {
+        catch: "静かなる育成のアルチザン",
+        description: "このサブタイプは「孤高の探求と深い共感で、本質的な才能と癒しを育む職人」として機能する。"
+      },
+      type2: {
+        catch: "内省する守護の灯台守",
+        description: "このサブタイプは「深い洞察と静かな愛情で、本質的な価値と心の平和を見守る賢者」として機能する。"
+      }
     }
   }
 };
@@ -302,10 +402,59 @@ export function getDetailedFeature(finalKey: string): DetailedFeatureInfo | null
   let [, baseKey, variantChar, subIdxStr] = match;
   const subTypeNum = parseInt(subIdxStr, 10);
 
-  // ★ baseKeyの正規化処理を追加 ★
-  baseKey = normalizeKey(baseKey);
+  const normalizedBaseKey = normalizeKey(baseKey); // ★ キーを正規化 ★
 
-  if (baseKey.toUpperCase() === 'KAIRI') { // KAIRIタイプの処理を追加
+  // ジュメリタイプの処理を最初に行う
+  if (JUMERI_FEATURES[normalizedBaseKey]) {
+    const jumeriData = JUMERI_FEATURES[normalizedBaseKey];
+    const variantData = variantChar === 'α' ? jumeriData.alpha : jumeriData.beta;
+    if (!variantData) return null;
+
+    let typeSpecificFeature: JumeriFeatureDetail;
+    if (subTypeNum === 1) typeSpecificFeature = variantData.type1;
+    else if (subTypeNum === 2) typeSpecificFeature = variantData.type2;
+    else return null;
+
+    // jumeri_type_name_jp を JUMERI_FEATURES から取得するか、または finalKey から再構築
+    // 例: normalizedBaseKey が "NOAH×KAIRI" の場合
+    const nameParts = normalizedBaseKey.split('×');
+    const type1Name = nameParts[0]; // 例: NOAH
+    const type2Name = nameParts[1]; // 例: KAIRI
+
+    // 表示用の名前 (全角等、ユーザー指示書に合わせる)
+    // この部分は必要に応じて catch_giumeri.json の jumeri_type_name_jp を参照するロジックも検討可能
+    // ここでは簡易的に構成
+    const displayType1Name = type1Name.replace("NOAH", "ＮＯＡＨ").replace("KAIRI", "ＫＡＩＲＩ"); // 他タイプも同様に
+    const displayType2Name = type2Name.replace("NOAH", "ＮＯＡＨ").replace("KAIRI", "ＫＡＩＲＩ");
+    const mainTypeNameJp = `${displayType1Name} × ${displayType2Name}`; // 例: ＮＯＡＨ × ＫＡＩＲＩ
+    const mainTypeBaseCatchphrase = variantData.main.catch; // ジュメリのメインキャッチを使用
+    const mainTypeTitle = `${mainTypeNameJp} 「${mainTypeBaseCatchphrase}」`; // タイトル形式に
+
+    return {
+      mainTypeTitle: mainTypeTitle,
+      mainTypeCatchphrase: mainTypeBaseCatchphrase,
+      mainTypeDescription: variantData.main.description, // ジュメリのメイン解説
+      mainTypeAcronyms: undefined, // ジュメリ用のアクロニムがあれば設定 (catch_giumeri.json参照など)
+
+      alphaBetaTypeFullTitle: `${mainTypeNameJp} ${variantChar === 'α' ? 'ａｌｐｈａ' : 'ｂｅｔａ'} 「${variantData.main.catch}」`,
+      alphaBetaTypeCatchphrase: variantData.main.catch,
+      alphaBetaTypeDescription: variantData.main.description,
+
+      oneTwoTypeFullTitle: `${mainTypeNameJp} ${variantChar === 'α' ? 'ａｌｐｈａ' : 'ｂｅｔａ'} ${subTypeNum === 1 ? '１型' : '２型'} 「${typeSpecificFeature.catch}」`,
+      oneTwoTypeCatchphrase: typeSpecificFeature.catch,
+      oneTwoTypeDescription: typeSpecificFeature.description,
+
+      catch: mainTypeTitle,
+      baseDescription: variantData.main.description,
+      mainTypeNameJp: normalizedBaseKey, // "NOAH×KAIRI" など
+      variantTitle: variantData.main.catch,
+      variant_description_sub_title_explanation: variantData.main.description,
+      subTitle: typeSpecificFeature.catch,
+      sub_type_description_sub_title_explanation: typeSpecificFeature.description,
+      acronyms: undefined,
+      componentAcronyms: undefined, // 必要なら catch_giumeri.json から取得するロジック
+    };
+  } else if (normalizedBaseKey.toUpperCase() === 'KAIRI') {
     const variant = variantChar === 'α' ? KAIRI_FEATURES.alpha : KAIRI_FEATURES.beta;
     if (!variant) return null;
 
@@ -340,7 +489,7 @@ export function getDetailedFeature(finalKey: string): DetailedFeatureInfo | null
       acronyms: undefined,
       componentAcronyms: undefined,
     };
-  } else if (baseKey.toUpperCase() === 'AKARI') {
+  } else if (normalizedBaseKey.toUpperCase() === 'AKARI') {
     const variant = variantChar === 'α' ? AKARI_FEATURES.alpha : AKARI_FEATURES.beta;
     if (!variant) return null;
 
@@ -391,7 +540,7 @@ export function getDetailedFeature(finalKey: string): DetailedFeatureInfo | null
       acronyms: undefined, // 必要なら設定
       componentAcronyms: undefined, // 必要なら設定
     };
-  } else if (baseKey.toUpperCase() === 'SENRI') { // SENRIタイプの処理を追加
+  } else if (normalizedBaseKey.toUpperCase() === 'SENRI') {
     const variant = variantChar === 'α' ? SENRI_FEATURES.alpha : SENRI_FEATURES.beta;
     if (!variant) return null;
 
@@ -428,7 +577,7 @@ export function getDetailedFeature(finalKey: string): DetailedFeatureInfo | null
       acronyms: undefined,
       componentAcronyms: undefined,
     };
-  } else if (baseKey.toUpperCase() === 'NOAH') { // NOAHタイプの処理を追加
+  } else if (normalizedBaseKey.toUpperCase() === 'NOAH') {
     const variant = variantChar === 'α' ? NOAH_FEATURES.alpha : NOAH_FEATURES.beta;
     if (!variant) return null;
 
@@ -471,8 +620,8 @@ export function getDetailedFeature(finalKey: string): DetailedFeatureInfo | null
     };
   }
 
-  // === 以下は KAIRI, AKARI, SENRI, NOAH 以外の場合の既存のロジック (変更なし) ===
-  const entry = findEntry(baseKey); // 正規化されたbaseKeyが使われる
+  // === 以下はジュメリでも基本タイプでもない場合の既存のロジック (変更なし) ===
+  const entry = findEntry(normalizedBaseKey); // ★ 正規化されたキーを使用 ★
   // ... (残りの既存ロジックは変更しない) ...
   if (!entry) return null;
 
